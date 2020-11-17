@@ -1,6 +1,8 @@
 # `0x01` Data
 
-This message is sent by the host of a game in the client's `FixedUpdate` method to update every [`InnerNetObject`](../05_innernetobject_types/README.md) that has changed since the last call to `FixedUpdate` and keeps all clients in sync.
+### Host-to-Game
+
+This message is sent by the host of a game to all clients in a game. It is sent from inside the host client's `FixedUpdate` method in order to keep all clients in sync by updating every [`InnerNetObject`](../05_innernetobject_types/README.md) that has changed since the last call to `FixedUpdate`.
 
 Every `Data` message starts out with the same data, outlined in the table below.
 
