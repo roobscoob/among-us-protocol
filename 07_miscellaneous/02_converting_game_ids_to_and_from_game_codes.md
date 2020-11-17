@@ -1,6 +1,6 @@
 # Converting Game IDs to and from Game Codes
 
-Among Us uses six-letter codes to identify games and allow players to invite others to their game. Previous versions were four letters long but with the rise in popularity came the frequent issue of collisions. The four-letter variants were simply the ASCII uppercase letter in hexadecimal. Six-letter codes use a special encoding to maintain backwards-compatibility with a size of four bytes.
+Among Us uses six-letter codes to identify games and allow players to invite others to their game. Previous versions were four letters long but with the rise in popularity came the frequent issue of collisions. The four-letter variants were simply the ASCII uppercase letters in hexadecimal. Six-letter codes use a special encoding to maintain backwards-compatibility with a size of four bytes.
 
 ##### Converting an ID to a String Code
 
