@@ -2,7 +2,7 @@
 
 ### Server-to-Client
 
-This message is sent from the server to a client when loading the list of games and tells the client which servers the games are hosted on.
+This message is sent from the server to a client when loading the game list, creating a game, and joining a game, and tells the client which servers the games are hosted on.
 
 | Type | Name | Description |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ This is the structure of each [Hazel message](../01_packet_structure/03_the_stru
 | Type | Name | Description |
 | --- | --- | --- |
 | `String` | Name | The name of the master server |
-| `IP Address` | IP Address | The IP address of the server that the game is hosted on |
+| `IP Address` | IP Address | The IP address of the server |
 | `uint16` | Port | The port that the server is listening on |
 | `packed uint32` | Number of Players | The number of players currently connected to the server |
 

@@ -16,7 +16,6 @@ As there is currently only one game tag, whose value is of type `boolean`, the t
     <summary>Click here to view an example packet</summary>
 
 ```
-made private
 01              # Reliable packet
 0098            # Nonce
 06000a          # Hazel message (tag of 0x0a = AlterGame)
