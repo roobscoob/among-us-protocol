@@ -1,6 +1,6 @@
 # The Different Types of IDs
 
-Every [`InnerNetObject`](../05_innernetobject_types/README.md) that can be spawned has two IDs associated with it: and owner ID and a net ID.
+Every [`InnerNetObject`](../05_innernetobject_types/README.md) that can be spawned has two IDs associated with it: an owner ID and a net ID.
 
 ### Owner ID / Client ID
 

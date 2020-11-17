@@ -111,7 +111,7 @@ if ((amount & 0x40) != 0) {
 | `0` | Left Reactor |
 | `1` | Right Reactor |
 
-###### Mira HQ Seismic Consoles
+###### Polus Seismic Consoles
 
 | ID | Location |
 | --- | --- |

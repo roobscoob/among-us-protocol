@@ -115,7 +115,7 @@ Example:
 
 ### `Color`
 
-This refers to the customizable colors that a player can be.
+This refers to the customizable colors that a player can play as.
 
 | ID | Name |
 | --- | --- |

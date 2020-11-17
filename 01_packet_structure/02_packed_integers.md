@@ -1,6 +1,6 @@
 # Packed Integers
 
-Packed integers, also known as variable integers (or `VarInt`), are numbers that have been encoded in such a way that they take up as few bytes as possible, with a maximum length of 5 bytes. The value of the number is encoded in the seven least-significant bits while the most-significant bit is used to tell the reader whether or not it needs to read another byte. The Hazel (C#) implementation, used in Among Us, can be found below.
+Packed integers, also known as variable integers (or `VarInt`), are numbers that have been encoded in such a way that they take up as few bytes as possible, with a maximum length of 5 bytes. The value of the number is encoded in the seven least-significant bits while the most-significant bit is used to tell the reader whether or not it needs to read another byte. The Hazel (C#) implementation, as used in Among Us, can be found below.
 
 #### [`MessageReader.cs`](https://github.com/willardf/Hazel-Networking/blob/9dc6afef033a36a27e2d3d35f18c3b0bb8bfac87/Hazel/MessageReader.cs#L234-L266)
 

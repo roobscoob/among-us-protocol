@@ -16,7 +16,7 @@ Below you will find a section for each type of packet that could be sent over th
 
 ### `0x00` Normal
 
-A `Normal` packet is used to transmit updates to various [`InnerNetObject`s](../05_innernetobject_types/README.md).
+A `Normal` packet is primarily used to transmit updates to various [`InnerNetObject`s](../05_innernetobject_types/README.md).
 
 `Normal` packets **do not** need to be acknowledged.
 
@@ -24,7 +24,7 @@ The `Normal` packet structure is as follows:
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `Message[n]` | Payload | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) containing the packet's payload<br><br>The message tag is the [Message Type](../02_root_message_types/README.md) |
+| `Message[n]` | Payload | One or more [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) containing the packet's payload<br><br>The message tag is the [Message Type](../02_root_message_types/README.md) |
 
 For a list of all messages, including example packets, that could be sent using this packet type, see [Root Message Types](../02_root_message_types/README.md).
 
@@ -43,7 +43,7 @@ void parseNormal(MessageReader payload) {
 
 ### `0x01` Reliable
 
-A `Reliable` packet is used to transmit game state changes and various client actions such as joining a game, competing a task, entering a vent, repairing a sabotage, and more.
+A `Reliable` packet is used to transmit game state changes and various client actions such as joining a game, completing a task, entering a vent, repairing a sabotage, and more.
 
 `Reliable` packets **do** need to be acknowledged.
 
@@ -52,7 +52,7 @@ The `Reliable` packet structure is as follows:
 | Type | Name | Description |
 | --- | --- | --- |
 | `uint16` (*Big Endian*) | Nonce | The ID of this packet so that the receiver can acknowledge it upon receipt |
-| `Message[n]` | Payload | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) containing the packet's payload<br><br>The message tag is the [Message Type](../02_root_message_types/README.md) |
+| `Message[n]` | Payload | One or more [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) containing the packet's payload<br><br>The message tag is the [Message Type](../02_root_message_types/README.md) |
 
 For a list of all messages, including example packets, that could be sent using this packet type, see [Root Message Types](../02_root_message_types/README.md).
 
@@ -73,7 +73,7 @@ void parseReliable(MessageReader payload, int nonce) {
 
 ### `0x08` Hello
 
-The `Hello` packet is sent upon loading the game list and initiates a connection with the game servers.
+The `Hello` packet is sent upon loading the game list, creating a game, and joining a game, and is used to initiate a connection with the game servers.
 
 `Hello` packets **do** need to be acknowledged.
 
@@ -114,8 +114,8 @@ The `Disconnect` packet structure, when containing a [Disconnect Reason](06_enum
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Unknown | An unknown value that is always observed to be `0x01` |
-| `Message` | Disconnect Reason | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) describing why the player was disconnected<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`byte`</td><td>Disconnect Reason</td><td>The reason for the disconnection</td></tr><tr><td>`String` (Optional)</td><td>Custom Message</td><td>A custom disconnect message</td></tr></tbody></table> |
+| `byte` | *Unknown* | An unknown value that is always observed to be `0x01` |
+| `Message` | Disconnect Reason | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) describing why the player was disconnected<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`byte`</td><td>[Disconnect Reason](06_enums.md#disconnectreason)</td><td>The reason for the disconnection</td></tr><tr><td>`String` (Optional)</td><td>Custom Message</td><td>A custom disconnect message</td></tr></tbody></table> |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -128,11 +128,11 @@ The `Disconnect` packet structure, when containing a [Disconnect Reason](06_enum
 |   |   |       |   |   |
 |   |   |       |   |   Length-prefixed string containing a custom message, "Hello" in this case
 |   |   |       |   |
-|   |   |       |   Disconnect Reason
+|   |   |       |   Disconnect Reason: 8 (CUSTOM)
 |   |   |       |
 |   |   |       Message #1 Type (not used)
 |   |   |
-|   |   Message #1 Length
+|   |   Message #1 Length: 7 bytes
 |   |
 |   Unknown
 |
@@ -173,7 +173,7 @@ Packet type
 
 ### `0x0b` Fragment
 
-The `Fragment` packet, although never used in Among Us, would be used to send larger payloads across multiple smaller packets.
+The `Fragment` packet, although never used in Among Us (and not yet implemented in Hazel), would be used to send larger payloads across multiple smaller packets.
 
 `Fragment` packets **do not** need to be acknowledged.
 
