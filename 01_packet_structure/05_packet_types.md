@@ -155,7 +155,7 @@ The `Acknowledgement` packet structure is as follows:
 
 When sending an acknowledgement packet, the sender will attach a byte representing the 8 most recent reliable packets sent. Starting with the previous packet (`n - 1` where `n` is the ID of the packet currently being acknowledged) and ending with the 8th most recent packet (`n - 8`) a bit will either be set or unset (from bit 1 to 8 respectively) representing whether or not the sender received an acknowledgement for that packet.
 
-Given the example `11110101` (`0xf5`) we can see that packets 2 and 4 have not yet been acknowledged by the receiver.
+Given the example `0b11110101` (`0xf5`) we can see that packets 2 and 4 have not yet been acknowledged by the receiver.
 
 <details>
     <summary>Click here to view an example packet</summary>
