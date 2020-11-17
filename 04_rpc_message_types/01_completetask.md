@@ -2,13 +2,13 @@
 
 This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game when they complete a task.
 
-> **Note**: Each map has its own set of tasks and associated IDs that are used when setting a player's tasks, and are found [here](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md).
+> **Note**: Each map has its own set of tasks and associated IDs, found [here](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md), that are used when setting a player's tasks.
 
 > **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Task Index | The index of the player's task list (zero-indexed) for the task that was completed<br><br>The player's task list is provided via the [`SetTasks`](29_settasks.md) RPC message |
+| `packed uint32` | Task Index | The index of the player's task list (zero-indexed) for the task that was completed<br><br>The player's task list is provided via the [`0x1d` SetTasks](29_settasks.md) RPC message |
 
 <details>
     <summary>Click here to view an example packet</summary>

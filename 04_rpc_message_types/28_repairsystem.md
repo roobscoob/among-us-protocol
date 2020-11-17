@@ -6,7 +6,7 @@ This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipsta
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | System ID |  |
+| `byte` | System ID | The ID of the [system](../01_packet_structure/06_enums.md#systemtype) that is being repaired |
 | `packed uint32` | PlayerControl Net ID | The net ID of the [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object for the player who repaired/sabotaged the system |
 | `byte` | Amount | A value which holds various information about a system's state |
 
@@ -30,7 +30,7 @@ This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipsta
 
 ## The `Amount` Field
 
-How the `Amount` is read depends on the `System ID`. Below is a list of all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) that can be interacted with using this RPC message as well as pseudocode on how to parse them.
+How the `Amount` is read depends on the `System ID`. Below is a list of all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) that can be interacted with using this RPC message as well as pseudocode, when necessary, on how to parse them.
 
 #### `ELECTRICAL`
 
@@ -82,7 +82,7 @@ if ((amount & 0x40) != 0) {
 
 #### `REACTOR` and `LABORATORY`
 
-The `SystemType` for *Reactor* on *The Skeld* and *Mira HQ* is `SystemType.REACTOR`, while *Seismic* on *Polus* is `SystemType.LABORATORY`; they share the same logic.
+The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *Mira HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player is places or removes their hand from a console.
 
 ```java
 // The ID of the reactor/seismic console
@@ -159,7 +159,7 @@ int doorId = amount & ~0x40;
 
 #### `COMMUNICATIONS`
 
-The `System ID` will be that of `SystemType.COMMUNICATIONS` when a player repairs communications on any of the maps, as well as when the player opens or closes a communications panel on *Mira HQ*.
+The `System ID` will be that of `SystemType.COMMUNICATIONS` when a player repairs communications on any of the maps, as well as when the player opens or closes a communications console on *Mira HQ*.
 
 ```java
 switch (currentMap) {
