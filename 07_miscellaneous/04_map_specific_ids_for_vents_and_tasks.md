@@ -1,5 +1,7 @@
 # Map-Specific IDs for Vents and Tasks
 
+All vents in the tables below include an X and Y coordinate which can be used in conjunction with the [`0x15` SnapTo](../04_rpc_message_types/21_snapto.md) message to determine if a player is moving between vents or teleporting using a modified client.
+
 #### Table of Contents
 
 1. [The Skeld](#the-skeld)
@@ -16,7 +18,7 @@
 
 ##### Vents
 
-| ID | Location | Coordinates |
+| ID | Location | Coordinates `(x, y)` |
 | --- | --- | --- |
 | `0` | In Admin | `2.543373`, `-9.59182` |
 | `1` | In the right hallway | `9.38308`, `-6.0749207` |
@@ -73,7 +75,7 @@
 
 > **Note**: *Mira HQ* vent IDs start at `1`.
 
-| ID | Location | Coordinates |
+| ID | Location | Coordinates `(x, y)` |
 | --- | --- | --- |
 | `1` | On the Balcony | `23.769283`, `-1.576561` |
 | `2` | In the Cafeteria | `23.899899`, `7.5434494` |
@@ -122,7 +124,7 @@
 
 ##### Vents
 
-| ID | Location | Coordinates |
+| ID | Location | Coordinates `(x, y)` |
 | --- | --- | --- |
 | `0` | By Security | `1.9281311`, `-9.195087` |
 | `1` | Outside Electrical | `6.8989105`, `-14.047455` |
