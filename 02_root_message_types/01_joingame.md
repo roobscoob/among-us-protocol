@@ -2,7 +2,7 @@
 
 ### Request: Client-to-Server
 
-This message is sent from the client to the server when attempting to join a gamem.
+This message is sent from the client to the server when attempting to join a game.
 
 | Type | Name | Description |
 | --- | --- | --- |
