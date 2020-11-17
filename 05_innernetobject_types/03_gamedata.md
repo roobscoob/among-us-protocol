@@ -93,7 +93,7 @@ if (!isSpawning) {
     writer.position = writer.length
 }
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize

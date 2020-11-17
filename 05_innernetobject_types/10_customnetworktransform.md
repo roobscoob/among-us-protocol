@@ -22,7 +22,7 @@ writer.writeUInt16(lastSequenceId);
 Vector2.writeVector2(writer, targetPosition);
 Vector2.writeVector2(writer, targetVelocity);
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize

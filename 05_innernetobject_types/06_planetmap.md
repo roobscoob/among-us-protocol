@@ -1,6 +1,6 @@
 # `PlanetMap`
 
-The `PlanetMap` object (which is a variant of the `ShipStatus` object) is spawned at the start of a game on *Polus* and despawned at the end of the game. It holds the map for *Polus* and is responsible for controlling the interactive systems throughout the map.
+The `PlanetMap` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *Polus* and despawned at the end of the game. It holds the map for *Polus* and is responsible for controlling the interactive systems throughout the map.
 
 ##### All `SystemType`s for Polus
 
@@ -20,7 +20,7 @@ The [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in the table 
 
 ##### Serialize
 
-> **Note**: Because `PlanetMap` is an alias for `ShipStatus` specific to *Polus*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `PlanetMap` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Polus*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
 
 When the `ShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Polus*. For each type that is a part of *Polus*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
 
@@ -57,12 +57,12 @@ for (SystemType system : SystemType.values()) {
     }
 }
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize
 
-> **Note**: Because `PlanetMap` is an alias for `ShipStatus` specific to *Polus*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `PlanetMap` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Polus*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
 
 When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Polus*. For each type that is a part of *Polus*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
 

@@ -24,12 +24,12 @@ for (int i = 0; i < players.length; i++) {
 
     for (int j = 0; j < 3; j++) {
         // Write the client ID of all 3 players that voted to kick the player
-        // The votesToKick array would have default client IDs of 0
+        // The votesToKick array would have default client IDs of 0 in the case of no vote
         writer.writePackedUInt32(players.votesToKick[j]);
     }
 }
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize
@@ -53,7 +53,8 @@ for (int i = 0; i < playersLength; i++) {
     long clientId = voteBanSystem.readUInt32();
 
     for (int j = 0; l < 3; j++) {
-        // Read the client ID of all 3 players that voted to kick the player, with a default value of 0
+        // Read the client ID of all 3 players that voted to kick the player,
+        // with a default value of 0 in the case of no vote
         voteBanSystem.readUInt32();
     }
 }

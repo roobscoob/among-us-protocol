@@ -54,7 +54,7 @@ for (SystemType system : SystemType.values()) {
     }
 }
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize

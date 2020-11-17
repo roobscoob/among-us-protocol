@@ -1,6 +1,6 @@
 # `MeetingHud`
 
-The `MeetingHud` object is spawned at the start of a meeting and despawned at the end of the meeting. It is responsible for storing player states in a meeting such as which players are dead, which voted, and who they voted for.
+The `MeetingHud` object is spawned at the start of a meeting and despawned at the end of the meeting. It is responsible for storing player states in a meeting such as which players are dead, which players have voted, and who they voted for.
 
 ##### Serialize
 
@@ -20,9 +20,9 @@ writer.startMessage(0);
 
 // Loop through all player states
 for (int i = 0; i < playerStates.length; i++) {
-    // If the MeetingHud is being spawned
+    // If the MeetingHud is being spawned...
     if (isSpawning) {
-        // Write (serialize) the data from the player state
+        // ...then we should write (serialize) the data from the player state
         playerStates[i].serialize(writer);
     // If the MeetingHud is receiving data updates
     } else {
@@ -36,7 +36,7 @@ for (int i = 0; i < playerStates.length; i++) {
     }
 }
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize
@@ -57,9 +57,9 @@ MessageReader meetingHud = reader.readMessage();
 
 // Loop through all player states
 for (int i = 0; i < playerStates.length; i++) {
-    // If the MeetingHud is being spawned
+    // If the MeetingHud is being spawned...
     if (isSpawning) {
-        // Read (deserialize) the data from the component message
+        // ...then we should read (deserialize) the data from the component message
         playerStates[i].deserialize(meetingHud);
     // If the MeetingHud is receiving data updates
     } else {

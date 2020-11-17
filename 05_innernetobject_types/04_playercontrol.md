@@ -8,7 +8,7 @@ When the `PlayerControl` is being spawned, the game first writes the information
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `boolean` | Is New | Whether or not the `PlayerControl` object already existed before sending a spawn message for it<br><br>**Note**: This will be `true` to the clients already in a game lobby when a new players joins, and `false` for everyone in the game lobby to that new player |
+| `boolean` | Is New | Whether or not the `PlayerControl` object already existed before sending a spawn message for it<br><br>**Note**: This will be `true` on the `PlayerControl` object of a joining player as seen from the clients that are already in a game lobby, and `false` on the `PlayerControl` objects of the clients already in the game lobby as seen from the joining player |
 
 When the `PlayerControl` object is being spawned, as well as when it is sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game also writes the information in the table below.
 
@@ -28,7 +28,7 @@ if (isSpawning) {
 
 writer.writeByte(playerId);
 
-write.endMessage();
+writer.endMessage();
 ```
 
 ##### Deserialize
@@ -37,7 +37,7 @@ When the `PlayerControl` has been spawned, the game first reads the information 
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `boolean` | Is New | Whether or not the `PlayerControl` object already existed before receiving a spawn message for it<br><br>**Note**: This will be `true` to the clients already in a game lobby when a new players joins, and `false` for everyone in the game lobby to that new player |
+| `boolean` | Is New | Whether or not the `PlayerControl` object already existed before receiving a spawn message for it<br><br>**Note**: This will be `true` on the `PlayerControl` object of a joining player as seen from the clients that are already in a game lobby, and `false` on the `PlayerControl` objects of the clients already in the game lobby as seen from the joining player |
 
 When the `PlayerControl` object has been spawned, as well as when it is receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game also reads the information in the table below.
 
