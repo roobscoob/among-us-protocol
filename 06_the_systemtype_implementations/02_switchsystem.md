@@ -6,8 +6,8 @@ When spawned, as well as when sending or receiving data (via [`0x01` Data](../03
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Expected Switches | A bitfield (with five bits--one per switch) used to tell the game which switches need to be flipped up or down in order to fix the lights |
-| `byte` | Actual Switches | A bitfield (with five bits--one per switch) used to tell the game the current up/down state of each switch |
+| `byte` | Expected Switches | A bitfield (with five bits&mdash;one per switch) used to tell the game which switches need to be flipped up or down in order to fix the lights |
+| `byte` | Actual Switches | A bitfield (with five bits&mdash;one per switch) used to tell the game the current up/down state of each switch |
 | `byte` | Value | The percentage displayed next to the task on a client's task list when the lights are sabotaged |
 
 ---

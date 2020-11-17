@@ -1,6 +1,6 @@
 # `ReactorSystem`
 
-The `ReactorSystem` is responsible for storing whether or not the Reactor (and Laboratory on *Polus*) is sabotaged, and which players have their hand on a console.
+The `ReactorSystem` is responsible for storing whether or not the Reactor (on *The Skeld* and *Mira HQ*) or Laboratory (on *Polus*) is sabotaged, and which players have their hand on a console.
 
 When spawned, as well as when sending or receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game (de)serializes the information in the table below.
 

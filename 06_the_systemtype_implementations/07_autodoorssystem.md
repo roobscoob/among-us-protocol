@@ -25,8 +25,9 @@ Refer to the pseudocode below for an example.
 ```java
 // If the ShipStatus is being spawned
 if (isSpawning) {
-    // Loop through all 13 doors on The Skeld
+    // Loop through all 13 doors on The Skeld...
     for (int i = 0; i < 13) {
+        // ...and write each door's open state
         writer.writeBoolean(skeld.doors[i].isOpen);
     }
 } else {
@@ -35,8 +36,9 @@ if (isSpawning) {
 
     // Loop through all 13 doors on The Skeld
     for (int i = 0; i < 13; i++) {
-        // If the current door needs to be updated
+        // If the current door needs to be updated...
         if ((dirtyBits & (1 << i)) != 0) {
+            // ...then write its open state
             writer.writeBoolean(skeld.doors[i].isOpen);
         }
     }
@@ -72,6 +74,7 @@ if (!isSpawning) {
 for (int i = 0; i < 13; i++) {
     // If the ShipStatus has been spawned or this door needs to be updated
     if (isSpawning || (mask & (1 << i)) != 0) {
+        // ...then read and update its open state
         skeld.doors[i].isOpen = reader.readBoolean();
     }
 }

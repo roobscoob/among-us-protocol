@@ -19,7 +19,7 @@ When spawned, as well as when sending or receiving data (via [`0x01` Data](../03
 | Type | Name | Description |
 | --- | --- | --- |
 | `byte` | Door ID | The ID of the door (see [Polus Doors](../04_rpc_message_types/28_repairsystem.md#polus-doors) for a mapping of IDs to doors) |
-| `float` | Door Cooldown | The amount of time that impostors must wait before being able to close the door |
+| `float` | Door Cooldown | The amount of time that impostors must wait before being able to close the door again |
 
 ---
 
