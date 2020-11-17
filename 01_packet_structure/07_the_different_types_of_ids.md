@@ -14,7 +14,7 @@ When spawned, an [`InnerNetObject`](../05_innernetobject_types/README.md) is ass
 
 ### Player ID
 
-Every player in a game has a third ID known as their `player ID`. This `player ID`, like the `net ID`, is managed by the host of a game. When a player leaves a game, their `player ID` becomes avaiable for the next player who joins. These IDs do not get shuffled around and the game will always assign a new player the first available ID starting from `0`. Since the `player ID` is stored as an `sbyte` is various places, the technical limit for this ID, and therefore how many players a game can have, is `127`.
+Every player in a game has a third ID known as their `player ID`. This `player ID`, like the `net ID`, is managed by the host of a game. When a player leaves a game, their `player ID` becomes avaiable for the next player who joins. These IDs do not get shuffled around and the game will always assign a new player the first available ID starting from `0`. Since the `player ID` is stored as a 4-bit integer in RPC VotingComplete, the player count limit is `15` without modifying the protocol.
 
 ---
 
