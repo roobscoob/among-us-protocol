@@ -1,6 +1,6 @@
 # Map-Specific IDs for Vents and Tasks
 
-All vents in the tables below include an X and Y coordinate which can be used in conjunction with the [`0x15` SnapTo](../04_rpc_message_types/21_snapto.md) message to determine if a player is moving between vents or teleporting using a modified client.
+All vents in the tables below include an X and Y coordinate which can be used in conjunction with the [`0x15` SnapTo](../04_rpc_message_types/21_snapto.md) message to determine if a player is moving between vents. The tasks in the tables below are used when the game sets each player's tasks via the [`0x1d` SetTasks](../04_rpc_message_types/29_settasks.md) message.
 
 #### Table of Contents
 
