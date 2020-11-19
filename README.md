@@ -12,7 +12,7 @@ To intercept packets, I recommend using [Wireshark](https://www.wireshark.org/) 
 To show all game traffic:
 udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 }
 
-To show only reliable packets (recommended as movement, pings, and acks can add a bunch of noise)
+To show only reliable packets (recommended as movement, pings, and acks can add a bunch of noise):
 udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and data[0] == 01
 ```
 
