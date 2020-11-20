@@ -82,7 +82,7 @@ if ((amount & 0x40) != 0) {
 
 #### `REACTOR` and `LABORATORY`
 
-The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *Mira HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player is places or removes their hand from a console.
+The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *Mira HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player places or removes their hand from a console.
 
 ```java
 // The ID of the reactor/seismic console
@@ -169,7 +169,7 @@ switch (currentMap) {
             // Communications was repaired by the player
         }
 
-        break;
+        break; // Don't forget this, it might cost you $750
     case MIRA_HQ:
         // The ID of the communications console
         int consoleId = amount & 3;
