@@ -65,7 +65,7 @@ udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and 
     1. [`0x0c` WaitForHost](02_root_message_types/12_waitforhost.md)
     1. [`0x0d` Redirect](02_root_message_types/13_redirect.md)
     1. [`0x0e` ReselectServer](02_root_message_types/14_reselectserver.md)
-    1. [`0x0f` GetGameListV2](02_root_message_types/16_getgamelistv2.md)
+    1. [`0x10` GetGameListV2](02_root_message_types/16_getgamelistv2.md)
 1. [`GameData` and `GameDataTo` Message Types](03_gamedata_and_gamedatato_message_types/README.md)
     1. [`0x01` Data](03_gamedata_and_gamedatato_message_types/01_data.md)
     1. [`0x02` RPC](03_gamedata_and_gamedatato_message_types/02_rpc.md)
