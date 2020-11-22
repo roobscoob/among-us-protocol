@@ -1,6 +1,6 @@
 # `LifeSuppSystem`
 
-The `ReactorSystem` is responsible for storing whether or not the Oxygen is sabotaged, and which consoles have been completed.
+The `LifeSuppSystem` is responsible for storing whether or not the Oxygen is sabotaged, and which consoles have been completed.
 
 When spawned, as well as when sending or receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game (de)serializes the information in the table below.
 
