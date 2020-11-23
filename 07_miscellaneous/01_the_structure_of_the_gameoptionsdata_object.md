@@ -6,7 +6,7 @@
 | `byte` | Version | &mdash; | &mdash; | The version of the `GameOptionsData` object |
 | `byte` | Max Number of Players | 1 | `10` | The maximum number of players |
 | `uint32` | Keywords | 1 | `1` | A bitfield for the languages (see [`GameKeywords`](../01_packet_structure/06_enums.md#gamekeywords)) |
-| `byte` | Map(s) | 1 | `1` | For the [client-to-server `0x10` GetGameListV2](../02_root_message_types/16_getgamelistv2.md#request-client-to-server) message, this is a bitfield<br><br>For all other uses, this is the ID of the map (see [`Map`](../01_packet_structure/06_enums.md#map)) |
+| `byte` | Map(s) | 1 | `1` | For the [client-to-server `0x10` GetGameListV2](../02_root_message_types/16_getgamelistv2.md#request-client-to-server) message, this is a bitfield<br><br>For all other uses, this is the ID of the [`Map`](../01_packet_structure/06_enums.md#map) |
 | `float` | Player Speed Modifier | 1 | `1.0` | A multiplicative number for the speed at which players will move |
 | `float` | Crewmate Light Modifier | 1 | `1.0` | A multiplicative number for the size of the fog-of-war ring encircling crewmates |
 | `float` | Impostor Light Modifier | 1 | `1.5` | A multiplicative number for the size of the fog-of-war ring encircling impostors |
