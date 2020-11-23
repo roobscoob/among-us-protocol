@@ -6,8 +6,8 @@ This message is sent from the client to the server when searching for public gam
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed int32` | *Unknown* | An unknown value that is hardcoded to be `0x00`<br><br>In the previous version of this message, [`0x09` GetGameList](09_getgamelist.md), this field was a boolean that when set to `true` would tell the server to include private games in the search results |
-| [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings used when searching for public games<br><br>**Note**: The map ID in this Game Options Data is a bitfield containing the IDs of the [maps](../01_packet_structure/06_enums.md#map) that the player is searching for |
+| `packed int32` | *Unknown* | An unknown value that is hardcoded to be `0x00`<br><br>In the previous version of this message, [`0x09` GetGameList](09_getgamelist.md), this field was a `boolean` that when set to `true` would tell the server to include private games in the search results |
+| [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings used when searching for public games<br><br>**Note**: The map ID in this Game Options Data is a bitfield containing the IDs of each [`Map`](../01_packet_structure/06_enums.md#map) that the player is searching for |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -41,12 +41,12 @@ This message is sent from the client to the server when searching for public gam
 
 ### Response: Server-to-Client
 
-This message is sent from the server to a client after searching for public games that match the client's search criteria.
+This message is sent from the server to the client after searching for public games that match the client's search criteria.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `Message` (Optional) | Game Counts | An optional [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x01` that contains the number of games for each map<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`uint32`</td><td>The Skeld</td><td>The number of games being played on *The Skeld*</td></tr><tr><td>`uint32`</td><td>Mira HQ</td><td>The number of games being played on *Mira HQ*</td></tr><tr><td>`uint32`</td><td>Polus</td><td>The number of games being played on *Polus*</td></tr></tbody></table> |
-| `Message` | Game List | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x00` that contains multiple nested Hazel messages, one for each public game |
+| `Message` (*Optional*) | Game Counts | An optional [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x01` that contains the number of games for each map<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`uint32`</td><td>The Skeld</td><td>The number of games being played on *The Skeld*</td></tr><tr><td>`uint32`</td><td>Mira HQ</td><td>The number of games being played on *Mira HQ*</td></tr><tr><td>`uint32`</td><td>Polus</td><td>The number of games being played on *Polus*</td></tr></tbody></table> |
+| `Message` | Game List | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x00` that contains multiple nested Hazel messages (one for each public game) |
 
 ### The `Game List` Message Structure
 
@@ -54,17 +54,19 @@ The `Game List` field is a [Hazel message](../01_packet_structure/03_the_structu
 
 This is the structure of each child [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) in the `Game List` field.
 
+> **Note**: The tag for each child [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) is meaningless and so any value will work.
+
 | Type | Name | Description |
 | --- | --- | --- |
 | `IP Address` | IP Address | The IP address of the server that the game is hosted on |
-| `uint16` | Port | The port that the game's server is listening on |
+| `uint16` | Port | The port that the server is listening on |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
-| `String` | Name | The name of the current host of the game |
-| `byte` | Player Count | The number of players currently in the game |
+| `String` | Host Name | The name of the current host of the game |
+| `byte` | Number of Players | The number of players currently in the game |
 | `packed uint32` | Age | The age, in seconds, of the game since it was first created |
-| `byte` | Map | The ID of the [map](../01_packet_structure/06_enums.md#map) that is being played on in the game |
-| `byte` | Impostor Count | The number of impostors in the game |
-| `byte` | Max Players | The maximum number of players allowed in the game |
+| `byte` | Map ID | The ID of the [`Map`](../01_packet_structure/06_enums.md#map) that the game is being played on |
+| `byte` | Number of Impostors | The number of impostors in the game |
+| `byte` | Max Number of Players | The maximum number of players allowed in the game |
 
 <details>
     <summary>Click here to view an example packet</summary>

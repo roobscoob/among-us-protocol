@@ -2,7 +2,7 @@
 
 The `GameData` object is spawned when joining a game lobby and despawned at the end of the game. It is responsible for storing the metadata for players such as their name, cosmetics, tasks, and more. It has one sibling object: the [`VoteBanSystem`](08_votebansystem.md) object.
 
-##### Serialize
+### Serialize
 
 When the `GameData` object is being spawned, as well as when it is sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
@@ -17,10 +17,10 @@ After writing the length, the game loops over all players. For each player in th
 | --- | --- | --- |
 | `byte` | Player ID | The ID of the player |
 | `String` | Name | The player's name |
-| `packed uint32` | Color ID | The ID of the player's color |
-| `packed uint32` | Hat ID | The ID of the player's hat |
-| `packed uint32` | Pet ID | The ID of the player's pet |
-| `packed uint32` | Skin ID | The ID of the player's skin |
+| `packed uint32` | Color ID | The ID of the player's color (see [`Color`](../01_packet_structure/06_enums.md#color)) |
+| `packed uint32` | Hat ID | The ID of the player's hat (see [`Hat`](../01_packet_structure/06_enums.md#hat)) |
+| `packed uint32` | Pet ID | The ID of the player's pet (see [`Pet`](../01_packet_structure/06_enums.md#pet)) |
+| `packed uint32` | Skin ID | The ID of the player's skin (see [`Skin`](../01_packet_structure/06_enums.md#skin)) |
 | `byte` | Flags | A bitfield containing the player's character states |
 | `byte` | Tasks Length | The number of tasks that the player has |
 | `TaskInfo[n]` | Tasks | A list of the player's tasks and their completion state, where length `n` is defined in the previous field |
@@ -96,7 +96,7 @@ if (!isSpawning) {
 writer.endMessage();
 ```
 
-##### Deserialize
+### Deserialize
 
 When the `GameData` has been spawned, as well as when it is receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 
@@ -111,10 +111,10 @@ After reading the length, the game loops over the provided number of players. Fo
 | --- | --- | --- |
 | `byte` | Player ID | The ID of the player |
 | `String` | Name | The player's name |
-| `packed uint32` | Color ID | The ID of the player's color |
-| `packed uint32` | Hat ID | The ID of the player's hat |
-| `packed uint32` | Pet ID | The ID of the player's pet |
-| `packed uint32` | Skin ID | The ID of the player's skin |
+| `packed uint32` | Color ID | The ID of the player's color (see [`Color`](../01_packet_structure/06_enums.md#color)) |
+| `packed uint32` | Hat ID | The ID of the player's hat (see [`Hat`](../01_packet_structure/06_enums.md#hat)) |
+| `packed uint32` | Pet ID | The ID of the player's pet (see [`Pet`](../01_packet_structure/06_enums.md#pet)) |
+| `packed uint32` | Skin ID | The ID of the player's skin (see [`Skin`](../01_packet_structure/06_enums.md#skin)) |
 | `byte` | Flags | A bitfield containing the player's character states |
 | `byte` | Tasks Length | The number of tasks that the player has |
 | `TaskInfo[n]` | Tasks | A list of the player's tasks and their completion state, where length `n` is defined in the previous field |
@@ -158,11 +158,11 @@ for (int i = 0; i < playerCount; i++) {
 }
 ```
 
-### Reading the Player's `Flags`
+##### Reading the Player's `Flags`
 
 Each player's flags is itself a bitfield indicating whether or not a player is disconnected, dead, or an impostor. To read the information in each player's flags, see [The `Flags` Bitfield](../04_rpc_message_types/30_updategamedata.md#the-flags-bitfield).
 
-### Reading the Player's `TaskInfo`
+##### Reading the Player's `TaskInfo`
 
 Each player's `TaskInfo` is an array containing the player's task completion states. To read the information in each player's `TaskInfo`, see [The `TaskInfo` Structure](../04_rpc_message_types/30_updategamedata.md#the-taskinfo-structure).
 

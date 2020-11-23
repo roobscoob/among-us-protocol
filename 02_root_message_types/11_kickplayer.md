@@ -9,7 +9,7 @@ This message is sent from the host of a game to all clients when the host kicks 
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
 | `packed uint32` | Kicked Player Client ID | The client ID of the player that was kicked |
 | `boolean` | Is Banned | Whether or not the player was also banned |
-| `byte` (Optional) | Disconnect Reason | The optional ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the player was kicked |
+| `byte` (*Optional*) | Disconnect Reason | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the player was kicked |
 
 <details>
     <summary>Click here to view an example packet</summary>

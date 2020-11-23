@@ -6,7 +6,7 @@ This message is sent from the server to the client in order to close down a game
 
 | Type | Name | Message |
 | --- | --- | --- |
-| `byte` (Optional) | Disconnect Reason ID | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the game was removed<br><br>If this field is not present, it will default to `19` (`SERVER_REQUEST`) |
+| `byte` (*Optional*) | Disconnect Reason | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the game was removed<br><br>If this field is not present, it will default to `19` (`SERVER_REQUEST`) |
 
 <details>
     <summary>Click here to view an example packet</summary>

@@ -4,7 +4,7 @@ The `DoorsSystem` is responsible for storing the open state of all doors around 
 
 > **Note**: This only applies to *Polus*. For *The Skeld*, see [`AutoDoorsSystem`](07_autodoorssystem.md).
 
-> **Note**: *Polus* has 16 doors (12 manual doors and 4 decontamination doors), and this value is looped over whenever data is serialized or deserialized.
+> **Note**: *Polus* has `16` doors (`12` manual doors and `4` decontamination doors), and this value is looped over whenever data is serialized or deserialized.
 
 When spawned, as well as when sending or receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game (de)serializes the information in the table below.
 

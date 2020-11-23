@@ -2,9 +2,9 @@
 
 The `ShipStatus` object is spawned at the start of a game on *The Skeld* and despawned at the end of the game. It holds the map for *The Skeld* and is responsible for controlling the interactive systems throughout the map.
 
-##### All `SystemType`s for The Skeld
+### All `SystemType`s for The Skeld
 
-The [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in the table below are used on *The Skeld* and should be handled when being spawned, serialized, and deserialized.
+The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *The Skeld* and each should be handled when being spawned, serialized, and deserialized.
 
 | Type | Implementation | On Spawn | On Data |
 | --- | --- | --- | --- |
@@ -17,15 +17,15 @@ The [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in the table 
 | `DOORS` | [`AutoDoorsSystem`](../06_the_systemtype_implementations/07_autodoorssystem.md) | &#x2714; | &#x2714; |
 | `SABOTAGE` | [`SabotageSystem`](../06_the_systemtype_implementations/08_sabotagesystem.md) | &#x2714; | &#x2714; |
 
-##### Serialize
+### Serialize
 
-When the `ShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
+When the `ShipStatus` is being spawned, the game loops over every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Systems Mask | A bitfield mask used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
+| `packed uint32` | Systems Mask | A bitfield used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
 
 After writing the mask, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type's ID is set on the mask. For each type that does have its ID set on the mask, the Hazel message writer containing the update data is passed in to the type's `serialize` method. Refer to the pseudocode below for an example.
 
@@ -57,7 +57,7 @@ for (SystemType system : SystemType.values()) {
 writer.endMessage();
 ```
 
-##### Deserialize
+### Deserialize
 
 When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
 
@@ -65,7 +65,7 @@ When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_typ
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Systems Mask | A bitfield mask used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
+| `packed uint32` | Systems Mask | A bitfield used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
 
 After reading the mask, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type's ID is set on the mask. For each type that does have its ID set on the mask, the Hazel message containing the update data is passed in to the type's `deserialize` method. Refer to the pseudocode below for an example.
 

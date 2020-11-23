@@ -1,6 +1,6 @@
 # `0x1e` UpdateGameData
 
-This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.md) object when the data for a player is updated.
+This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.md) object when the metadata for a player is updated.
 
 > **Note**: This message is sent from the host of a game to all players via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
@@ -13,10 +13,10 @@ This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.
 | Type | Name | Description |
 | --- | --- | --- |
 | `String` | Name | The player's name |
-| `byte` | Color ID | The ID of the player's color |
-| `packed uint32` | Hat ID | The ID of the player's hat |
-| `packed uint32` | Pet ID | The ID of the player's pet |
-| `packed uint32` | Skin ID | The ID of the player's skin |
+| `byte` | Color ID | The ID of the player's [`Color`](../01_packet_structure/06_enums.md#color) |
+| `packed uint32` | Hat ID | The ID of the player's [`Hat`](../01_packet_structure/06_enums.md#hat) |
+| `packed uint32` | Pet ID | The ID of the player's [`Pet`](../01_packet_structure/06_enums.md#pet) |
+| `packed uint32` | Skin ID | The ID of the player's [`Skin`](../01_packet_structure/06_enums.md#skin) |
 | `byte` | Flags | A bitfield containing the player's character states |
 | `byte` | Tasks Length | The number of tasks that the player has |
 | `TaskInfo[n]` | Tasks | A list of the player's tasks and their completion state, where length `n` is defined in the previous field |

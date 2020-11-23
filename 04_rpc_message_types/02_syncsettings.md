@@ -6,7 +6,7 @@ This message is sent by the host's [`PlayerControl`](../05_innernetobject_types/
 
 | Type | Name | Description |
 | --- | --- | --- |
-| [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings for the game<br><br>**Note**: The map ID in this Game Options Data is the ID of the [map](../01_packet_structure/06_enums.md#map) |
+| [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings for the game<br><br>**Note**: The map ID in this Game Options Data is the ID of the [`Map`](../01_packet_structure/06_enums.md#map) |
 
 <details>
     <summary>Click here to view an example packet</summary>

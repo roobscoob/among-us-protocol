@@ -1,13 +1,13 @@
 # `0x10` SendChatNote
 
-This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game when sending a [chat note](../01_packet_structure/06_enums.md#chatnotetype)
+This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game when sending a [chat note](../01_packet_structure/06_enums.md#chatnotetype).
 
 > **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |
 | `byte` | Player ID | The ID of the player who sent the note |
-| `byte` | Chat Note ID | The ID of the chat note type that the player sent |
+| `byte` | Chat Note Type | The ID of the chat note type that the player sent |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -21,7 +21,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
         ad01    # Sender (PlayerControl) Net ID: 173
         10      # RPC Call ID: 16 (SendChatNote)
         04      # Player ID: 4
-        00      # Chat Note ID: 0 (DID_VOTE)
+        00      # Chat Note Type: 0 (DID_VOTE)
 ```
 </details>
 

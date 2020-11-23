@@ -1,14 +1,14 @@
 # `0x1c` RepairSystem
 
-This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipstatus.md) object when a system is interacted with by a player or sabotaged by an impostor.
+This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipstatus.md) object when a [`SystemType`](../01_packet_structure/06_enums.md#systemtype) is interacted with by a player or sabotaged by an impostor.
 
 > **Note**: This message is sent from a player to the host of a game via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md). It is **never** sent from the host of a game.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | System ID | The ID of the [system](../01_packet_structure/06_enums.md#systemtype) that is being repaired |
+| `byte` | System ID | The ID of the [`SystemType`](../01_packet_structure/06_enums.md#systemtype) that is being repaired |
 | `packed uint32` | PlayerControl Net ID | The net ID of the [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object for the player who repaired/sabotaged the system |
-| `byte` | Amount | A value which holds various information about a system's state |
+| `byte` | Amount | A value which holds various information about the state of the system |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -30,7 +30,7 @@ This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipsta
 
 ## The `Amount` Field
 
-How the `Amount` is read depends on the `System ID`. Below is a list of all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) that can be interacted with using this RPC message as well as pseudocode, when necessary, on how to parse them.
+How the `Amount` is read depends on the `System ID`. Below is a list of every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) that can be interacted with using this RPC message as well as pseudocode, when necessary, on how to parse the `Amount` for that system.
 
 #### `ELECTRICAL`
 
@@ -82,7 +82,7 @@ if ((amount & 0x40) != 0) {
 
 #### `REACTOR` and `LABORATORY`
 
-The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *Mira HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player places or removes their hand from a console.
+The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *Mira HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player interacts with a console.
 
 ```java
 // The ID of the reactor/seismic console
@@ -137,7 +137,7 @@ The `System ID` will be that of `SystemType.DOORS` when a player opens a door on
 
 ```java
 // The ID of the door that was opened
-int doorId = amount & ~0x40;
+int doorId = amount & 0x1f;
 ```
 
 ###### Polus Doors
@@ -165,7 +165,7 @@ The `System ID` will be that of `SystemType.COMMUNICATIONS` when a player repair
 switch (currentMap) {
     case THE_SKELD:
     case POLUS:
-        if ((amount & 0x80) != 0) {
+        if ((amount & 0x80) == 0) {
             // Communications was repaired by the player
         }
 
@@ -174,11 +174,11 @@ switch (currentMap) {
         // The ID of the communications console
         int consoleId = amount & 3;
 
-        if ((amount 0x40) != 0) {
+        if ((amount & 0x40) != 0) {
             // The player opened the communications console
-        } else if ((amount 0x20) != 0) {
+        } else if ((amount & 0x20) != 0) {
             // The player closed the communications console
-        } else if ((amount 0x10) != 0) {
+        } else if ((amount & 0x10) != 0) {
             // The player entered the correct code in the communications console
         }
 

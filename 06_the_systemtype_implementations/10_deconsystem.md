@@ -25,7 +25,7 @@ To read the `State` of the decontamination room's doors, use the following bitwi
 
 When looking at [`DECONTAMINATION` and `DECONTAMINATION_2`](../04_rpc_message_types/28_repairsystem.md#decontamination-and-decontamination_2), the `amount` can be translated to the following states.
 
-| Amount | `State` Bitwise Equivalent |
+| Amount | `State` Bitfield Equivalent |
 | --- | --- |
 | `1` | `States.Enter \| States.HeadingUp` |
 | `2` | `States.Enter` |

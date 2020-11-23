@@ -363,7 +363,7 @@ This refers to the various types of tasks that a player can be assigned.
 
 ### `TaskBarUpdate`
 
-This refers to the **Task Bar Updates** field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object.
+This refers to the `Task Bar Updates` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object.
 
 | ID | Name |
 | --- | --- |
@@ -397,7 +397,7 @@ This refers to the various flags that an [`InnerNetObject`](../05_innernetobject
 
 ### `KillDistances`
 
-This refers to the **Kill Distance** field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object. Each unit has a corresponding `float` representing the magnitude ![magnitude of vector K to vector V](https://render.githubusercontent.com/render/math?math=\overrightarrow{\text{KV}}), or distance, between the killer and victim
+This refers to the `Kill Distance` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object. Each unit has a corresponding `float` representing the magnitude ![magnitude of vector K to vector V](https://render.githubusercontent.com/render/math?math=\overrightarrow{\text{KV}}), or distance, between the killer and victim
 
 | ID | Name | Magnitude |
 | --- | --- | --- |

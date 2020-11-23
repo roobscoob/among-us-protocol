@@ -2,7 +2,7 @@
 
 ### Server-to-Client
 
-This message is sent from the server to a client after creating a new game and tells the client which server the game is being hosted on.
+This message is sent from the server to the client after creating a new game and tells the client which server the game is being hosted on.
 
 | Type | Name | Description |
 | --- | --- | --- |

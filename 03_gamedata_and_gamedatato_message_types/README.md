@@ -3,7 +3,7 @@
 > **Note**: A `GameData` or `GameDataTo` message may have more than one of these sub-messages in its body. You should encapsulate your logic for reading these sub-messages in a loop that checks if there are more bytes to be read. An example implementation might look similar to the following pseudocode:
 
 ```java
-// After checking that the parent is a `GameData` message, we defer the parser to this method
+// After checking that the parent is a GameData message, we defer the parser to this method
 void parseGameData(MessageReader gameData) {
     MessageReader child;
 

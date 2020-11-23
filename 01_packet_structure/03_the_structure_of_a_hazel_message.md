@@ -1,6 +1,6 @@
 # The Structure of a Hazel Message
 
-A Hazel message is always prefixed with a `uint16` to define the message's length in bytes. Immediately following the length is a single byte known as the tag and is often used to identify the type of data contained within the message. Understanding this basic construct which is used throughout the Among Us protocol is key to understanding how to manually read and dissect packets and further your overall understanding of the game's netcode.
+A Hazel message is always prefixed with a `uint16` to define the message's length in bytes. Immediately following the length is a `byte` known as the tag and is often used to identify the type of data contained within the message. Understanding this basic construct which is used throughout the Among Us protocol is key to understanding how to manually read and dissect packets and further your overall understanding of the game's netcode.
 
 > **Note**: The length **never** includes the tag as part of the payload, and the tag does not always have a meaning behind it.
 

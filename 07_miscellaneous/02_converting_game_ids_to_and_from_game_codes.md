@@ -1,8 +1,8 @@
 # Converting Game IDs to and from Game Codes
 
-Among Us uses six-letter codes to identify games and allow players to invite others to their game. Previous versions were four letters long but with the rise in popularity came the frequent issue of collisions. The four-letter variants were simply the ASCII uppercase letters in hexadecimal. Six-letter codes use a special encoding to maintain backwards-compatibility with a size of four bytes.
+Among Us uses six-letter codes to identify games and allow players to invite others to their game. Previous versions were four letters long but with the rise in popularity came the frequent issue of collisions. The four-letter variants were simply the ASCII uppercase letters in hexadecimal. Six-letter codes are stored as an `int32` using a special encoding to maintain backwards-compatibility.
 
-##### Converting an ID to a String Code
+### Converting an ID to a String Code
 
 An example implementation in Java can be found below for converting a game's ID into a human-readable game code.
 
@@ -45,7 +45,7 @@ public static void main(String... args) {
 }
 ```
 
-##### Converting a String Code to an ID
+### Converting a String Code to an ID
 
 An example implementation in Java can be found below for converting a human-readable game code into a game's ID.
 

@@ -1,6 +1,6 @@
 # Packet Types
 
-Below you will find a section for each type of packet that could be sent over the network. In each section is a short description of the packet's use case, a declaration on whether or not a packet of that type needs to be acknowleged, the structure of the packet, and an example packet broken down and annotated. Every packet starts with a single byte identifying its type, and so the packet structures found below will omit this byte.
+Below you will find a section for each type of packet that could be sent over the network. In each section is a short description of the packet's use case, a declaration on whether or not a packet of that type needs to be acknowleged, the structure of the packet, and an example packet that has been broken down and annotated. Every packet starts with a `byte` identifying its type, and so it will be omitted from the packet structure tables found below.
 
 > **Note**: Internally, these types are referred to as a `SendOption`.
 
@@ -26,7 +26,7 @@ The `Normal` packet structure is as follows:
 | --- | --- | --- |
 | `Message[n]` | Payload | One or more [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) containing the packet's payload<br><br>The message tag is the [Message Type](../02_root_message_types/README.md) |
 
-For a list of all messages, including example packets, that could be sent using this packet type, see [Root Message Types](../02_root_message_types/README.md).
+For a list of all messages that could be sent using this packet type, as well as example packets for each, see [Root Message Types](../02_root_message_types/README.md).
 
 > **Note**: A `Normal` packet may have more than one [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) in its payload. You should encapsulate your logic for reading these messages in a loop that checks if there are more bytes to be read. An example implementation might look similar to the following pseudocode:
 
@@ -54,7 +54,7 @@ The `Reliable` packet structure is as follows:
 | `uint16` (*Big Endian*) | Nonce | The ID of this packet so that the receiver can acknowledge it upon receipt |
 | `Message[n]` | Payload | One or more [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) containing the packet's payload<br><br>The message tag is the [Message Type](../02_root_message_types/README.md) |
 
-For a list of all messages, including example packets, that could be sent using this packet type, see [Root Message Types](../02_root_message_types/README.md).
+For a list of all messages that could be sent using this packet type, as well as example packets for each, see [Root Message Types](../02_root_message_types/README.md).
 
 > **Note**: A `Reliable` packet may have more than one [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) in its payload. You should encapsulate your logic for reading these messages in a loop that checks if there are more bytes to be read. An example implementation might look similar to the following pseudocode:
 
@@ -115,12 +115,12 @@ The `Disconnect` packet structure, when containing a [Disconnect Reason](06_enum
 | Type | Name | Description |
 | --- | --- | --- |
 | `byte` | *Unknown* | An unknown value that is always observed to be `0x01` |
-| `Message` | Disconnect Reason | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) describing why the player was disconnected<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`byte`</td><td>[Disconnect Reason](06_enums.md#disconnectreason)</td><td>The reason for the disconnection</td></tr><tr><td>`String` (Optional)</td><td>Custom Message</td><td>A custom disconnect message</td></tr></tbody></table> |
+| `Message` | Disconnect Reason | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) describing why the player was disconnected<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`byte`</td><td>[Disconnect Reason](06_enums.md#disconnectreason)</td><td>The reason for the disconnection</td></tr><tr><td>`String` (*Optional*)</td><td>Custom Message</td><td>A custom disconnect message</td></tr></tbody></table> |
 
 <details>
     <summary>Click here to view an example packet</summary>
 <pre>
-        Message #1
+        Hazel Message
         |
         |------------------------------------\
 09  01  07  00  00  08  05  48  65  6c  6c  6f
@@ -130,9 +130,9 @@ The `Disconnect` packet structure, when containing a [Disconnect Reason](06_enum
 |   |   |       |   |
 |   |   |       |   Disconnect Reason: 8 (CUSTOM)
 |   |   |       |
-|   |   |       Message #1 Type (not used)
+|   |   |       Message tag
 |   |   |
-|   |   Message #1 Length: 7 bytes
+|   |   Message length: 7 bytes
 |   |
 |   Unknown
 |
@@ -151,11 +151,11 @@ The `Acknowledgement` packet structure is as follows:
 | Type | Name | Description |
 | --- | --- | --- |
 | `uint16` (*Big Endian*) | Nonce | The ID of the packet that is being acknowledged |
-| `byte` | Missing Packets | A bitfield describing whether or not each of the last 8 reliable packets sent have been acknowledged |
+| `byte` | Missing Packets | A bitfield describing whether or not each of the last eight reliable packets sent have been acknowledged |
 
-When sending an acknowledgement packet, the sender will attach a byte representing the 8 most recent reliable packets sent. Starting with the previous packet (`n - 1` where `n` is the ID of the packet currently being acknowledged) and ending with the 8th most recent packet (`n - 8`) a bit will either be set or unset (from bit 1 to 8 respectively) representing whether or not the sender received an acknowledgement for that packet.
+When sending an acknowledgement packet, the sender will attach a `byte` representing the eight most recent reliable packets sent. Starting with the previous packet (`n - 1` where `n` is the ID of the packet currently being acknowledged) and ending with the 8th most recent packet (`n - 8`) a bit will either be set or unset (from bit `1` to `8` respectively) representing whether or not the sender received an acknowledgement for that packet.
 
-Given the example `0b11110101` (`0xf5`) we can see that packets 2 and 4 have not yet been acknowledged by the receiver.
+Given the example `0b11110101` (`0xf5`) we can see that the second and fourth packets have not yet been acknowledged by the receiver.
 
 <details>
     <summary>Click here to view an example packet</summary>

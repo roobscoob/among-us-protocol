@@ -7,7 +7,7 @@ Every `RPC` message starts out with the same data, outlined in the table below.
 | Type | Name | Description |
 | --- | --- | --- |
 | `packed uint32` | Sender Net ID | The net ID of the `InnerNetObject` that sent the RPC message |
-| `byte` | RPC Call ID | The ID of the RPC message type |
+| `byte` | RPC Call ID | The ID of the [`RPC` Message Type](../04_rpc_message_types/README.md) |
 
 See [`RPC` Message Types](../04_rpc_message_types/README.md) for details on each possible RPC message that may be contained in this message type, taking note that the data described in the table above is omitted from the breakdown of those messages.
 

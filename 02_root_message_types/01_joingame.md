@@ -7,7 +7,7 @@ This message is sent from the client to the server when attempting to join a gam
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
-| `byte` | Owned Maps | A bitfield containing the IDs of the [maps](../01_packet_structure/06_enums.md#map) that the player owns<br><br>Since all maps are now free, this will always be `0x07` |
+| `byte` | Owned Maps | A bitfield containing the IDs of each [`Map`](../01_packet_structure/06_enums.md#map) that the player owns<br><br>Since all maps are now free, this will always be `0x07` |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -59,7 +59,7 @@ If the client could not join the game, the message will follow this structure:
 01              # Reliable packet
 0001            # Nonce
 040001          # Hazel message (tag of 0x01 = JoinGame)
-    01000000    # Disconnect reason: 1 (GAME_FULL)
+    01000000    # Disconnect Reason: 1 (GAME_FULL)
 ```
 </details>
 

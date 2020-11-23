@@ -2,7 +2,7 @@
 
 The `VoteBanSystem` object is spawned when joining a game lobby and despawned at the end of the game. It is responsible for managing votes to kick a player as well as the host banning a player. It has one sibling object: the [`GameData`](03_gamedata.md) object.
 
-##### Serialize
+### Serialize
 
 When the `VoteBanSystem` object is being spawned, as well as when it is sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
@@ -32,7 +32,7 @@ for (int i = 0; i < players.length; i++) {
 writer.endMessage();
 ```
 
-##### Deserialize
+### Deserialize
 
 When the `VoteBanSystem` has been spawned, as well as when it is receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 

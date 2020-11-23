@@ -12,7 +12,7 @@ Every `Spawn` message starts out with the same data, outlined in the table below
 | `packed int32` | Owner ID | The ID of the owner that spawned the object |
 | `byte` | Spawn Flags | The [`SpawnFlag`s](../01_packet_structure/06_enums.md#spawnflag) for the spawned object |
 | `packed uint32` | Components Length | The number of components associated with the spawned object |
-| `Component[n]` | Components | The components associated with the spawned object, , where length `n` is defined in the previous field |
+| `Component[n]` | Components | The components associated with the spawned object, where length `n` is defined in the previous field |
 
 ### The `Component` Structure
 

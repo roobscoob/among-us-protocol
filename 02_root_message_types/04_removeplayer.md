@@ -32,7 +32,7 @@ This message is sent from the server to all clients in a game when another playe
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
 | `uint32` | Player Client ID | The client ID of the player that was disconnected |
 | `uint32` | Host Client ID | The client ID of the player that is now the current host of the game |
-| `byte` (Optional) | Disconnect Reason | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the player was disconnected |
+| `byte` (*Optional*) | Disconnect Reason | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the player was disconnected |
 
 <details>
     <summary>Click here to view an example packet</summary>

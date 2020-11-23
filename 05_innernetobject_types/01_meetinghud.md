@@ -2,17 +2,17 @@
 
 The `MeetingHud` object is spawned at the start of a meeting and despawned at the end of the meeting. It is responsible for storing player states in a meeting such as which players are dead, which players have voted, and who they voted for.
 
-##### Serialize
+### Serialize
 
-When the `MeetingHud` is being spawned, the game loops over all players in order (starting from ID `0`) and passes the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) in to the state's `serialize` method.
+When the `MeetingHud` is being spawned, the game loops over all players in order (starting from player `0`) and passes the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) in to the state's `serialize` method.
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | States Mask | A bitfield mask used to tell the game which player states were updated |
+| `packed uint32` | States Mask | A bitfield used to tell the game which player states are receiving data |
 
-After writing the mask, the game loops over all players in order (starting from ID `0`) and checks if the player's ID is set on the mask. For each player that does have its ID set on the mask, the Hazel message writer containing the update data is passed in to the states's `serialize` method. Refer to the pseudocode below for an example.
+After writing the mask, the game loops over all players in order (starting from player `0`) and checks if the player's ID is set on the mask. For each player that does have its ID set on the mask, the Hazel message writer containing the update data is passed in to the states's `serialize` method. Refer to the pseudocode below for an example.
 
 ```java
 writer.writePackedUInt32(meetingHudNetId);
@@ -39,17 +39,17 @@ for (int i = 0; i < playerStates.length; i++) {
 writer.endMessage();
 ```
 
-##### Deserialize
+### Deserialize
 
-When the `MeetingHud` has been spawned, the game loops over all players in order (starting from ID `0`) and passes the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) in to the state's `deserialize` method.
+When the `MeetingHud` has been spawned, the game loops over all players in order (starting from player `0`) and passes the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) in to the state's `deserialize` method.
 
 When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | States Mask | A bitfield mask used to tell the game which player states were updated |
+| `packed uint32` | States Mask | A bitfield used to tell the game which player states are receiving data |
 
-After reading the mask, the game loops over all players in order (starting from ID `0`) and checks if the player's ID is set on the mask. For each player that does have its ID set on the mask, the Hazel message containing the update data is passed in to the state's `deserialize` method. Refer to the pseudocode below for an example.
+After reading the mask, the game loops over all players in order (starting from player `0`) and checks if the player's ID is set on the mask. For each player that does have its ID set on the mask, the Hazel message containing the update data is passed in to the state's `deserialize` method. Refer to the pseudocode below for an example.
 
 ```java
 long meetingHudNetId = reader.readPackedUInt32();
@@ -74,7 +74,7 @@ for (int i = 0; i < playerStates.length; i++) {
 }
 ```
 
-### Reading the `States Mask`
+##### Reading the `States Mask`
 
 Each player state is itself a bitfield indicating how the game should display a player and their votes on the meeting HUD. To read the information in each player's state, see [The `Vote States` Bitfield](../04_rpc_message_types/23_votingcomplete.md#the-vote-states-bitfield).
 

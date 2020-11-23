@@ -2,7 +2,7 @@
 
 The `PlayerControl` object is spawned for each player that joins a game lobby and despawned at the end of the game. It is responsible for a player's character interacting with the game and its other players. It has two sibling objects: the [`PlayerPhysics`](09_playerphysics.md) and [`CustomNetworkTransform`](10_customnetworktransform.md) objects.
 
-##### Serialize
+### Serialize
 
 When the `PlayerControl` is being spawned, the game first writes the information in the table below.
 
@@ -31,7 +31,7 @@ writer.writeByte(playerId);
 writer.endMessage();
 ```
 
-##### Deserialize
+### Deserialize
 
 When the `PlayerControl` has been spawned, the game first reads the information in the table below.
 

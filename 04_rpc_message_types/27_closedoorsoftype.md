@@ -6,7 +6,7 @@ This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipsta
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | System ID | The ID of the [room (system)](../01_packet_structure/06_enums.md#systemtype) whose doors were closed |
+| `byte` | System ID | The ID of the room ([`SystemType`](../01_packet_structure/06_enums.md#systemtype)) whose doors were closed |
 
 <details>
     <summary>Click here to view an example packet</summary>

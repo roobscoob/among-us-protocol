@@ -1,6 +1,6 @@
 # The `Vector2` Type
 
-Each `Vector2`, when sent over the network, has a pair of `uint16` fields: one for the X axis and one for the Y axis. Each of these values should be divided by `65535.0f` and passed in to a `Lerp` function, clamped between `0.0f` and `1.0f`, on a range of floats from `-40.0f` to `40.0f`. The result of the `Lerp` function will be the value representing either the X or Y value of the `Vector2`.
+Each `Vector2`, when sent over the network, has a pair of `uint16` fields: one for the X axis and one for the Y axis. Each of these values should be divided by `65535.0f` and passed in to a `Lerp` function, clamped between `0.0f` and `1.0f`, on a range of floats from `-40.0f` to `40.0f`. The result of the `Lerp` function will be the `float` value representing either the X or Y value of the `Vector2`.
 
 Below is an example implementation in Java:
 

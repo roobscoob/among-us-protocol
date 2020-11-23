@@ -2,9 +2,9 @@
 
 The `PlanetMap` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *Polus* and despawned at the end of the game. It holds the map for *Polus* and is responsible for controlling the interactive systems throughout the map.
 
-##### All `SystemType`s for Polus
+### All `SystemType`s for Polus
 
-The [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in the table below are used on *Polus* and should be handled when being spawned, serialized, and deserialized.
+The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *Polus* and each should be handled when being spawned, serialized, and deserialized.
 
 | Type | Implementation | On Spawn | On Data |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@ The [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in the table 
 | `LABORATORY` | [`ReactorSystem`](../06_the_systemtype_implementations/01_reactorsystem.md) | &#x2714; | &#x2714; |
 | `DECONTAMINATION_2` | [`DeconSystem`](../06_the_systemtype_implementations/10_deconsystem.md) | &#x2716; | &#x2714; |
 
-##### Serialize
+### Serialize
 
 > **Note**: Because `PlanetMap` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Polus*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
 
@@ -28,7 +28,7 @@ When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Systems Mask | A bitfield mask used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
+| `packed uint32` | Systems Mask | A bitfield used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
 
 After writing the mask, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type's ID is set on the mask. For each type that does have its ID set on the mask, the Hazel message writer containing the update data is passed in to the type's `serialize` method. Refer to the pseudocode below for an example.
 
@@ -60,7 +60,7 @@ for (SystemType system : SystemType.values()) {
 writer.endMessage();
 ```
 
-##### Deserialize
+### Deserialize
 
 > **Note**: Because `PlanetMap` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Polus*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
 
@@ -70,7 +70,7 @@ When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_typ
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Systems Mask | A bitfield mask used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
+| `packed uint32` | Systems Mask | A bitfield used to tell the game which [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) are receiving data |
 
 After reading the mask, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type's ID is set on the mask. For each type that does have its ID set on the mask, the Hazel message containing the update data is passed in to the type's `deserialize` method. Refer to the pseudocode below for an example.
 

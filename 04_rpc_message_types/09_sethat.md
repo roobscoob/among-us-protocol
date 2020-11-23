@@ -1,12 +1,12 @@
 # `0x09` SetHat
 
-This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object when joining a game or when customizing their [hat](../01_packet_structure/06_enums.md#hat) in the lobby.
+This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object when joining a game or when customizing their [`Hat`](../01_packet_structure/06_enums.md#hat) in the lobby.
 
 > **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Hat ID | The ID of the player's new hat |
+| `byte` | Hat ID | The ID of the player's new [`Hat`](../01_packet_structure/06_enums.md#hat) |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -19,7 +19,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
     030002      # Hazel message (tag of 0x02 = RPC)
         4b      # Sender (PlayerControl) Net ID: 75
         09      # RPC Call ID: 9 (SetHat)
-        40      # Hat ID: 64 (Mohawk)
+        40      # Hat ID: 64 (MOHAWK)
 ```
 </details>
 

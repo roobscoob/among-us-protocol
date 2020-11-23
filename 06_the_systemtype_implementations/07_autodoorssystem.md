@@ -4,15 +4,15 @@ The `AutoDoorsSystem` is responsible for storing the open state of all doors aro
 
 > **Note**: This only applies to *The Skeld*. For *Polus*, see [`DoorsSystem`](11_doorssystem.md).
 
-> **Note**: *The Skeld* has 13 doors, and this value is looped over whenever data is serialized or deserialized.
+> **Note**: *The Skeld* has `13` doors, and this value is looped over whenever data is serialized or deserialized.
 
-##### Serialize
+### Serialize
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Doors Mask | A bitfield mask used to tell the game which doors are receiving data |
+| `packed uint32` | Doors Mask | A bitfield used to tell the game which doors are receiving data |
 
 When the `ShipStatus` is being spawned, as well as when it is sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game writes the information in the table below.
 
@@ -45,13 +45,13 @@ if (isSpawning) {
 }
 ```
 
-##### Deserialize
+### Deserialize
 
 When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Doors Mask | A bitfield mask used to tell the game which doors are receiving data |
+| `packed uint32` | Doors Mask | A bitfield used to tell the game which doors are receiving data |
 
 When the `ShipStatus` has been spawned, as well as when it is receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game reads the information in the table below.
 
