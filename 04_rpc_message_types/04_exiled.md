@@ -10,7 +10,7 @@ This *empty* message, though it is never sent in-game, will kill the player that
 ```
 01                              # Reliable packet
 0004                            # Nonce
-160006                          # Hazel message (tag of 0x06 = GameDataTo)
+0c0006                          # Hazel message (tag of 0x06 = GameDataTo)
     d3503f8a                    # Game ID: -1975562029 (REDSUS)
     84a210                      # Target Client ID: 266500
     0c0002                      # Hazel message (tag of 0x02 = RPC)
