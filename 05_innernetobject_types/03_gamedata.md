@@ -28,7 +28,7 @@ After writing the length, the game loops over all players. For each player in th
 Refer to the pseudocode below for an example.
 
 ```java
-writer.writePackedUInt32(meetingHudNetId);
+writer.writePackedUInt32(gameDataNetId);
 writer.startMessage(0);
 
 // Store the position of the write head so we can write the
