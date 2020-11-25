@@ -23,7 +23,7 @@ This message is sent by the host's [`PlayerControl`](../05_innernetobject_types/
         04          # Game Optiona Data Version: 4
         0a          # Max Number of Players: 10
         01000000    # Keywords: 1 (Other)
-        01          # Map: 1 (The Skeld)
+        01          # Map: 1 (Mira HQ)
         0000803f    # Player Speed Modifier: 1.0x
         0000803f    # Crewmate Light Modifier: 1.0x
         0000c03f    # Impostor Light Modifier: 1.5x
