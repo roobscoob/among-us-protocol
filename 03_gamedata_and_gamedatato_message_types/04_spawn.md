@@ -23,7 +23,7 @@ Every component of an `InnerNetObject` that is spawned starts out with the same 
 | `packed uint32` | Net ID | The net ID of the component |
 | `Message` | Component Data | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) that contains the spawn data for the component<br><br>**Note**: A component will **always** have a Hazel message for its spawn data, but the message won't always contain data |
 
-> **Note**: When a component of an `InnerNetObject` is receiving a data update (via [`0x01` Data](01_data.md)), the structure is slightly different and is outlined in the table below.
+When a component of an `InnerNetObject` is receiving a data update (via [`0x01` Data](01_data.md)), the structure is slightly different and is outlined in the table below.
 
 | Type | Name | Description |
 | --- | --- | --- |
