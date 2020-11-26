@@ -6,7 +6,7 @@ This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `Message[n]` | Player Info | One or more [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) each containing the metadata for a player |
+| `Message[n]` | Player Info | One or more [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) each containing the metadata for a player<br><br>**Note**: The `tag` of each Hazel message is the player ID |
 
 ### The `Player Info` Message Structure
 
