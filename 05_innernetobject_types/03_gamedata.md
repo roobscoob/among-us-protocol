@@ -29,7 +29,10 @@ Refer to the pseudocode below for an example.
 
 ```java
 writer.writePackedUInt32(gameDataNetId);
-writer.startMessage(0);
+
+if (isSpawning) {
+    writer.startMessage(0);
+}
 
 // Store the position of the write head so we can write the
 // number of updated players when sending a data update
@@ -93,7 +96,9 @@ if (!isSpawning) {
     writer.position = writer.length
 }
 
-writer.endMessage();
+if (isSpawning) {
+    writer.endMessage();
+}
 ```
 
 ### Deserialize
@@ -123,35 +128,39 @@ Refer to the pseudocode below for an example.
 
 ```java
 long gameDataNetId = reader.readPackedUInt32();
-MessageReader gameData = reader.readMessage();
+
+if (isSpawning) {
+    reader = reader.readMessage();
+}
+
 long playerCount = isSpawning ? reader.readPackedUInt32() : reader.readByte();
 
 // Loop through all player states
 for (int i = 0; i < playerCount; i++) {
-    byte id = gameData.readByte();
+    byte id = reader.readByte();
     Player player = Game.getOrCreatePlayerById(id);
 
-    player.name = gameData.readString();
-    player.color = gameData.readPackedUInt32();
-    player.hat = gameData.readPackedUInt32();
-    player.pet = gameData.readPackedUInt32();
-    player.skin = gameData.readPackedUInt32();
+    player.name = reader.readString();
+    player.color = reader.readPackedUInt32();
+    player.hat = reader.readPackedUInt32();
+    player.pet = reader.readPackedUInt32();
+    player.skin = reader.readPackedUInt32();
 
-    byte flags = gameData.readByte();
+    byte flags = reader.readByte();
 
     player.isDisconnected = (flags & 1) != 0
     player.isImpostor = (flags & 2) != 0
     player.isDead = (flags & 4) != 0
 
-    byte tasksLength = gameData.readByte();
+    byte tasksLength = reader.readByte();
 
     player.tasks = new TaskInfo[tasksLength];
 
     for (int j = 0; j < tasksLength; j++) {
         TaskInfo task = new TaskInfo();
 
-        task.id = gameData.readPackedUInt32();
-        task.isCompleted = gameData.readBoolean();
+        task.id = reader.readPackedUInt32();
+        task.isCompleted = reader.readBoolean();
 
         player.tasks[j] = task;
     }

@@ -16,7 +16,10 @@ After writing the mask, the game loops over all players in order (starting from 
 
 ```java
 writer.writePackedUInt32(meetingHudNetId);
-writer.startMessage(0);
+
+if (isSpawning) {
+    writer.startMessage(0);
+}
 
 // Loop through all player states
 for (int i = 0; i < playerStates.length; i++) {
@@ -36,7 +39,9 @@ for (int i = 0; i < playerStates.length; i++) {
     }
 }
 
-writer.endMessage();
+if (isSpawning) {
+    writer.endMessage();
+}
 ```
 
 ### Deserialize
@@ -53,22 +58,25 @@ After reading the mask, the game loops over all players in order (starting from 
 
 ```java
 long meetingHudNetId = reader.readPackedUInt32();
-MessageReader meetingHud = reader.readMessage();
+
+if (isSpawning) {
+    reader = reader.readMessage();
+}
 
 // Loop through all player states
 for (int i = 0; i < playerStates.length; i++) {
     // If the MeetingHud is being spawned...
     if (isSpawning) {
         // ...then we should read (deserialize) the data from the component message
-        playerStates[i].deserialize(meetingHud);
+        playerStates[i].deserialize(reader);
     // If the MeetingHud is receiving data updates
     } else {
-        long statesMask = meetingHud.readPackedUInt32();
+        long statesMask = reader.readPackedUInt32();
 
         // If this player state is set on the statesMask...
         if ((statesMask & (1 << system.id())) != 0) {
             // ...then we should read (deserialize) the data from the component message
-            playerStates[i].deserialize(meetingHud);
+            playerStates[i].deserialize(reader);
         }
     }
 }

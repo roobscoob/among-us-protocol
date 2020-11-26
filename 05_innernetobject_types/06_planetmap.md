@@ -34,7 +34,10 @@ After writing the mask, the game loops over all [`SystemType`s](../01_packet_str
 
 ```java
 writer.writePackedUInt32(shipStatusNetId);
-writer.startMessage(0);
+
+if (isSpawning) {
+    writer.startMessage(0);
+}
 
 // Loop through all SystemTypes
 for (SystemType system : SystemType.values()) {
@@ -57,7 +60,9 @@ for (SystemType system : SystemType.values()) {
     }
 }
 
-writer.endMessage();
+if (isSpawning) {
+    writer.endMessage();
+}
 ```
 
 ### Deserialize
@@ -76,7 +81,10 @@ After reading the mask, the game loops over all [`SystemType`s](../01_packet_str
 
 ```java
 long shipStatusNetId = reader.readPackedUInt32();
-MessageReader shipStatus = reader.readMessage();
+
+if (isSpawning) {
+    reader = reader.readMessage();
+}
 
 // Loop through all SystemTypes
 for (SystemType system : SystemType.values()) {
@@ -85,16 +93,16 @@ for (SystemType system : SystemType.values()) {
         // If Polus has this SystemType...
         if (polusSystems.containsKey(system)) {
             // ...then we should read (deserialize) the data from the component message
-            polusSystems.get(system).deserialize(shipStatus);
+            polusSystems.get(system).deserialize(reader);
         }
     // If the ShipStatus is receiving data updates
     } else {
-        long systemsMask = shipStatus.readPackedUInt32();
+        long systemsMask = reader.readPackedUInt32();
 
         // If this system is set on the systemsMask...
         if ((systemsMask & (1 << system.id())) != 0) {
             // ...then we should read (deserialize) the data from the component message
-            polusSystems.get(system).deserialize(shipStatus);
+            polusSystems.get(system).deserialize(reader);
         }
     }
 }

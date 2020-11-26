@@ -14,7 +14,11 @@ After writing the length, the game loops over all players. For each player in th
 
 ```java
 writer.writePackedUInt32(voteBanSystemNetId);
-writer.startMessage(0);
+
+if (isSpawning) {
+    writer.startMessage(0);
+}
+
 writer.writeByte(players.length);
 
 // Loop through all players
@@ -29,7 +33,9 @@ for (int i = 0; i < players.length; i++) {
     }
 }
 
-writer.endMessage();
+if (isSpawning) {
+    writer.endMessage();
+}
 ```
 
 ### Deserialize
@@ -44,18 +50,22 @@ After reading the length, the game loops over all players based on the length de
 
 ```java
 long voteBanSystemNetId = reader.readPackedUInt32();
-MessageReader voteBanSystem = reader.readMessage();
-byte playersLength = voteBanSystem.readByte();
+
+if (isSpawning) {
+    reader = reader.readMessage();
+}
+
+byte playersLength = reader.readByte();
 
 // Loop through all players
 for (int i = 0; i < playersLength; i++) {
     // Read the client ID of the player
-    long clientId = voteBanSystem.readUInt32();
+    long clientId = reader.readUInt32();
 
     for (int j = 0; l < 3; j++) {
         // Read the client ID of all 3 players that voted to kick the player,
         // with a default value of 0 in the case of no vote
-        voteBanSystem.readUInt32();
+        reader.readUInt32();
     }
 }
 ```

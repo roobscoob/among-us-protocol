@@ -16,13 +16,18 @@ Refer to the pseudocode below for an example.
 
 ```java
 writer.writePackedUInt32(customNetworkTransformNetId);
-writer.startMessage(0);
+
+if (isSpawning) {
+    writer.startMessage(0);
+}
 
 writer.writeUInt16(lastSequenceId);
 Vector2.writeVector2(writer, targetPosition);
 Vector2.writeVector2(writer, targetVelocity);
 
-writer.endMessage();
+if (isSpawning) {
+    writer.endMessage();
+}
 ```
 
 ### Deserialize
@@ -39,11 +44,14 @@ Refer to the pseudocode below for an example.
 
 ```java
 long customNetworkTransformNetId = reader.readPackedUInt32();
-MessageReader customNetworkTransform = reader.readMessage();
 
-int lastSequenceId = customNetworkTransform.readUInt16();
-Vector2 targetPosition = Vector2.readVector2(customNetworkTransform);
-Vector2 targetVelocity = Vector2.readVector2(customNetworkTransform);
+if (isSpawning) {
+    reader = reader.readMessage();
+}
+
+int lastSequenceId = reader.readUInt16();
+Vector2 targetPosition = Vector2.readVector2(reader);
+Vector2 targetVelocity = Vector2.readVector2(reader);
 ```
 
 ---

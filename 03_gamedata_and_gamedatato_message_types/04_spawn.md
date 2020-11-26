@@ -21,9 +21,16 @@ Every component of an `InnerNetObject` that is spawned starts out with the same 
 | Type | Name | Description |
 | --- | --- | --- |
 | `packed uint32` | Net ID | The net ID of the component |
-| `Message` | Component Data | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) that contains the data for the component<br><br>**Note**: A component will **always** have a Hazel message for its data, but the message won't always contain data |
+| `Message` | Component Data | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) that contains the spawn data for the component<br><br>**Note**: A component will **always** have a Hazel message for its spawn data, but the message won't always contain data |
 
-See [`InnerNetObject` Types](../05_innernetobject_types/README.md) for details on each possible `Component` that may be spawned from this message type, taking note that the data described in the table above is omitted from the breakdown of those objects.
+> **Note**: When a component of an `InnerNetObject` is receiving a data update (via [`0x01` Data](01_data.md)), the structure is slightly different and is outlined in the table below.
+
+| Type | Name | Description |
+| --- | --- | --- |
+| `packed uint32` | Net ID | The net ID of the component |
+| `byte[n]` | Component Data | The raw bytes of the data for the component<br><br>**Note**: The length is not specified as the data is deserialized on the component |
+
+See [`InnerNetObject` Types](../05_innernetobject_types/README.md) for details on each possible `Component` that may be spawned from this message type, taking note that the data described in the tables above is omitted from the breakdown of those objects.
 
 > **Note**: When an object is spawned, the first component will always be the type being spawned. For example, the first component on a spawned `ShipStatus` *is* a `ShipStatus`. This might seem counterintuitive but think of the first component as the actual data for the object.
 

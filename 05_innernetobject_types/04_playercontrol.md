@@ -20,15 +20,17 @@ Refer to the pseudocode below for an example.
 
 ```java
 writer.writePackedUInt32(meetingHudNetId);
-writer.startMessage(0);
 
 if (isSpawning) {
+    writer.startMessage(0);
     writer.writeBoolean(isNew);
 }
 
 writer.writeByte(playerId);
 
-writer.endMessage();
+if (isSpawning) {
+    writer.endMessage();
+}
 ```
 
 ### Deserialize
@@ -49,13 +51,13 @@ Refer to the pseudocode below for an example.
 
 ```java
 long playerControlNetId = reader.readPackedUInt32();
-MessageReader playerControl = reader.readMessage();
 
 if (isSpawning) {
-    boolean isNew = playerControl.readBoolean();
+    reader = reader.readMessage();
+    boolean isNew = reader.readBoolean();
 }
 
-byte playerId = playerControl.readByte();
+byte playerId = reader.readByte();
 ```
 
 ---
