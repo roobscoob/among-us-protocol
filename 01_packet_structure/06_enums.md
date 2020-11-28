@@ -402,7 +402,7 @@ This refers to the `Kill Distance` field in the [`GameOptionsData`](../07_miscel
 | ID | Name | Magnitude |
 | --- | --- | --- |
 | `0` | `SHORT` | `1.0f` |
-| `1` | `MEDIUM` | `1.8f` |
+| `1` | `NORMAL` | `1.8f` |
 | `2` | `LONG` | `2.5f` |
 
 ---
