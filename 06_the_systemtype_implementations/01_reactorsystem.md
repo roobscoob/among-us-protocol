@@ -6,7 +6,7 @@ When spawned, as well as when sending or receiving data (via [`0x01` Data](../03
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `float` | Countdown | The time remaining before the Reactor has a meltdown or the Seismic Stabilizers fail and the impostors win |
+| `float` | Timer | The time remaining before the Reactor has a meltdown or the Seismic Stabilizers fail and the impostors win |
 | `packed uint32` | Players Length | The number of players who have their hand on a console in an attempt to repair the sabotage |
 | `UserConsolePair[n]` | Players | A list of each player that has their hand on a console, and which console their hand is on, where length `n` is defined in the previous field |
 
