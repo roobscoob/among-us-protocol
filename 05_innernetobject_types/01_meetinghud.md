@@ -74,7 +74,7 @@ for (int i = 0; i < playerStates.length; i++) {
         long statesMask = reader.readPackedUInt32();
 
         // If this player state is set on the statesMask...
-        if ((statesMask & (1 << system.id())) != 0) {
+        if ((statesMask & (1 << i)) != 0) {
             // ...then we should read (deserialize) the data from the component message
             playerStates[i].deserialize(reader);
         }
