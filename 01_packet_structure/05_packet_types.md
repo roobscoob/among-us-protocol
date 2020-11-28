@@ -114,7 +114,7 @@ The `Disconnect` packet structure, when containing a [Disconnect Reason](06_enum
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Is Forced | While this `byte` is similar to a `boolean`, it has different conditions:<br><ul><li>If this value is **anything but** `1` then the `Disconnect Reason` below will be parsed and displayed</li><li>If this value is **exactly** `1` then the `Disconnect Reason` below will not be read and the game will display the message *"Forcibly disconnected from the server"*</li></ul> |
+| `byte` | Is Forced | While this `byte` is similar to a `boolean`, it has different conditions:<br><ul><li>If this value is **exactly** `1` then the `Disconnect Reason` below will be parsed and displayed</li><li>If this value is **anything but** `1` then the `Disconnect Reason` below will not be read and the game will display the message *"Forcibly disconnected from the server"*</li></ul> |
 | `Message` | Disconnect Reason | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) describing why the player was disconnected<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`byte`</td><td>[Disconnect Reason](06_enums.md#disconnectreason)</td><td>The reason for the disconnection</td></tr><tr><td>`String` (*Optional*)</td><td>Custom Message</td><td>A custom disconnect message</td></tr></tbody></table> |
 
 <details>
@@ -134,7 +134,7 @@ The `Disconnect` packet structure, when containing a [Disconnect Reason](06_enum
 |   |   |
 |   |   Message length: 7 bytes
 |   |
-|   Unknown
+|   Is Forced: false
 |
 Packet type
 </pre>
