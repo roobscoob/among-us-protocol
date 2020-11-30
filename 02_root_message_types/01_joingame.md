@@ -10,7 +10,7 @@ This message has two main flows that depend on the state of the game:
     - ...and the client joins successfully, the server will do the following:
         1. Add the client to the list of clients in the game
         1. Send the client a [`0x07` JoinedGame](07_joinedgame.md) packet
-        1. Broadcast a [Server-to-Game](#server-to-game) packet to every client excluding the client that just joined
+        1. Broadcast a [Server-to-Game](#server-to-game) packet for the client that just joined to *every other* client
     - ...and the client fails to join, the server will send the client an [Error](#error-server-to-client) response packet
         - A client may fail to join for multiple reasons, including but not limited to:
             - The game already started
@@ -25,7 +25,7 @@ This message has two main flows that depend on the state of the game:
             1. Re-add the client to the list of clients in the game (the list is cleared when the game ends)
             1. Put the client in the `WaitingForHost` [limbo state](../01_packet_structure/06_enums.md#limbostates)
             1. Send the client a [`0x0c` WaitForHost](12_waitforhost.md) packet
-            1. Broadcast a [Server-to-Game](#server-to-game) packet to every client excluding the client that just rejoined
+            1. Broadcast a [Server-to-Game](#server-to-game) packet for the client that just rejoined to *every other* client
         - If the [game state](../01_packet_structure/06_enums.md#gamestates) is `NotStarted` (the host has already rejoined)...
             1. The client will go through the **Join Game Flow** above
     - ...and the client *is the host*, the server will do the following:
@@ -33,7 +33,7 @@ This message has two main flows that depend on the state of the game:
         1. Re-add the client to the list of clients in the game (the list is cleared when the game ends)
         1. Put the client in the `NotLimbo` [limbo state](../01_packet_structure/06_enums.md#limbostates)
         1. Send the client a [`0x07` JoinedGame](07_joinedgame.md) packet
-        1. Broadcast a [Server-to-Game](#server-to-game) packet to every client excluding the client that just rejoined
+        1. Broadcast a [Server-to-Game](#server-to-game) packet for the client that just rejoined to *every other* client
         1. Send each client in the `WaitingForHost` [limbo state](../01_packet_structure/06_enums.md#limbostates) a [`0x07` JoinedGame](07_joinedgame.md) packet
 
 > **Note**: If the host of a game leaves at the end of the game, regardless of whether or not there are any clients in the `WaitingForHost` [limbo state](../01_packet_structure/06_enums.md#limbostates), the first client to click "*Play Again*" becomes the new host of the game.
