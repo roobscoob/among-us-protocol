@@ -7,11 +7,11 @@ This message is sent from the client to the server when attempting to join a gam
 This message has two main flows that depend on the state of the game:
 
 - **Join Game Flow**: if the client is joining a game that has not started...
-    - ...the client joins successfully, the server will do the following:
+    - ...and the client joins successfully, the server will do the following:
         1. Add the client to the list of clients in the game
         1. Send the client a [`0x07` JoinedGame](07_joinedgame.md) packet
         1. Broadcast a [Server-to-Game](#server-to-game) packet to every client excluding the client that just joined
-    - ...the client fails to join, the server will send the client an [Error](#error-server-to-client) response packet
+    - ...and the client fails to join, the server will send the client an [Error](#error-server-to-client) response packet
         - A client may fail to join for multiple reasons, including but not limited to:
             - The game already started
             - The game was closed
