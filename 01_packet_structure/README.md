@@ -31,6 +31,8 @@
     1. [`SpawnType`](06_enums.md#spawntype)
     1. [`SpawnFlag`](06_enums.md#spawnflag)
     1. [`KillDistances`](06_enums.md#killdistances)
+    1. [`GameStates`](06_enums.md#gamestates)
+    1. [`LimboStates`](06_enums.md#limbostates)
 1. [The Different Types of IDs](07_the_different_types_of_ids.md)
 
 ---

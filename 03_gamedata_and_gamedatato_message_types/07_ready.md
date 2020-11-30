@@ -6,7 +6,7 @@ This message is sent by the client to the host of a game as a response to the [`
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Player Client ID | The client ID of the player that is ready |
+| `packed uint32` | Ready Client ID | The ID of the client that is ready |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -17,7 +17,7 @@ This message is sent by the client to the host of a game as a response to the [`
 0a0005            # Hazel message (tag of 0x05 = GameData)
     d3503f8a      # Game ID: -1975562029 (REDSUS)
     030007        # Hazel message (tag of 0x06 = Ready)
-        828c13    # Player Client ID: 312834
+        828c13    # Ready Client ID: 312834
 ```
 </details>
 

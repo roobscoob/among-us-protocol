@@ -2,7 +2,7 @@
 
 This *empty* message, though it is never sent in-game, will kill the player that it was sent to as if they were voted off during a meeting meaning it *will not* spawn a dead body for the player.
 
-> **Note**: This message is sent from the host of a game to a player via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md).
+> **Note**: This message is sent from the host of a game to a client via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md).
 
 <details>
     <summary>Click here to view an example packet</summary>

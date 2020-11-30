@@ -41,6 +41,8 @@ This message is sent from the client to the server when attempting to create a g
 
 This message is sent from the server to the client after creating a game and tells the client the ID of the newly created game.
 
+With this game ID, the client will immediately send a [`0x01` JoinGame](01_joingame.md) packet.
+
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |

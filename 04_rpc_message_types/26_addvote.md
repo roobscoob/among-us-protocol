@@ -2,7 +2,7 @@
 
 This message is sent by the [`VoteBanSystem`](../05_innernetobject_types/08_votebansystem.md) component when a player votes to kick another player.
 
-> **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md). It is **never** sent from the host of a game as the host will immediately kick the player without the need to vote.
+> **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md). It is **never** sent from the host of a game as the host will immediately kick the player without the need to vote.
 
 | Type | Name | Description |
 | --- | --- | --- |

@@ -2,7 +2,7 @@
 
 This message is sent by the [`MeetingHud`](../05_innernetobject_types/01_meetinghud.md) object when voting has ended.
 
-> **Note**: This message is sent from the host of a game to all players via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent from the host of a game to all clients via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |

@@ -6,7 +6,7 @@ This message is sent by the client to the host of a game when changing the game 
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Player Client ID | The client ID of the player that is changing scenes |
+| `packed uint32` | Client ID | The ID of the client that is changing scenes |
 | `String` | Scene Name | The name of the scene that the client is changing to |
 
 <details>
@@ -18,7 +18,7 @@ This message is sent by the client to the host of a game when changing the game 
 150005                            # Hazel message (tag of 0x05 = GameData)
     d3503f8a                      # Game ID: -1975562029 (REDSUS)
     0e0006                        # Hazel message (tag of 0x06 = SceneChange)
-        fda810                    # Player Client ID: 267389
+        fda810                    # Client ID: 267389
         0a4f6e6c696e6547616d65    # Scene Name: OnlineGame
 ```
 </details>

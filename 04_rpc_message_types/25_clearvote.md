@@ -2,7 +2,7 @@
 
 This *empty* message is sent by the [`MeetingHud`](../05_innernetobject_types/01_meetinghud.md) object when a player that is still alive disconnects from the game during the voting phase. This allows players that already voted for the disconnecting player to vote again.
 
-> **Note**: This message is sent from the host of a game to all affected players via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent from the host of a game to all affected players via [`0x06` GameDataTo](../02_root_message_types/05_gamedata.md).
 
 <details>
     <summary>Click here to view an example packet</summary>

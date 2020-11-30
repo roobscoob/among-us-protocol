@@ -2,7 +2,7 @@
 
 This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object when joining a game to check with the host if the name is available for use. If the name is already being used, the host updates the client's name by appending an incrementing number from `1` to `99` to the end of their name.
 
-> **Note**: This message is sent from a player to the host of a game via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md). It is **never** sent from the host of a game.
+> **Note**: This message is sent from a client to the host of a game via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md). It is **never** sent from the host of a game.
 
 Example:
 

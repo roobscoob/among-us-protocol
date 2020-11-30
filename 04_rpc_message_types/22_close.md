@@ -2,7 +2,7 @@
 
 This *empty* message is sent by the [`MeetingHud`](../05_innernetobject_types/01_meetinghud.md) object to close the meeting screen.
 
-> **Note**: This message is sent from the host of a game to all players via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent from the host of a game to all clients via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 <details>
     <summary>Click here to view an example packet</summary>

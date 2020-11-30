@@ -2,7 +2,7 @@
 
 This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object when joining a game to check with the host if the [`Color`](../01_packet_structure/06_enums.md#color) is available for use. If the color is already being used, the host updates the client's color to the next available color.
 
-> **Note**: This message is sent from a player to the host of a game via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md). It is **never** sent from the host of a game.
+> **Note**: This message is sent from a client to the host of a game via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md). It is **never** sent from the host of a game.
 
 Example:
 

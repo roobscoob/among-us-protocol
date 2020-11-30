@@ -18,6 +18,8 @@
 1. [`SpawnType`](#spawntype)
 1. [`SpawnFlag`](#spawnflag)
 1. [`KillDistances`](#killdistances)
+1. [`GameStates`](#gamestates)
+1. [`LimboStates`](#limbostates)
 
 ### `AlterGameTag`
 
@@ -404,6 +406,23 @@ This refers to the `Kill Distance` field in the [`GameOptionsData`](../07_miscel
 | `0` | `SHORT` | `1.0f` |
 | `1` | `NORMAL` | `1.8f` |
 | `2` | `LONG` | `2.5f` |
+
+### `GameStates`
+
+| ID | Name |
+| --- | --- |
+| `0` | `NOT_STARTED` |
+| `1` | `STARTED` |
+| `2` | `ENDED` |
+| `3` | `DESTROYED` |
+
+### `LimboStates`
+
+| ID | Name |
+| --- | --- |
+| `0` | `PRE_SPAWN` |
+| `1` | `NOT_LIMBO` |
+| `2` | `WAITING_FOR_HOST` |
 
 ---
 

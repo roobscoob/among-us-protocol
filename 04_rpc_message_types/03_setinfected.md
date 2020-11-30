@@ -4,7 +4,7 @@ This message is sent by the host's [`PlayerControl`](../05_innernetobject_types/
 
 > **Note**: This message will set each player in the list as an impostor. It **will not** set an impostor back to crewmate if they are not included in the list.
 
-> **Note**: This message is sent from the host of a game to all players via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent from the host of a game to all clients via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |

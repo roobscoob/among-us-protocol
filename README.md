@@ -48,6 +48,8 @@ udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and 
         1. [`SpawnType`](01_packet_structure/06_enums.md#spawntype)
         1. [`SpawnFlag`](01_packet_structure/06_enums.md#spawnflag)
         1. [`KillDistances`](01_packet_structure/06_enums.md#killdistances)
+        1. [`GameStates`](01_packet_structure/06_enums.md#gamestates)
+        1. [`LimboStates`](01_packet_structure/06_enums.md#limbostates)
     1. [The Different Types of IDs](01_packet_structure/07_the_different_types_of_ids.md)
 1. [Root Message Types](02_root_message_types/README.md)
     1. [`0x00` HostGame](02_root_message_types/00_hostgame.md)

@@ -1,8 +1,8 @@
 # `0x15` SnapTo
 
-This message is sent by a client's [`CustomNetworkTransform`](../05_innernetobject_types/10_customnetworktransform.md) component when moving between [vents](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md).
+This message is sent by a client's [`CustomNetworkTransform`](../05_innernetobject_types/10_customnetworktransform.md) component when moving between [vents](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md), and the player's velocity is set to zero in the process.
 
-> **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |

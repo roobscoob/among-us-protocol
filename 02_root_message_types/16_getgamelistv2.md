@@ -7,7 +7,7 @@ This message is sent from the client to the server when searching for public gam
 | Type | Name | Description |
 | --- | --- | --- |
 | `packed int32` | *Unknown* | An unknown value that is hardcoded to be `0x00`<br><br>In the previous version of this message, [`0x09` GetGameList](09_getgamelist.md), this field was a `boolean` that when set to `true` would tell the server to include private games in the search results |
-| [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings used when searching for public games<br><br>**Note**: The map ID in this Game Options Data is a bitfield containing the IDs of each [`Map`](../01_packet_structure/06_enums.md#map) that the player is searching for |
+| [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings used when searching for public games<br><br>**Note**: The map ID in this Game Options Data is a bitfield containing the IDs of each [`Map`](../01_packet_structure/06_enums.md#map) that the client is searching for |
 
 <details>
     <summary>Click here to view an example packet</summary>

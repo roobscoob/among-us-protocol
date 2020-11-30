@@ -2,7 +2,7 @@
 
 This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game or lobby when sending a chat message.
 
-> **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md). The Innersloth servers currently relay chat messages to every player in a game, even if the sender is dead and the receiver is still alive. This means that players who are still alive can read chat messages sent by a dead player by means of packet sniffing, patching the game, or reading the game's memory.
+> **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md). The Innersloth servers currently relay chat messages to every player in a game, even if the sender is dead and the receiver is still alive. This means that players who are still alive can read chat messages sent by a dead player by means of packet sniffing, patching the game, or reading the game's memory.
 
 | Type | Name | Description |
 | --- | --- | --- |

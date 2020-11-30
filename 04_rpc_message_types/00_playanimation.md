@@ -2,7 +2,7 @@
 
 This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game and tells other clients to play an animation associated with a visual [task](../01_packet_structure/06_enums.md#tasktype).
 
-> **Note**: This message is sent to and from all players in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md) inside a [`0x00` Normal](../01_packet_structure/05_packet_types.md#0x00-normal) packet.
+> **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md) inside a [`0x00` Normal](../01_packet_structure/05_packet_types.md#0x00-normal) packet.
 
 | Type | Name | Description |
 | --- | --- | --- |

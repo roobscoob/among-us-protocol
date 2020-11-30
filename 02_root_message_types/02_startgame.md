@@ -4,6 +4,8 @@
 
 This message is sent from the host of a game to all clients when the host starts the game. Clients must respond with a [`0x07` Ready](../03_gamedata_and_gamedatato_message_types/07_ready.md) packet or they will be disconnected.
 
+> **Note**: The [game state](../01_packet_structure/06_enums.md#gamestates) is set to `Started` when this message is sent.
+
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |

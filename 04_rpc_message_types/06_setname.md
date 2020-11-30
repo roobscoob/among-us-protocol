@@ -2,7 +2,7 @@
 
 This message is sent by the host's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a lobby to set a joining client's name after receiving a [`0x05` CheckName](05_checkname.md) message from the client.
 
-> **Note**: This message is sent from the host of a game to all players via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent from the host of a game to all clients via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |
