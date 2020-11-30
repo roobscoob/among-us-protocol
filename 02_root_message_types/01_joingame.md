@@ -18,11 +18,11 @@ This message has two main flows that depend on the state of the game:
             - The game was full
             - The code was incorrect
             - The client was banned
-        - If multiple clients try to join a game with fewers spot open than required to let them all join, the *host* of the game will disconnect the last clients to join with a [`0x04` RemovePlayer](04_removeplayer.md#server-to-game) packet
+        - If multiple clients try to join a game with fewer spots open than required to let them all join, the *host* of the game will disconnect the last clients to join with a [`0x04` RemovePlayer](04_removeplayer.md#server-to-game) packet
 - **Rejoin Game Flow**: if a client tries to rejoin a game by clicking the "*Play Again*" button...
     - ...and the client *is not the host*, the server will do the following:
         - If the [game state](../01_packet_structure/06_enums.md#gamestates) is `Ended` (the host has not yet rejoined)...
-            1. Re-add the client to the list of clients in the game (the list is cleared when the game ends)
+            1. Add the client to the list of clients in the game (the list is cleared when the game ends)
             1. Put the client in the `WaitingForHost` [limbo state](../01_packet_structure/06_enums.md#limbostates)
             1. Send the client a [`0x0c` WaitForHost](12_waitforhost.md) packet
             1. Broadcast a [Server-to-Game](#server-to-game) packet for the client that just rejoined to *every other* client
@@ -30,7 +30,7 @@ This message has two main flows that depend on the state of the game:
             1. The client will go through the **Join Game Flow** above
     - ...and the client *is the host*, the server will do the following:
         1. Set the [game state](../01_packet_structure/06_enums.md#gamestates) to `NotStarted`
-        1. Re-add the client to the list of clients in the game (the list is cleared when the game ends)
+        1. Add the client to the list of clients in the game (the list is cleared when the game ends)
         1. Put the client in the `NotLimbo` [limbo state](../01_packet_structure/06_enums.md#limbostates)
         1. Send the client a [`0x07` JoinedGame](07_joinedgame.md) packet
         1. Broadcast a [Server-to-Game](#server-to-game) packet for the client that just rejoined to *every other* client
