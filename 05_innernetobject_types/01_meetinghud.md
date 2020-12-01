@@ -63,6 +63,11 @@ if (isSpawning) {
     reader = reader.readMessage();
 }
 
+long statesMask;
+if (!isSpawning) {
+    statesMask = reader.readPackedUInt32();
+}
+       
 // Loop through all player states
 for (int i = 0; i < playerStates.length; i++) {
     // If the MeetingHud is being spawned...
@@ -71,8 +76,6 @@ for (int i = 0; i < playerStates.length; i++) {
         playerStates[i].deserialize(reader);
     // If the MeetingHud is receiving data updates
     } else {
-        long statesMask = reader.readPackedUInt32();
-
         // If this player state is set on the statesMask...
         if ((statesMask & (1 << i)) != 0) {
             // ...then we should read (deserialize) the data from the component message
