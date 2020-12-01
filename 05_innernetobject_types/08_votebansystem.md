@@ -65,7 +65,7 @@ for (int i = 0; i < playersLength; i++) {
     for (int j = 0; l < 3; j++) {
         // Read the client ID of all 3 players that voted to kick the player,
         // with a default value of 0 in the case of no vote
-        reader.readUInt32();
+        reader.readPackedUInt32();
     }
 }
 ```
