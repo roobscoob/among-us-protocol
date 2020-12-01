@@ -31,7 +31,7 @@ for (int i = 0; i < playerStates.length; i++) {
     } else {
         writer.writePackedUInt32(statesMask);
 
-        // If this player state is set on the systemsMask...
+        // If this player state is set on the statesMask...
         if ((statesMask & (1 << i)) != 0) {
             // ...then we should write (serialize) the data from the player state
             playerStates[i].serialize(writer);
