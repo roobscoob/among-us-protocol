@@ -8,7 +8,7 @@ When sending or receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Timer | How long before the decontamination doors open |
+| `byte` | Timer | How long, in seconds, before the decontamination doors open |
 | `byte` | State | A bitfield describing which state the doors are in (which direction a player is heading through decontamination) |
 
 ##### The `State` Bitfield

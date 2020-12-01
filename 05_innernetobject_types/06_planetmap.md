@@ -6,17 +6,17 @@ The `PlanetMap` object (which is a variant of the [`ShipStatus`](00_shipstatus.m
 
 The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *Polus* and each should be handled when being spawned, serialized, and deserialized.
 
-| Type | Implementation | On Spawn | On Data |
-| --- | --- | --- | --- |
-| `ELECTRICAL` | [`SwitchSystem`](../06_the_systemtype_implementations/02_switchsystem.md) | &#x2714; | &#x2714; |
-| `MEDBAY` | [`MedScanSystem`](../06_the_systemtype_implementations/04_medscansystem.md) | &#x2714; | &#x2714; |
-| `SECURITY` | [`SecurityCameraSystem`](../06_the_systemtype_implementations/05_securitycamerasystem.md) | &#x2714; | &#x2714; |
-| `COMMUNICATIONS` | [`HudOverrideSystem`](../06_the_systemtype_implementations/06_hudoverridesystem.md) | &#x2714; | &#x2714; |
-| `DOORS` | [`DoorsSystem`](../06_the_systemtype_implementations/11_doorssystem.md) | &#x2714; | &#x2714; |
-| `SABOTAGE` | [`SabotageSystem`](../06_the_systemtype_implementations/08_sabotagesystem.md) | &#x2714; | &#x2714; |
-| `DECONTAMINATION` | [`DeconSystem`](../06_the_systemtype_implementations/10_deconsystem.md) | &#x2716; | &#x2714; |
-| `LABORATORY` | [`ReactorSystem`](../06_the_systemtype_implementations/01_reactorsystem.md) | &#x2714; | &#x2714; |
-| `DECONTAMINATION_2` | [`DeconSystem`](../06_the_systemtype_implementations/10_deconsystem.md) | &#x2716; | &#x2714; |
+| Type | Implementation |
+| --- | --- |
+| `ELECTRICAL` | [`SwitchSystem`](../06_the_systemtype_implementations/02_switchsystem.md) |
+| `MEDBAY` | [`MedScanSystem`](../06_the_systemtype_implementations/04_medscansystem.md) |
+| `SECURITY` | [`SecurityCameraSystem`](../06_the_systemtype_implementations/05_securitycamerasystem.md) |
+| `COMMUNICATIONS` | [`HudOverrideSystem`](../06_the_systemtype_implementations/06_hudoverridesystem.md) |
+| `DOORS` | [`DoorsSystem`](../06_the_systemtype_implementations/11_doorssystem.md) |
+| `DECONTAMINATION` | [`DeconSystem`](../06_the_systemtype_implementations/10_deconsystem.md) |
+| `DECONTAMINATION_2` | [`DeconSystem`](../06_the_systemtype_implementations/10_deconsystem.md) |
+| `SABOTAGE` | [`SabotageSystem`](../06_the_systemtype_implementations/08_sabotagesystem.md) |
+| `LABORATORY` | [`ReactorSystem`](../06_the_systemtype_implementations/01_reactorsystem.md) |
 
 ### Serialize
 

@@ -6,16 +6,16 @@ The `ShipStatus` object is spawned at the start of a game on *The Skeld* and des
 
 The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *The Skeld* and each should be handled when being spawned, serialized, and deserialized.
 
-| Type | Implementation | On Spawn | On Data |
-| --- | --- | --- | --- |
-| `REACTOR` | [`ReactorSystem`](../06_the_systemtype_implementations/01_reactorsystem.md) | &#x2714; | &#x2714; |
-| `ELECTRICAL` | [`SwitchSystem`](../06_the_systemtype_implementations/02_switchsystem.md) | &#x2714; | &#x2714; |
-| `O2` | [`LifeSuppSystem`](../06_the_systemtype_implementations/03_lifesuppsystem.md) | &#x2714; | &#x2714; |
-| `MEDBAY` | [`MedScanSystem`](../06_the_systemtype_implementations/04_medscansystem.md) | &#x2714; | &#x2714; |
-| `SECURITY` | [`SecurityCameraSystem`](../06_the_systemtype_implementations/05_securitycamerasystem.md) | &#x2714; | &#x2714; |
-| `COMMUNICATIONS` | [`HudOverrideSystem`](../06_the_systemtype_implementations/06_hudoverridesystem.md) | &#x2714; | &#x2714; |
-| `DOORS` | [`AutoDoorsSystem`](../06_the_systemtype_implementations/07_autodoorssystem.md) | &#x2714; | &#x2714; |
-| `SABOTAGE` | [`SabotageSystem`](../06_the_systemtype_implementations/08_sabotagesystem.md) | &#x2714; | &#x2714; |
+| Type | Implementation |
+| --- | --- |
+| `REACTOR` | [`ReactorSystem`](../06_the_systemtype_implementations/01_reactorsystem.md) |
+| `ELECTRICAL` | [`SwitchSystem`](../06_the_systemtype_implementations/02_switchsystem.md) |
+| `O2` | [`LifeSuppSystem`](../06_the_systemtype_implementations/03_lifesuppsystem.md) |
+| `MEDBAY` | [`MedScanSystem`](../06_the_systemtype_implementations/04_medscansystem.md) |
+| `SECURITY` | [`SecurityCameraSystem`](../06_the_systemtype_implementations/05_securitycamerasystem.md) |
+| `COMMUNICATIONS` | [`HudOverrideSystem`](../06_the_systemtype_implementations/06_hudoverridesystem.md) |
+| `DOORS` | [`AutoDoorsSystem`](../06_the_systemtype_implementations/07_autodoorssystem.md) |
+| `SABOTAGE` | [`SabotageSystem`](../06_the_systemtype_implementations/08_sabotagesystem.md) |
 
 ### Serialize
 
