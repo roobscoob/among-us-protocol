@@ -165,14 +165,14 @@ The `System ID` will be that of `SystemType.COMMUNICATIONS` when a player repair
 switch (currentMap) {
     case THE_SKELD:
     case POLUS:
-        if ((amount & 0x80) == 0) {
+        if (amount == 0) {
             // Communications was repaired by the player
         }
 
         break; // Don't forget this, it might cost you $750
     case MIRA_HQ:
         // The ID of the communications console
-        int consoleId = amount & 3;
+        int consoleId = amount & 0xf;
 
         if ((amount & 0x40) != 0) {
             // The player opened the communications console
