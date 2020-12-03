@@ -2,6 +2,8 @@
 
 The `ShipStatus` object is spawned at the start of a game on *The Skeld* and despawned at the end of the game. It holds the map for *The Skeld* and is responsible for controlling the interactive systems throughout the map.
 
+> **Note**: See [`Headquarters`](05_headquarters.md) for *Mira HQ*, or [`PlanetMap`](06_planetmap.md) for *Polus*.
+
 ### All `SystemType`s for The Skeld
 
 The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *The Skeld* and each should be handled when being spawned, serialized, and deserialized.

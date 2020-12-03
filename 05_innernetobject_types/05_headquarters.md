@@ -2,6 +2,8 @@
 
 The `Headquarters` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *Mira HQ* and despawned at the end of the game. It holds the map for *Mira HQ* and is responsible for controlling the interactive systems throughout the map.
 
+> **Note**: See [`ShipStatus`](00_shipstatus.md) for *The Skeld*, or [`PlanetMap`](06_planetmap.md) for *Polus*.
+
 ### All `SystemType`s for Mira HQ
 
 The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *Mira HQ* and each should be handled when being spawned, serialized, and deserialized.
