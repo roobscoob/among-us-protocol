@@ -19,7 +19,7 @@ When the `PlayerControl` object is being spawned, as well as when it is sending 
 Refer to the pseudocode below for an example.
 
 ```java
-writer.writePackedUInt32(meetingHudNetId);
+writer.writePackedUInt32(playerControlNetId);
 
 if (isSpawning) {
     writer.startMessage(0);
