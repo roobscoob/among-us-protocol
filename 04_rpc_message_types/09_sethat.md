@@ -6,7 +6,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Hat ID | The ID of the player's new [`Hat`](../01_packet_structure/06_enums.md#hat) |
+| `packed uint32` | Hat ID | The ID of the player's new [`Hat`](../01_packet_structure/06_enums.md#hat) |
 
 <details>
     <summary>Click here to view an example packet</summary>

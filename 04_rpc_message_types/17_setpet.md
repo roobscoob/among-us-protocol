@@ -6,7 +6,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Pet ID | The ID of the player's new [`Pet`](../01_packet_structure/06_enums.md#pet) |
+| `packed uint32` | Pet ID | The ID of the player's new [`Pet`](../01_packet_structure/06_enums.md#pet) |
 
 <details>
     <summary>Click here to view an example packet</summary>

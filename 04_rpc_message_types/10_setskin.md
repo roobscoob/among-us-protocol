@@ -6,7 +6,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Skin ID | The ID of the player's new [`Skin`](../01_packet_structure/06_enums.md#skin) |
+| `packed uint32` | Skin ID | The ID of the player's new [`Skin`](../01_packet_structure/06_enums.md#skin) |
 
 <details>
     <summary>Click here to view an example packet</summary>
