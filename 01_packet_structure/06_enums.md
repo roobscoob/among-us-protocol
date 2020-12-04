@@ -252,6 +252,7 @@ This refers to the customizable pets that a player can be accompanied by.
 | `8` | `ELLIE_ROSE` |
 | `9` | `SQUIG` |
 | `10` | `BEDCRAB` |
+| `11` | `GLITCH` |
 
 ### `Skin`
 
