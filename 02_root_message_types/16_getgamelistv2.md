@@ -133,7 +133,7 @@ fa0010                      # Hazel message (tag of 0x10 = GetGameListV2)
             054c61757261    # Host Name: Laura
             06              # Number of Players: 6
             bc08            # Age: 18 minutes 4 seconds
-            02              # Map ID: 0 (The Skeld)
+            02              # Map ID: 2 (Polus)
             02              # Number of Impostors: 2
             0a              # Max Number of Players: 10
         160000              # Hazel message (game listing)
@@ -163,7 +163,7 @@ fa0010                      # Hazel message (tag of 0x10 = GetGameListV2)
             0548656e7279    # Host Name: Henry
             02              # Number of Players: 2
             59              # Age: 1 minute 29 seconds
-            02              # Map ID: 0 (The Skeld)
+            02              # Map ID: 2 (Polus)
             02              # Number of Impostors: 2
             0a              # Max Number of Players: 10
         160000              # Hazel message (game listing)
