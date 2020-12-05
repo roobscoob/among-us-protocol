@@ -160,7 +160,7 @@ Given the example `0b11110101` (`0xf5`) we can see that the second and fourth pa
 <details>
     <summary>Click here to view an example packet</summary>
 <pre>
-0c  00  07  ff
+0a  00  07  ff
 |/  |----/  |/
 |   |       |
 |   |       Missing Packets (none, all have been acknowledged)
