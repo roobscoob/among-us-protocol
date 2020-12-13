@@ -318,6 +318,8 @@ This refers to the various rooms and systems found throughout each map.
 
 This refers to the various types of tasks that a player can be assigned.
 
+For a list of all tasks on each map, see [Map-Specific IDs for Vents and Tasks](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md).
+
 | ID | Name |
 | --- | --- |
 | `0` | `SUBMIT_SAN` |
