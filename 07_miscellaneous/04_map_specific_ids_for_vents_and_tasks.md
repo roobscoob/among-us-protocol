@@ -37,37 +37,37 @@ All vents in the tables below include an X and Y coordinate which can be used in
 
 ##### Tasks
 
-| ID | Description |
-| --- | --- |
-| `0` | Admin: Swipe Card |
-| `1` | Electrical: Fix Wiring |
-| `2` | Weapons: Clear Asteroids |
-| `3` | Engines: Align Engine Output |
-| `4` | Medbay: Submit Scan |
-| `5` | Medbay: Inspect Sample |
-| `6` | Storage: Fuel Engines |
-| `7` | Reactor: Start Reactor |
-| `8` | O2: Empty Chute |
-| `9` | Cafeteria: Empty Garbage |
-| `10` | Communications: Download Data |
-| `11` | Electrical: Calibrate Distributor |
-| `12` | Navigation: Chart Course |
-| `13` | O2: Clean O2 Filter |
-| `14` | Reactor: Unlock Manifolds |
-| `15` | Electrical: Download Data |
-| `16` | Navigation: Stabilize Steering |
-| `17` | Weapons: Download Data |
-| `18` | Shields: Prime Shields |
-| `19` | Cafeteria: Download Data |
-| `20` | Navigation: Download Data |
-| `21` | Electrical: Divert Power to Shields |
-| `22` | Electrical: Divert Power to Weapons |
-| `23` | Electrical: Divert Power to Communications |
-| `24` | Electrical: Divert Power to Upper Engine |
-| `25` | Electrical: Divert Power to O2 |
-| `26` | Electrical: Divert Power to Navigation |
-| `27` | Electrical: Divert Power to Lower Engine |
-| `28` | Electrical: Divert Power to Security |
+| ID | Description | [`TaskType`](../01_packet_structure/06_enums.md#tasktype) | Length | Is Visual |
+| --- | --- | --- | --- | --- |
+| `0` | Admin: Swipe Card | `SWIPE_CARD` | Common | &#x2716; |
+| `1` | Electrical: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
+| `2` | Weapons: Clear Asteroids | `CLEAR_ASTEROIDS` | Long | &#x2714; |
+| `3` | Engines: Align Engine Output | `ALIGN_ENGINE_OUTPUT` | Short | &#x2716; |
+| `4` | Medbay: Submit Scan | `SUBMIT_SAN` | Long | &#x2714; |
+| `5` | Medbay: Inspect Sample | `INSPECT_SAMPLE` | Long | &#x2716; |
+| `6` | Storage: Fuel Engines | `FUEL_ENGINES` | Long | &#x2716; |
+| `7` | Reactor: Start Reactor | `START_REACTOR` | Long | &#x2716; |
+| `8` | O2: Empty Chute | `EMPTY_CHUTE` | Long | &#x2714; |
+| `9` | Cafeteria: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2714; |
+| `10` | Communications: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `11` | Electrical: Calibrate Distributor | `CALIBRATE_DISTRIBUTOR` | Short | &#x2716; |
+| `12` | Navigation: Chart Course | `CHART_COURSE` | Short | &#x2716; |
+| `13` | O2: Clean O2 Filter | `CLEAN_O2_FILTER` | Short | &#x2716; |
+| `14` | Reactor: Unlock Manifolds | `UNLOCK_MANIFOLDS` | Short | &#x2716; |
+| `15` | Electrical: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `16` | Navigation: Stabilize Steering | `STABILIZE_STEERING` | Short | &#x2716; |
+| `17` | Weapons: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `18` | Shields: Prime Shields | `PRIME_SHIELDS` | Short | &#x2714; |
+| `19` | Cafeteria: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `20` | Navigation: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `21` | Electrical: Divert Power to Shields | `DIVERT_POWER` | Short | &#x2716; |
+| `22` | Electrical: Divert Power to Weapons | `DIVERT_POWER` | Short | &#x2716; |
+| `23` | Electrical: Divert Power to Communications | `DIVERT_POWER` | Short | &#x2716; |
+| `24` | Electrical: Divert Power to Upper Engine | `DIVERT_POWER` | Short | &#x2716; |
+| `25` | Electrical: Divert Power to O2 | `DIVERT_POWER` | Short | &#x2716; |
+| `26` | Electrical: Divert Power to Navigation | `DIVERT_POWER` | Short | &#x2716; |
+| `27` | Electrical: Divert Power to Lower Engine | `DIVERT_POWER` | Short | &#x2716; |
+| `28` | Electrical: Divert Power to Security | `DIVERT_POWER` | Short | &#x2716; |
 
 ### Mira HQ
 
@@ -91,34 +91,34 @@ All vents in the tables below include an X and Y coordinate which can be used in
 
 ##### Tasks
 
-| ID | Description |
-| --- | --- |
-| `0` | Hallway: Fix Wiring |
-| `1` | Admin: Enter ID Code |
-| `2` | Medbay: Submit Scan |
-| `3` | Balcony: Clear Asteroids |
-| `4` | Electrical: Divert Power to Admin |
-| `5` | Electrical: Divert Power to Cafeteria |
-| `6` | Electrical: Divert Power to Communications |
-| `7` | Electrical: Divert Power to Launchpad |
-| `8` | Electrical: Divert Power to Medbay |
-| `9` | Electrical: Divert Power to Office |
-| `10` | Storage: Water Plants |
-| `11` | Reactor: Start Reactor |
-| `12` | Electrical: Divert Power to Greenhouse |
-| `13` | Admin: Chart Course |
-| `14` | Greenhouse: Clean O2 Filter |
-| `15` | Launchpad: Fuel Engines |
-| `16` | Laboratory: Assemble Artifact |
-| `17` | Laboratory: Sort Samples |
-| `18` | Admin: Prime Shields |
-| `19` | Cafeteria: Empty Garbage |
-| `20` | Balcony: Measure Weather |
-| `21` | Electrical: Divert Power to Laboratory |
-| `22` | Cafeteria: Buy Beverage |
-| `23` | Office: Process Data |
-| `24` | Launchpad: Run Diagnostics |
-| `25` | Reactor: Unlock Manifolds |
+| ID | Description | [`TaskType`](../01_packet_structure/06_enums.md#tasktype) | Length | Is Visual |
+| --- | --- | --- | --- | --- |
+| `0` | Hallway: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
+| `1` | Admin: Enter ID Code | `ENTER_ID_CODE` | Common | &#x2716; |
+| `2` | Medbay: Submit Scan | `SUBMIT_SAN` | Long | &#x2714; |
+| `3` | Balcony: Clear Asteroids | `CLEAR_ASTEROIDS` | Long | &#x2716; |
+| `4` | Electrical: Divert Power to Admin | `DIVERT_POWER` | Short | &#x2716; |
+| `5` | Electrical: Divert Power to Cafeteria | `DIVERT_POWER` | Short | &#x2716; |
+| `6` | Electrical: Divert Power to Communications | `DIVERT_POWER` | Short | &#x2716; |
+| `7` | Electrical: Divert Power to Launchpad | `DIVERT_POWER` | Short | &#x2716; |
+| `8` | Electrical: Divert Power to Medbay | `DIVERT_POWER` | Short | &#x2716; |
+| `9` | Electrical: Divert Power to Office | `DIVERT_POWER` | Short | &#x2716; |
+| `10` | Storage: Water Plants | `WATER_PLANTS` | Long | &#x2716; |
+| `11` | Reactor: Start Reactor | `START_REACTOR` | Long | &#x2716; |
+| `12` | Electrical: Divert Power to Greenhouse | `DIVERT_POWER` | Short | &#x2716; |
+| `13` | Admin: Chart Course | `CHART_COURSE` | Short | &#x2716; |
+| `14` | Greenhouse: Clean O2 Filter | `CLEAN_O2_FILTER` | Short | &#x2716; |
+| `15` | Launchpad: Fuel Engines | `FUEL_ENGINES` | Short | &#x2716; |
+| `16` | Laboratory: Assemble Artifact | `ASSEMBLE_ARTIFACT` | Short | &#x2716; |
+| `17` | Laboratory: Sort Samples | `SORT_SAMPLES` | Short | &#x2716; |
+| `18` | Admin: Prime Shields | `PRIME_SHIELDS` | Short | &#x2716; |
+| `19` | Cafeteria: Empty Garbage | `EMPTY_GARBAGE` | Short | &#x2716; |
+| `20` | Balcony: Measure Weather | `MEASURE_WEATHER` | Short | &#x2716; |
+| `21` | Electrical: Divert Power to Laboratory | `DIVERT_POWER` | Short | &#x2716; |
+| `22` | Cafeteria: Buy Beverage | `BUY_BEVERAGE` | Short | &#x2716; |
+| `23` | Office: Process Data | `PROCESS_DATA` | Short | &#x2716; |
+| `24` | Launchpad: Run Diagnostics | `RUN_DIAGNOSTICS` | Long | &#x2716; |
+| `25` | Reactor: Unlock Manifolds | `UNLOCK_MANIFOLDS` | Short | &#x2716; |
 
 ### Polus
 
@@ -141,41 +141,41 @@ All vents in the tables below include an X and Y coordinate which can be used in
 
 ##### Tasks
 
-| ID | Description |
-| --- | --- |
-| `0` | Office: Swipe Card |
-| `1` | Dropship: Insert Keys |
-| `2` | Office: Scan Boarding Pass |
-| `3` | Electrical: Fix Wiring |
-| `4` | Weapons: Download Data |
-| `5` | Office: Download Data |
-| `6` | Electrical: Download Data |
-| `7` | Specimen Room: Download Data |
-| `8` | O2: Download Data |
-| `9` | Specimen Room: Start Reactor |
-| `10` | Storage: Fuel Engines |
-| `11` | Boiler Room: Open Waterways |
-| `12` | Medbay: Inspect Sample |
-| `13` | Boiler Room: Replace Water Jug |
-| `14` | Outside: Fix Weather Node Node_GI |
-| `15` | Outside: Fix Weather Node Node_IRO |
-| `16` | Outside: Fix Weather Node Node_PD |
-| `17` | Outside: Fix Weather Node Node_TB |
-| `18` | Communications: Reboot WiFi |
-| `19` | O2: Monitor Tree |
-| `20` | Specimen Room: Unlock Manifolds |
-| `21` | Specimen Room: Store Artifacts |
-| `22` | O2: Fill Canisters |
-| `23` | O2: Empty Garbage |
-| `24` | Dropship: Chart Course |
-| `25` | Medbay: Submit Scan |
-| `26` | Weapons: Clear Asteroids |
-| `27` | Outside: Fix Weather Node Node_CA |
-| `28` | Outside: Fix Weather Node Node_MLG |
-| `29` | Laboratory: Align Telescope |
-| `30` | Laboratory: Repair Drill |
-| `31` | Laboratory: Record Temperature |
-| `32` | Outside: Record Temperature |
+| ID | Description | [`TaskType`](../01_packet_structure/06_enums.md#tasktype) | Length | Is Visual |
+| --- | --- | --- | --- | --- |
+| `0` | Office: Swipe Card | `SWIPE_CARD` | Common | &#x2716; |
+| `1` | Dropship: Insert Keys | `INSERT_KEYS` | Common | &#x2716; |
+| `2` | Office: Scan Boarding Pass | `SCAN_BOARDING_PASS` | Common | &#x2716; |
+| `3` | Electrical: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
+| `4` | Weapons: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `5` | Office: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `6` | Electrical: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `7` | Specimen Room: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `8` | O2: Download Data | `UPLOAD_DATA` | Short | &#x2716; |
+| `9` | Specimen Room: Start Reactor | `START_REACTOR` | Long | &#x2716; |
+| `10` | Storage: Fuel Engines | `FUEL_ENGINES` | Long | &#x2716; |
+| `11` | Boiler Room: Open Waterways | `OPEN_WATERWAYS` | Long | &#x2716; |
+| `12` | Medbay: Inspect Sample | `INSPECT_SAMPLE` | Long | &#x2716; |
+| `13` | Boiler Room: Replace Water Jug | `REPLACE_WATER_JUG` | Long | &#x2716; |
+| `14` | Outside: Fix Weather Node Node_GI | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
+| `15` | Outside: Fix Weather Node Node_IRO | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
+| `16` | Outside: Fix Weather Node Node_PD | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
+| `17` | Outside: Fix Weather Node Node_TB | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
+| `18` | Communications: Reboot WiFi | `REBOOT_WIFI` | Long | &#x2716; |
+| `19` | O2: Monitor Tree | `MONITOR_O2` | Short | &#x2716; |
+| `20` | Specimen Room: Unlock Manifolds | `UNLOCK_MANIFOLDS` | Short | &#x2716; |
+| `21` | Specimen Room: Store Artifacts | `STORE_ARTIFACTS` | Short | &#x2716; |
+| `22` | O2: Fill Canisters | `FILL_CANISTERS` | Short | &#x2716; |
+| `23` | O2: Empty Garbage | `EMPTY_GARBAGE` | Short | &#x2716; |
+| `24` | Dropship: Chart Course | `CHART_COURSE` | Short | &#x2716; |
+| `25` | Medbay: Submit Scan | `SUBMIT_SAN` | Short | &#x2714; |
+| `26` | Weapons: Clear Asteroids | `CLEAR_ASTEROIDS` | Short | &#x2714; |
+| `27` | Outside: Fix Weather Node Node_CA | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
+| `28` | Outside: Fix Weather Node Node_MLG | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
+| `29` | Laboratory: Align Telescope | `ALIGN_TELESCOPE` | Short | &#x2716; |
+| `30` | Laboratory: Repair Drill | `REPAIR_DRILL` | Short | &#x2716; |
+| `31` | Laboratory: Record Temperature | `RECORD_TEMPERATURE` | Short | &#x2716; |
+| `32` | Outside: Record Temperature | `RECORD_TEMPERATURE` | Short | &#x2716; |
 
 ---
 
