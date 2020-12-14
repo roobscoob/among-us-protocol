@@ -234,6 +234,7 @@ This refers to the customizable hats that a player can wear.
 | `91` | `NINJA_MASK` |
 | `92` | `RAM_HORNS` |
 | `93` | `MINI_CREWMATE_SNOWMAN` |
+| `94` | `GEOFF_KEIGHLEY_MASK` |
 
 ### `Pet`
 
