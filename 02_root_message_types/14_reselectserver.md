@@ -26,39 +26,39 @@ This is the structure of each [Hazel message](../01_packet_structure/03_the_stru
 
 ```
 00                                # Normal packet
-79000e                            # Hazel message (tag of 0x0e = ReselectServer)
+7a000e                            # Hazel message (tag of 0x0e = ReselectServer)
     01                            # Version: 1
     06                            # Master Servers Length: 6
-        110000                    # Hazel message (master server)
-            084d61737465722d35    # Name: Master-5
-            c63a6347              # IP Address: 198.58.99.71
-            0756                  # Port: 22023
-            a536                  # Number of Connections: 6949
-        110000                    # Hazel message (master server)
-            084d61737465722d36    # Name: Master-6
-            2d4f0506              # IP Address: 45.79.5.6
-            0756                  # Port: 22023
-            9b35                  # Number of Connections: 6811
-        100000                    # Hazel message (master server)
+        110000                    # Hazel message (master server)  
             084d61737465722d34    # Name: Master-4
-            2d4f284b              # IP Address: 45.79.40.75
+            c63a7339              # IP Address: 198.58.115.57
             0756                  # Port: 22023
-            2b                    # Number of Connections: 43
+            cb22                  # Number of Connections: 4427
         110000                    # Hazel message (master server)
             084d61737465722d33    # Name: Master-3
             2d4f284b              # IP Address: 45.79.40.75
             0756                  # Port: 22023
-            ed5c                  # Number of Connections: 11885
+            a215                  # Number of Connections: 2722
+        110000                    # Hazel message (master server)
+            084d61737465722d36    # Name: Master-6
+            2d4f0506              # IP Address: 45.79.5.6
+            0756                  # Port: 22023
+            bd25                  # Number of Connections: 4797
         110000                    # Hazel message (master server)
             084d61737465722d32    # Name: Master-2
             68ed87ba              # IP Address: 104.237.135.186
             0756                  # Port: 22023
-            b332                  # Number of Connections: 6451
+            a414                  # Number of Connections: 2596
+        110000                    # Hazel message (master server)
+            084d61737465722d35    # Name: Master-5
+            c63a6347              # IP Address: 198.58.99.71
+            0756                  # Port: 22023
+            c022                  # Number of Connections: 4416
         110000                    # Hazel message (master server)
             084d61737465722d31    # Name: Master-1
-            68ed87ba              # IP Address: 104.237.135.186
+            3274012a              # IP Address: 50.116.1.42
             0756                  # Port: 22023
-            9a02                  # Number of Connections: 282
+            ca1d                  # Number of Connections: 3786
 ```
 </details>
 
