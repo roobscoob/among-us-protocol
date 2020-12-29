@@ -27,7 +27,7 @@ This is the structure of each [Hazel message](../01_packet_structure/03_the_stru
 ```
 00                                # Normal packet
 79000e                            # Hazel message (tag of 0x0e = ReselectServer)
-    01                            # Unknown
+    01                            # Version: 1
     06                            # Master Servers Length: 6
         110000                    # Hazel message (master server)
             084d61737465722d35    # Name: Master-5
