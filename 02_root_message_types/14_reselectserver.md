@@ -6,7 +6,7 @@ This message is sent from the server to the client when loading the game list, c
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | *Unknown* | An unknown and *unused* value that has so far been observed to always be `0x01` |
+| `byte` | Version | An *unused* version number. The current version is 1 |
 | `packed uint32` | Master Servers Length | The number of master servers in this message |
 | `Message[n]` | Master Servers | A list of [Hazel messages](../01_packet_structure/03_the_structure_of_a_hazel_message.md), each containing one master server for the selected region, where length `n` is defined in the previous field |
 
