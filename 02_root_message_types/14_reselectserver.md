@@ -19,7 +19,7 @@ This is the structure of each [Hazel message](../01_packet_structure/03_the_stru
 | `String` | Name | The name of the master server |
 | `IP Address` | IP Address | The IP address of the server |
 | `uint16` | Port | The port that the server is listening on |
-| `packed uint32` | Number of Connections | The number of connections currently connected to the server |
+| `packed uint32` | Number of Connections | The number of clients currently connected to the server |
 
 <details>
     <summary>Click here to view an example packet</summary>
