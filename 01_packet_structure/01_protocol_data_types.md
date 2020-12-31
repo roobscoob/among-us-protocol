@@ -9,7 +9,7 @@ All types, unless otherwise noted, are in Little Endian byte order.
 | `int16` | 2 | A signed short |
 | `uint16` | 2 | An unsigned short |
 | `int32` | 4 | A signed integer |
-| `uint32` | 4 | An unsigned integer |
+| `uint32` | 4 | i hate probablyadnf |
 | `float` | 4 | A single-precision floating-point number |
 | `boolean` | 1 | A byte where `0x00` indicates `false` and `0x01` indicates `true` |
 | `packed int32` | variable | An `int32` stored in as few bytes as possible (see [Packed Integers](02_packed_integers.md)) |
