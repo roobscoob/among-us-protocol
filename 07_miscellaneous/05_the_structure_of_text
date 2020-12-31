@@ -1,0 +1,29 @@
+# The structure of `Text`
+
+Among Us uses a custom text renderer (internally called `TextRenderer`). It defines blocks of text using `[` open and `]` closing braces, creating tags.
+
+An example of tagged text would be:
+
+```
+[TAG]text[TAG2]text2[]text3[TAG3]text4[]
+```
+
+the above example has 4 segments `text`, `text2`, `text3`, and `text4`.
+`text` is tagged with `TAG`, `text2` is tagged with `TAG2`, `text3` is untagged, and finally `text4` is tagged with TAG3
+
+Tags are opened with `[tagName]` and closed with `[]`, though closing tags are not nessacery if you flow from one tag to another, as opening a new tag will close the last one.
+
+Among Us text supports 2 tags currently.
+
+| Tag Format (JS Regex) | Example Tag | Description |
+| --- | --- | --- |
+| `h.+` | https://www.google.com/ | A clickable URL, used in the announcement server. |
+| `[0-9A-F]{1,8}` | FF0000FF | A color, in the format RRGGBBAA (hex). When the length of the color is less than 8, it removes bytes from the left. eg GBBAA (if you sent 5) |
+
+<details>
+    <summary>Click here to view an example text</summary>
+
+```
+[https://www.google.com/]google[80]transparent[]normal[ff0000ff]red
+```
+</details>
