@@ -146,13 +146,13 @@ int doorId = amount & 0x1f;
 | --- | --- |
 | `0` | Outside to Electrical |
 | `1` | Inside Electrical |
-| `2` | O2-to-Electrical Hallway (top) |
-| `3` | O2-to-Electrical Hallway (bottom) |
+| `2` | O2-to-Electrical Hallway (Top) |
+| `3` | O2-to-Electrical Hallway (Bottom) |
 | `4` | Outside to O2 |
 | `5` | Weapons |
 | `6` | Communications |
-| `7` | Office (right) |
-| `8` | Office (left) |
+| `7` | Office (Right) |
+| `8` | Office (Left) |
 | `9` | Drill |
 | `10` | Outside to Medbay |
 | `11` | Storage |
