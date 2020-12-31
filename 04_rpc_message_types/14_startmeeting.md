@@ -6,7 +6,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `byte` | Victim Player ID | The ID of the player whose body was found<br><br>**Note**: This will be 255 (`0xff`) if pressing the emergency meeting button |
+| `byte` | Victim Player ID | The ID of the player whose body was found<br><br>**Note**: This will be 255 (`0xff`) if pressing the emergency meeting button, however when sent any invalid player ID can be used to display a button press animation |
 
 <details>
     <summary>Click here to view an example packet</summary>
