@@ -7,7 +7,7 @@ This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/
 | Type | Name | Description |
 | --- | --- | --- |
 | `boolean` | Is Scanning | Whether or not the player is currently being scanned |
-| `byte` | Count | *Unknown*<br><br>This value is incremented per-player every time this message is sent, and is believed to be used to keep the clients in sync with one another in regard to controlling the scanner animation |
+| `byte` | Sequence ID | This value is incremented per-player every time this message is sent, and is used to keep the scanning animation in sync across all clients |
 
 <details>
     <summary>Click here to view an example packet</summary>
