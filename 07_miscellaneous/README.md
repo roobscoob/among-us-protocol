@@ -15,7 +15,7 @@
     1. [Polus](04_map_specific_ids_for_vents_and_tasks.md#polus)
         1. [Vents](04_map_specific_ids_for_vents_and_tasks.md#vents-2)
         1. [Tasks](04_map_specific_ids_for_vents_and_tasks.md#tasks-2)
-
+1. [The structure of `Text`](05_the_structure_of_text.md)
 ---
 
 > Previous section: [The `SystemType` Implementations](../06_the_systemtype_implementations/README.md)
