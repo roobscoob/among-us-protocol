@@ -1,8 +1,8 @@
 # `0x0e` StartMeeting
 
-This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game when calling an emergency meeting or reporting a dead body.
+This message is sent by the host's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game after receiving a [`0x0b` ReportDeadBody](11_reportdeadbody.md) message from a client.
 
-> **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
+> **Note**: This message is sent from the host of a game to all clients via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
 | Type | Name | Description |
 | --- | --- | --- |
