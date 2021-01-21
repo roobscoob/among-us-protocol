@@ -74,6 +74,8 @@ All vents in the tables below include an X and Y coordinate which can be used in
 ##### Vents
 
 > **Note**: *Mira HQ* vent IDs start at `1`.
+>
+> ![Forte quote](../images/mirahq_vents_quote.png)
 
 | ID | Location | Coordinates `(x, y)` |
 | --- | --- | --- |
