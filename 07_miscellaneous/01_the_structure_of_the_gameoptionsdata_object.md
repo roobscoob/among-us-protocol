@@ -24,7 +24,7 @@
 | `boolean` | Confirm Ejects | 3 | `true` | Whether or not the game will say if the ejected player was or wasn't an impostor |
 | `boolean` | Visual Tasks | 3 | `true` | Whether or not tasks which play animations (e.g. Clear Asteroids) will play those animations to other players |
 | `boolean` | Anonymous Votes | 4 | `false` | Whether or not the votes on the meeting HUD will show the color of the players who voted |
-| `byte` | Task Bar Updates | 4 | `0` | When, if at all, the task bar will update to show how many tasks have been completed (see [`TaskBarUpdate`](../01_packet_structure/06_enums.md#taskbarupdate)) |
+| `byte` | Task Bar Updates | 4 | `0` | When, if at all, the task bar will update to show how many tasks have been completed (see [`TaskBarMode`](../01_packet_structure/06_enums.md#taskbarmode)) |
 
 ---
 

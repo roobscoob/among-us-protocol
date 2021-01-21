@@ -14,7 +14,7 @@
 1. [`Skin`](#skin)
 1. [`SystemType`](#systemtype)
 1. [`TaskType`](#tasktype)
-1. [`TaskBarUpdate`](#taskbarupdate)
+1. [`TaskBarMode`](#taskbarmode)
 1. [`SpawnType`](#spawntype)
 1. [`SpawnFlag`](#spawnflag)
 1. [`KillDistances`](#killdistances)
@@ -367,7 +367,7 @@ For a list of all tasks on each map, see [Map-Specific IDs for Vents and Tasks](
 | `41` | `RECORD_TEMPERATURE` |
 | `42` | `REBOOT_WIFI` |
 
-### `TaskBarUpdate`
+### `TaskBarMode`
 
 This refers to the `Task Bar Updates` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object.
 

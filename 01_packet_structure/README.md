@@ -27,7 +27,7 @@
     1. [`Skin`](06_enums.md#skin)
     1. [`SystemType`](06_enums.md#systemtype)
     1. [`TaskType`](06_enums.md#tasktype)
-    1. [`TaskBarUpdate`](06_enums.md#taskbarupdate)
+    1. [`TaskBarMode`](06_enums.md#taskbarmode)
     1. [`SpawnType`](06_enums.md#spawntype)
     1. [`SpawnFlag`](06_enums.md#spawnflag)
     1. [`KillDistances`](06_enums.md#killdistances)

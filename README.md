@@ -44,7 +44,7 @@ udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and 
         1. [`Skin`](01_packet_structure/06_enums.md#skin)
         1. [`SystemType`](01_packet_structure/06_enums.md#systemtype)
         1. [`TaskType`](01_packet_structure/06_enums.md#tasktype)
-        1. [`TaskBarUpdate`](01_packet_structure/06_enums.md#taskbarupdate)
+        1. [`TaskBarMode`](01_packet_structure/06_enums.md#taskbarmode)
         1. [`SpawnType`](01_packet_structure/06_enums.md#spawntype)
         1. [`SpawnFlag`](01_packet_structure/06_enums.md#spawnflag)
         1. [`KillDistances`](01_packet_structure/06_enums.md#killdistances)
