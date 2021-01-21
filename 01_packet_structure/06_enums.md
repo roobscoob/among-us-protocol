@@ -47,7 +47,6 @@ This refers to the condition that caused a player to be disconnected from a game
 | `1` | `GAME_FULL` |
 | `2` | `GAME_STARTED` |
 | `3` | `GAME_NOT_FOUND` |
-| `4` | `CUSTOM_MESSAGE_1` |
 | `5` | `INCORRECT_VERSION` |
 | `6` | `BANNED` |
 | `7` | `KICKED` |
