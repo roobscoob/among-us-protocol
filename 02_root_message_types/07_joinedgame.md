@@ -22,7 +22,7 @@ This message is sent from the host of a game to a client after the client has su
     d3503f8a        # Game ID: -1975562029 (REDSUS)
     412d2400        # Joined Client ID: 2370881
     86252400        # Host Client ID: 2368902
-    05              # Other Client IDs Length: 9
+    05              # Other Client IDs Length: 5
         86cb9001    # Other Client IDs[0]: 2368902
         fecc9001    # Other Client IDs[1]: 2369150
         f8d99001    # Other Client IDs[2]: 2370808
