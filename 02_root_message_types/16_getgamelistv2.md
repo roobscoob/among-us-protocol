@@ -46,7 +46,7 @@ This message is sent from the server to the client after searching for public ga
 | Type | Name | Description |
 | --- | --- | --- |
 | `Message` (*Optional*) | Game Counts | An optional [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x01` that contains the number of games for each map<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`uint32`</td><td>The Skeld</td><td>The number of games being played on *The Skeld*</td></tr><tr><td>`uint32`</td><td>Mira HQ</td><td>The number of games being played on *Mira HQ*</td></tr><tr><td>`uint32`</td><td>Polus</td><td>The number of games being played on *Polus*</td></tr></tbody></table> |
-| `Message` | Game List | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x00` that contains multiple nested Hazel messages (one for each public game) |
+| `Message` (*Optional*) | Game List | A [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x00` that contains multiple nested Hazel messages (one for each public game) |
 
 ### The `Game List` Message Structure
 
