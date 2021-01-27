@@ -43,7 +43,7 @@ All vents in the tables below include an X and Y coordinate which can be used in
 | `1` | Electrical: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
 | `2` | Weapons: Clear Asteroids | `CLEAR_ASTEROIDS` | Long | &#x2714; |
 | `3` | Engines: Align Engine Output | `ALIGN_ENGINE_OUTPUT` | Short | &#x2716; |
-| `4` | Medbay: Submit Scan | `SUBMIT_SAN` | Long | &#x2714; |
+| `4` | Medbay: Submit Scan | `SUBMIT_SCAN` | Long | &#x2714; |
 | `5` | Medbay: Inspect Sample | `INSPECT_SAMPLE` | Long | &#x2716; |
 | `6` | Storage: Fuel Engines | `FUEL_ENGINES` | Long | &#x2716; |
 | `7` | Reactor: Start Reactor | `START_REACTOR` | Long | &#x2716; |
