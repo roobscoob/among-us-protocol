@@ -9,7 +9,7 @@
     1. [The Skeld](04_map_specific_ids_for_vents_and_tasks.md#the-skeld)
         1. [Vents](04_map_specific_ids_for_vents_and_tasks.md#vents)
         1. [Tasks](04_map_specific_ids_for_vents_and_tasks.md#tasks)
-    1. [Mira HQ](04_map_specific_ids_for_vents_and_tasks.md#mira-hq)
+    1. [MIRA HQ](04_map_specific_ids_for_vents_and_tasks.md#mira-hq)
         1. [Vents](04_map_specific_ids_for_vents_and_tasks.md#vents-1)
         1. [Tasks](04_map_specific_ids_for_vents_and_tasks.md#tasks-1)
     1. [Polus](04_map_specific_ids_for_vents_and_tasks.md#polus)

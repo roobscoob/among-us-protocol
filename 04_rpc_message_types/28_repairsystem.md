@@ -73,7 +73,7 @@ if ((amount & 0x40) != 0) {
 | `0` | Admin |
 | `1` | O2 |
 
-###### Mira HQ O2 Consoles
+###### MIRA HQ O2 Consoles
 
 | ID | Location |
 | --- | --- |
@@ -82,7 +82,7 @@ if ((amount & 0x40) != 0) {
 
 #### `REACTOR` and `LABORATORY`
 
-The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *Mira HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player interacts with a console.
+The `SystemType` will be that of `SystemType.REACTOR` (for *Reactor* on *The Skeld* and *MIRA HQ*) or `SystemType.LABORATORY` (for *Seismic* on *Polus*) when a player interacts with a console.
 
 ```java
 // The ID of the reactor/seismic console
@@ -104,7 +104,7 @@ if ((amount & 0x40) != 0) {
 | `0` | Top Reactor |
 | `1` | Bottom Reactor |
 
-###### Mira HQ Reactor Consoles
+###### MIRA HQ Reactor Consoles
 
 | ID | Location |
 | --- | --- |
@@ -159,7 +159,7 @@ int doorId = amount & 0x1f;
 
 #### `COMMUNICATIONS`
 
-The `System ID` will be that of `SystemType.COMMUNICATIONS` when a player repairs communications on any of the maps, as well as when the player opens or closes a communications console on *Mira HQ*.
+The `System ID` will be that of `SystemType.COMMUNICATIONS` when a player repairs communications on any of the maps, as well as when the player opens or closes a communications console on *MIRA HQ*.
 
 ```java
 switch (currentMap) {
@@ -186,7 +186,7 @@ switch (currentMap) {
 }
 ```
 
-###### Mira HQ Communications Consoles
+###### MIRA HQ Communications Consoles
 
 | ID | Location |
 | --- | --- |
@@ -199,7 +199,7 @@ The `System ID` will be that of `SystemType.DECONTAMINATION` when a player opens
 
 **Note**: The conditions which describe a decontamination door being opened from inside decontamination are only ever sent if a player manually opens a decontamination door from the inside. It will not be sent if a player opens a decontamination door from the outside, enters decontamination, and exits through the other door after it opens on its own, because the player only ever opened one door.
 
-###### Mira HQ: `SystemType.DECONTAMINATION`
+###### MIRA HQ: `SystemType.DECONTAMINATION`
 
 | Value of `amount` | Condition |
 | --- | --- |

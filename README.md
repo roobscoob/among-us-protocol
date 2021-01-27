@@ -140,7 +140,7 @@ udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and 
         1. [The Skeld](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#the-skeld)
             1. [Vents](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#vents)
             1. [Tasks](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#tasks)
-        1. [Mira HQ](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#mira-hq)
+        1. [MIRA HQ](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#mira-hq)
             1. [Vents](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#vents-1)
             1. [Tasks](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#tasks-1)
         1. [Polus](07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md#polus)

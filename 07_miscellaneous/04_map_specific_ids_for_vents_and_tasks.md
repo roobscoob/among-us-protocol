@@ -7,7 +7,7 @@ All vents in the tables below include an X and Y coordinate which can be used in
 1. [The Skeld](#the-skeld)
     1. [Vents](#vents)
     1. [Tasks](#tasks)
-1. [Mira HQ](#mira-hq)
+1. [MIRA HQ](#mira-hq)
     1. [Vents](#vents-1)
     1. [Tasks](#tasks-1)
 1. [Polus](#polus)
@@ -69,11 +69,11 @@ All vents in the tables below include an X and Y coordinate which can be used in
 | `27` | Electrical: Divert Power to Lower Engine | `DIVERT_POWER` | Short | &#x2716; |
 | `28` | Electrical: Divert Power to Security | `DIVERT_POWER` | Short | &#x2716; |
 
-### Mira HQ
+### MIRA HQ
 
 ##### Vents
 
-> **Note**: *Mira HQ* vent IDs start at `1`.
+> **Note**: *MIRA HQ* vent IDs start at `1`.
 >
 > ![Forte quote](../images/mirahq_vents_quote.png)
 

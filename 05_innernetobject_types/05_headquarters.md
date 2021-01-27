@@ -1,12 +1,12 @@
 # `Headquarters`
 
-The `Headquarters` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *Mira HQ* and despawned at the end of the game. It holds the map for *Mira HQ* and is responsible for controlling the interactive systems throughout the map.
+The `Headquarters` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *MIRA HQ* and despawned at the end of the game. It holds the map for *MIRA HQ* and is responsible for controlling the interactive systems throughout the map.
 
 > **Note**: See [`ShipStatus`](00_shipstatus.md) for *The Skeld*, or [`PlanetMap`](06_planetmap.md) for *Polus*.
 
-### All `SystemType`s for Mira HQ
+### All `SystemType`s for MIRA HQ
 
-The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *Mira HQ* and each should be handled when being spawned, serialized, and deserialized.
+The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) used on *MIRA HQ* and each should be handled when being spawned, serialized, and deserialized.
 
 | Type | Implementation | On Spawn | On Data |
 | --- | --- | --- | --- |
@@ -20,9 +20,9 @@ The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#sy
 
 ### Serialize
 
-> **Note**: Because `Headquarters` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Mira HQ*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `Headquarters` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *MIRA HQ*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
 
-When the `ShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Mira HQ*. For each type that is a part of *Mira HQ*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
+When the `ShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *MIRA HQ*. For each type that is a part of *MIRA HQ*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
@@ -43,7 +43,7 @@ if (isSpawning) {
 for (SystemType system : SystemType.values()) {
     // If the ShipStatus is being spawned
     if (isSpawning) {
-        // If Mira HQ has this SystemType...
+        // If MIRA HQ has this SystemType...
         if (miraSystems.containsKey(system)) {
             // ...then we should write (serialize) the data from the system
             miraSystems.get(system).serialize(writer);
@@ -67,9 +67,9 @@ if (isSpawning) {
 
 ### Deserialize
 
-> **Note**: Because `Headquarters` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Mira HQ*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `Headquarters` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *MIRA HQ*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
 
-When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Mira HQ*. For each type that is a part of *Mira HQ*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
+When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *MIRA HQ*. For each type that is a part of *MIRA HQ*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
 
 When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 
@@ -90,7 +90,7 @@ if (isSpawning) {
 for (SystemType system : SystemType.values()) {
     // If the ShipStatus is being spawned
     if (isSpawning) {
-        // If Mira HQ has this SystemType...
+        // If MIRA HQ has this SystemType...
         if (miraSystems.containsKey(system)) {
             // ...then we should read (deserialize) the data from the component message
             miraSystems.get(system).deserialize(reader);

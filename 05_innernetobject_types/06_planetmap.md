@@ -2,7 +2,7 @@
 
 The `PlanetMap` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *Polus* and despawned at the end of the game. It holds the map for *Polus* and is responsible for controlling the interactive systems throughout the map.
 
-> **Note**: See [`ShipStatus`](00_shipstatus.md) for *The Skeld*, or [`Headquarters`](05_headquarters.md) for *Mira HQ*.
+> **Note**: See [`ShipStatus`](00_shipstatus.md) for *The Skeld*, or [`Headquarters`](05_headquarters.md) for *MIRA HQ*.
 
 ### All `SystemType`s for Polus
 

@@ -51,7 +51,7 @@ This message has two main flows that depend on the state of the game:
 0003            # Nonce
 050001          # Hazel message (tag of 0x01 = JoinGame)
     d3503f8a    # Game ID: -1975562029 (REDSUS)
-    07          # Owned Maps: The Skeld, Mira HQ, Polus
+    07          # Owned Maps: The Skeld, MIRA HQ, Polus
 ```
 </details>
 
