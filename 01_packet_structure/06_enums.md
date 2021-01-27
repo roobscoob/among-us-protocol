@@ -322,7 +322,7 @@ For a list of all tasks on each map, see [Map-Specific IDs for Vents and Tasks](
 
 | ID | Name |
 | --- | --- |
-| `0` | `SUBMIT_SAN` |
+| `0` | `SUBMIT_SCAN` |
 | `1` | `PRIME_SHIELDS` |
 | `2` | `FUEL_ENGINES` |
 | `3` | `CHART_COURSE` |
