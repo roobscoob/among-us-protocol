@@ -97,7 +97,7 @@ All vents in the tables below include an X and Y coordinate which can be used in
 | --- | --- | --- | --- | --- |
 | `0` | Hallway: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
 | `1` | Admin: Enter ID Code | `ENTER_ID_CODE` | Common | &#x2716; |
-| `2` | Medbay: Submit Scan | `SUBMIT_SAN` | Long | &#x2714; |
+| `2` | Medbay: Submit Scan | `SUBMIT_SCAN` | Long | &#x2714; |
 | `3` | Balcony: Clear Asteroids | `CLEAR_ASTEROIDS` | Long | &#x2716; |
 | `4` | Electrical: Divert Power to Admin | `DIVERT_POWER` | Short | &#x2716; |
 | `5` | Electrical: Divert Power to Cafeteria | `DIVERT_POWER` | Short | &#x2716; |
@@ -170,7 +170,7 @@ All vents in the tables below include an X and Y coordinate which can be used in
 | `22` | O2: Fill Canisters | `FILL_CANISTERS` | Short | &#x2716; |
 | `23` | O2: Empty Garbage | `EMPTY_GARBAGE` | Short | &#x2716; |
 | `24` | Dropship: Chart Course | `CHART_COURSE` | Short | &#x2716; |
-| `25` | Medbay: Submit Scan | `SUBMIT_SAN` | Short | &#x2714; |
+| `25` | Medbay: Submit Scan | `SUBMIT_SCAN` | Short | &#x2714; |
 | `26` | Weapons: Clear Asteroids | `CLEAR_ASTEROIDS` | Short | &#x2714; |
 | `27` | Outside: Fix Weather Node Node_CA | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
 | `28` | Outside: Fix Weather Node Node_MLG | `ACTIVATE_WEATHER_NODES` | Long | &#x2716; |
