@@ -9,7 +9,7 @@ This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.
 | Type | Name | Description |
 | --- | --- | --- |
 | `byte` | Player ID | The ID of the player whose tasks are being set |
-| `packet uint32` | Tasks Length | The number of tasks |
+| `packed uint32` | Tasks Length | The number of tasks |
 | `byte[n]` | Tasks | A list of the map-specific task IDs, where length `n` is defined in the previous field |
 
 <details>
