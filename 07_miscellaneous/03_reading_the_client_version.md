@@ -25,10 +25,8 @@ To decode the version and retrieve the separate units, use a method similar to t
 
 ```java
 int year = floor(version / 25000)
-version %= 25000
-int month = floor(version / 1800)
-version %= 1800
-int day = floor(version / 50)
+int month = floor((version %= 25000) / 1800)
+int day = floor((version %= 1800) / 50)
 int revision = version % 50
 ```
 
