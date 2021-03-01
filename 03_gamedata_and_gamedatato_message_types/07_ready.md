@@ -16,7 +16,7 @@ This message is sent by the client to the host of a game as a response to the [`
 0069              # Nonce
 0a0005            # Hazel message (tag of 0x05 = GameData)
     d3503f8a      # Game ID: -1975562029 (REDSUS)
-    030007        # Hazel message (tag of 0x06 = Ready)
+    030007        # Hazel message (tag of 0x07 = Ready)
         828c13    # Ready Client ID: 312834
 ```
 </details>
