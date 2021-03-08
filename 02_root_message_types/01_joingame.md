@@ -41,7 +41,6 @@ This message has two main flows that depend on the state of the game:
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
-| `byte` | Owned Maps | A bitfield containing the IDs of each [`Map`](../01_packet_structure/06_enums.md#map) that the client owns<br><br>Since all maps are now free, this will always be `0x07` |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -49,9 +48,8 @@ This message has two main flows that depend on the state of the game:
 ```
 01              # Reliable packet
 0003            # Nonce
-050001          # Hazel message (tag of 0x01 = JoinGame)
+040001          # Hazel message (tag of 0x01 = JoinGame)
     d3503f8a    # Game ID: -1975562029 (REDSUS)
-    07          # Owned Maps: The Skeld, MIRA HQ, Polus
 ```
 </details>
 
