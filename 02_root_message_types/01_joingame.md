@@ -48,7 +48,7 @@ This message has two main flows that depend on the state of the game:
 ```
 01              # Reliable packet
 0003            # Nonce
-050001          # Hazel message (tag of 0x01 = JoinGame)
+040001          # Hazel message (tag of 0x01 = JoinGame)
     d3503f8a    # Game ID: -1975562029 (REDSUS)
 ```
 </details>
