@@ -1,3 +1,5 @@
+<p align="center"><img width="720" src="https://raw.githubusercontent.com/codyphobe/among-us-protocol/master/images/banner.png"></p>
+
 # Among Us Protocol Research
 
 Contained in this repo is my detailed explanation of the netcode behind Among Us, a game by Innersloth. Myself and others have spent countless hours scanning the game's decompiled source code as well as manually dissecting each and every packet sent by the game. Not all of this information will be correct, though it is safe to assume that almost all of it is, and those parts that I am uncertain of will be labeled as such.
