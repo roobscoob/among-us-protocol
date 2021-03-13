@@ -2,8 +2,6 @@
 
 Each `Vector2`, when sent over the network, has a pair of `uint16` fields: one for the X axis and one for the Y axis. Each of these values should be divided by `65535.0f` and passed in to a `Lerp` function, clamped between `0.0f` and `1.0f`, on a range of floats from `-50.0f` to `50.0f`. The result of the `Lerp` function will be the `float` value representing either the X or Y value of the `Vector2`.
 
-**Note:** previously (I guess [Client Version](../07_miscellaneous/03_reading_the_client_version.md) < 50530650 or more old) game using `-40.0f` to `40.0f` for float ranges instead of `-50.0f` to `50.0f`.
-
 Below is an example implementation in Java:
 
 ```java
