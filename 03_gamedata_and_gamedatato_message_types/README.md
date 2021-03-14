@@ -23,6 +23,7 @@ void parseGameData(MessageReader gameData) {
 1. [`0x06` SceneChange](06_scenechange.md)
 1. [`0x07` Ready](07_ready.md)
 1. [`0x08` ChangeSettings](08_changesettings.md)
+1. [`0xcd` ClientInfo](205_clientinfo.md)
 
 ---
 

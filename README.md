@@ -78,6 +78,7 @@ udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and 
     1. [`0x06` SceneChange](03_gamedata_and_gamedatato_message_types/06_scenechange.md)
     1. [`0x07` Ready](03_gamedata_and_gamedatato_message_types/07_ready.md)
     1. [`0x08` ChangeSettings](03_gamedata_and_gamedatato_message_types/08_changesettings.md)
+    1. [`0xcd` ClientInfo](03_gamedata_and_gamedatato_message_types/205_clientinfo.md)
 1. [`RPC` Message Types](04_rpc_message_types/README.md)
     1. [`0x00` PlayAnimation](04_rpc_message_types/00_playanimation.md)
     1. [`0x01` CompleteTask](04_rpc_message_types/01_completetask.md)
