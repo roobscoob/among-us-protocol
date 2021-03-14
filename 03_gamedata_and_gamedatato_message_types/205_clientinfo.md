@@ -2,7 +2,7 @@
 
 ### Client-to-Server
 
-This message is sent by the client to the server when joining the game and is used to identify the platform that the client is playing on.
+This message is sent by the client to the server when joining a game and is used to identify the platform that the client is playing on.
 
 | Type | Name | Description |
 | --- | --- | --- |
