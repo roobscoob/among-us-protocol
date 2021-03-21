@@ -6,8 +6,8 @@ This message is sent by the [`MeetingHud`](../05_innernetobject_types/01_meeting
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Vote States Length | The number of player voting states |
-| `byte[n]` | Vote States | A list of bitfields for each player's voting state, where length `n` is defined in the previous field |
+| `packed uint32` | Vote States Length | The largest playerId + 1 |
+| `byte[n]` | Vote States | A list of bitfields for each player's voting state, where length `n` is defined in the previous field. Use `0x00` if there is not a vote state to fill the current slot |
 | `byte` | Exiled Player ID | The ID of the player who was voted off<br><br>**Note**: This will be 255 (`0xff`) if no player was voted off |
 | `boolean` | Is Tie | Whether or not the meeting ended with a tie in votes |
 
