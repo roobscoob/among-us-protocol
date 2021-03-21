@@ -12,7 +12,7 @@ When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types
 | --- | --- | --- |
 | `packed uint32` | States Mask | A bitfield used to tell the game which player states are receiving data |
 
-After writing the mask, the game loops over all players in order (starting from player `0`) and checks if the player's ID is set on the mask. For each player that does have its ID set on the mask, the Hazel message writer containing the update data is passed in to the states's `serialize` method. Refer to the pseudocode below for an example.
+After writing the mask, the game loops over all players in order (starting from player `0`) and checks if the player's index is set on the mask. For each player that does have its index set on the mask, the Hazel message writer containing the update data is passed in to the states's `serialize` method. Refer to the pseudocode below for an example.
 
 ```java
 writer.writePackedUInt32(meetingHudNetId);
@@ -54,7 +54,7 @@ When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_typ
 | --- | --- | --- |
 | `packed uint32` | States Mask | A bitfield used to tell the game which player states are receiving data |
 
-After reading the mask, the game loops over all players in order (starting from player `0`) and checks if the player's ID is set on the mask. For each player that does have its ID set on the mask, the Hazel message containing the update data is passed in to the state's `deserialize` method. Refer to the pseudocode below for an example.
+After reading the mask, the game loops over all players in order (starting from player `0`) and checks if the player's index is set on the mask. For each player that does have its index set on the mask, the Hazel message containing the update data is passed in to the state's `deserialize` method. Refer to the pseudocode below for an example.
 
 ```java
 long meetingHudNetId = reader.readPackedUInt32();
