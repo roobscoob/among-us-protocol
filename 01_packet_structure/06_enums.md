@@ -4,22 +4,25 @@
 
 1. [`AlterGameTag`](#altergametag)
 1. [`ChatNoteType`](#chatnotetype)
-1. [`DisconnectReason`](#disconnectreason)
-1. [`GameKeywords`](#gamekeywords)
-1. [`GameOverReason`](#gameoverreason)
-1. [`Map`](#map)
 1. [`Color`](#color)
+1. [`DisconnectReason`](#disconnectreason)
+1. [`GameKeyword`](#gamekeyword)
+1. [`GameOverReason`](#gameoverreason)
+1. [`GameState`](#gamestate)
 1. [`Hat`](#hat)
+1. [`KillDistance`](#killdistance)
+1. [`LimboState`](#limbostate)
+1. [`Map`](#map)
 1. [`Pet`](#pet)
+1. [`QuickChatMode`](#quickchatmode)
+1. [`ReportOutcome`](#reportoutcome)
+1. [`ReportReason`](#reportreason)
 1. [`Skin`](#skin)
-1. [`SystemType`](#systemtype)
-1. [`TaskType`](#tasktype)
-1. [`TaskBarMode`](#taskbarmode)
-1. [`SpawnType`](#spawntype)
 1. [`SpawnFlag`](#spawnflag)
-1. [`KillDistances`](#killdistances)
-1. [`GameStates`](#gamestates)
-1. [`LimboStates`](#limbostates)
+1. [`SpawnType`](#spawntype)
+1. [`SystemType`](#systemtype)
+1. [`TaskBarMode`](#taskbarmode)
+1. [`TaskType`](#tasktype)
 
 ### `AlterGameTag`
 
@@ -36,83 +39,6 @@ This refers to the types of special chat bubbles that may be sent.
 | ID | Name |
 | --- | --- |
 | `0` | `DID_VOTE` |
-
-### `DisconnectReason`
-
-This refers to the condition that caused a player to be disconnected from a game.
-
-| ID | Name |
-| --- | --- |
-| `0` | `EXIT_GAME` |
-| `1` | `GAME_FULL` |
-| `2` | `GAME_STARTED` |
-| `3` | `GAME_NOT_FOUND` |
-| `5` | `INCORRECT_VERSION` |
-| `6` | `BANNED` |
-| `7` | `KICKED` |
-| `8` | `CUSTOM` |
-| `9` | `INVALID_NAME` |
-| `10` | `HACKING` |
-| `16` | `DESTROY` |
-| `17` | `ERROR` |
-| `18` | `INCORRECT_GAME` |
-| `19` | `SERVER_REQUEST` |
-| `20` | `SERVER_FULL` |
-| `207` | `FOCUS_LOST_BACKGROUND` |
-| `208` | `INTENTIONAL_LEAVING` |
-| `209` | `FOCUS_LOST` |
-| `210` | `NEW_CONNECTION` |
-
-### `GameKeywords`
-
-This refers to the primary language that a game's players will be speaking.
-
-| ID | Name |
-| --- | --- |
-| `0` | `ALL` |
-| `1` | `OTHER` |
-| `2` | `SPANISH` |
-| `4` | `KOREAN` |
-| `8` | `RUSSIAN` |
-| `16` | `PORTUGUESE` |
-| `32` | `ARABIC` |
-| `64` | `FILIPINO` |
-| `128` | `POLISH` |
-| `256` | `ENGLISH` |
-
-### `GameOverReason`
-
-This refers to the condition that caused a game to finish.
-
-| ID | Name |
-| --- | --- |
-| `0` | `CREWMATES_BY_VOTE` |
-| `1` | `CREWMATES_BY_TASK` |
-| `2` | `IMPOSTORS_BY_VOTE` |
-| `3` | `IMPOSTORS_BY_KILL` |
-| `4` | `IMPOSTORS_BY_SABOTAGE` |
-| `5` | `IMPOSTOR_DISCONNECT` |
-| `6` | `CREWMATE_DISCONNECT` |
-
-### `Map`
-
-This refers to the available maps that games can be played on.
-
-When used in a bitfield, shift `1` to left by the map's ID.
-
-Example:
-
-```java
-// Searching for games on The Skeld (0) or Polus (2)
-
-(1 << 0) | (1 << 2) == 5
-```
-
-| ID | Name |
-| --- | --- |
-| `0` | `THE_SKELD` |
-| `1` | `MIRA_HQ` |
-| `2` | `POLUS` |
 
 ### `Color`
 
@@ -132,6 +58,74 @@ This refers to the customizable colors that a player can play as.
 | `9` | `BROWN` | `113, 73, 30` | `94, 38, 21` |
 | `10` | `CYAN` | `56, 255, 221` | `36, 169, 191` |
 | `11` | `LIGHT_GREEN` | `80, 240, 57` | `21, 168, 66` |
+
+### `DisconnectReason`
+
+This refers to the condition that caused a player to be disconnected from a game.
+
+| ID | Name |
+| --- | --- |
+| `0` | `EXIT_GAME` |
+| `1` | `GAME_FULL` |
+| `2` | `GAME_STARTED` |
+| `3` | `GAME_NOT_FOUND` |
+| `5` | `INCORRECT_VERSION` |
+| `6` | `BANNED` |
+| `7` | `KICKED` |
+| `8` | `CUSTOM` |
+| `9` | `INVALID_NAME` |
+| `10` | `HACKING` |
+| `11` | `NOT_AUTHORIZED` |
+| `16` | `DESTROY` |
+| `17` | `ERROR` |
+| `18` | `INCORRECT_GAME` |
+| `19` | `SERVER_REQUEST` |
+| `20` | `SERVER_FULL` |
+| `207` | `FOCUS_LOST_BACKGROUND` |
+| `208` | `INTENTIONAL_LEAVING` |
+| `209` | `FOCUS_LOST` |
+| `210` | `NEW_CONNECTION` |
+
+### `GameKeyword`
+
+This refers to the primary language that a game's players will be speaking.
+
+| ID | Name |
+| --- | --- |
+| `0` | `ALL` |
+| `1` | `OTHER` |
+| `2` | `SPANISH` |
+| `4` | `KOREAN` |
+| `8` | `RUSSIAN` |
+| `16` | `PORTUGUESE` |
+| `32` | `ARABIC` |
+| `64` | `FILIPINO` |
+| `128` | `POLISH` |
+| `256` | `ENGLISH` |
+| `512` | `JAPANESE` |
+
+### `GameOverReason`
+
+This refers to the condition that caused a game to finish.
+
+| ID | Name |
+| --- | --- |
+| `0` | `CREWMATES_BY_VOTE` |
+| `1` | `CREWMATES_BY_TASK` |
+| `2` | `IMPOSTORS_BY_VOTE` |
+| `3` | `IMPOSTORS_BY_KILL` |
+| `4` | `IMPOSTORS_BY_SABOTAGE` |
+| `5` | `IMPOSTOR_DISCONNECT` |
+| `6` | `CREWMATE_DISCONNECT` |
+
+### `GameState`
+
+| ID | Name |
+| --- | --- |
+| `0` | `NOT_STARTED` |
+| `1` | `STARTED` |
+| `2` | `ENDED` |
+| `3` | `DESTROYED` |
 
 ### `Hat`
 
@@ -187,7 +181,7 @@ This refers to the customizable hats that a player can wear.
 | `45` | `HEARING_PROTECTION` |
 | `46` | `HAZMAT_MASK` |
 | `47` | `FACE_MASK` |
-| `48` | `SECURITY_HAT_GLASSES` |
+| `48` | `MIRA_SECURITY_CAP` |
 | `49` | `SAFARI_HAT` |
 | `50` | `BANANA` |
 | `51` | `BEANIE` |
@@ -197,7 +191,7 @@ This refers to the customizable hats that a player can wear.
 | `55` | `EGG` |
 | `56` | `GREEN_FEDORA` |
 | `57` | `FLAMINGO` |
-| `58` | `FLOWER` |
+| `58` | `FLOWER_PIN` |
 | `59` | `KNIGHT_HELMET` |
 | `60` | `PLANT` |
 | `61` | `BAT_EYES` |
@@ -234,6 +228,65 @@ This refers to the customizable hats that a player can wear.
 | `92` | `RAM_HORNS` |
 | `93` | `MINI_CREWMATE_SNOWMAN` |
 | `94` | `GEOFF_KEIGHLEY_MASK` |
+| `95` | `DAVE_PANPA_CAP` |
+| `96` | `ELLIE_ROSE_HAIR` |
+| `97` | `SVEN_SVENSSON_HAT` |
+| `98` | `BURT_CURTIS_HAT` |
+| `99` | `ELLRY_MOHAWK` |
+| `100` | `THOMAS_CHESTERSHIRE_MONOCLES` |
+| `101` | `WIZARD_HAT` |
+| `102` | `FREDRICK_MUENSTER_HAT` |
+| `103` | `MR_MACBETH_HAT` |
+| `104` | `TOPPAT_HENRY_STICKMIN_HAT` |
+| `105` | `TOPPAT_ELLIE_ROSE_HAT` |
+| `106` | `GEOFFREY_PLUMB_HAT` |
+| `107` | `ANGRY_EYEBROWS` |
+| `108` | `CHOCOLATE_ICE_CREAM` |
+| `109` | `HEART_PIN` |
+| `110` | `PONYTAIL` |
+| `111` | `RUBBER_GLOVE` |
+| `112` | `UNICORN_HORN` |
+| `113` | `ZIPPER` |
+| `114` | `RIGHT_HAND_MAN_HAT` |
+
+### `KillDistance`
+
+This refers to the `Kill Distance` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object. Each unit has a corresponding `float` representing the magnitude ![magnitude of vector K to vector V](https://render.githubusercontent.com/render/math?math=\overrightarrow{\text{KV}}), or distance, between the killer and victim
+
+| ID | Name | Magnitude |
+| --- | --- | --- |
+| `0` | `SHORT` | `1.0f` |
+| `1` | `NORMAL` | `1.8f` |
+| `2` | `LONG` | `2.5f` |
+
+### `LimboState`
+
+| ID | Name |
+| --- | --- |
+| `0` | `PRE_SPAWN` |
+| `1` | `NOT_LIMBO` |
+| `2` | `WAITING_FOR_HOST` |
+
+### `Map`
+
+This refers to the available maps that games can be played on.
+
+When used in a bitfield, shift `1` to left by the map's ID.
+
+Example:
+
+```java
+// Searching for games on The Skeld (0) or Polus (2)
+
+(1 << 0) | (1 << 2) == 5
+```
+
+| ID | Name |
+| --- | --- |
+| `0` | `THE_SKELD` |
+| `1` | `MIRA_HQ` |
+| `2` | `POLUS` |
+| `3` | `THE_AIRSHIP` |
 
 ### `Pet`
 
@@ -253,6 +306,32 @@ This refers to the customizable pets that a player can be accompanied by.
 | `9` | `SQUIG` |
 | `10` | `BEDCRAB` |
 | `11` | `GLITCH` |
+
+### `QuickChatMode`
+
+| ID | Name |
+| --- | --- |
+| `1` | `FREE_CHAT_OR_QUICK_CHAT` |
+| `2` | `QUICK_CHAT_ONLY` |
+
+### `ReportOutcome`
+
+| ID | Name |
+| --- | --- |
+| `0` | `NOT_REPORTED_UNKNOWN` |
+| `1` | `NOT_REPORTED_NO_ACCOUNT` |
+| `2` | `NOT_REPORTED_NOT_FOUND` |
+| `3` | `NOT_REPORTED_RATE_LIMIT` |
+| `4` | `REPORTED` |
+
+### `ReportReason`
+
+| ID | Name |
+| --- | --- |
+| `0` | `INAPPROPRIATE_NAME` |
+| `1` | `INAPPROPRIATE_CHAT` |
+| `2` | `CHEATING_HACKING` |
+| `3` | `HARASSMENT_MISCONDUCT` |
 
 ### `Skin`
 
@@ -276,6 +355,33 @@ This refers to the customizable skins that a player can wear.
 | `13` | `MINER` |
 | `14` | `WINTER` |
 | `15` | `ARCHAEOLOGIST` |
+| `16` | `PRISONER` |
+| `17` | `CCC` |
+| `18` | `RIGHT_HAND_MAN_REBORN` |
+
+### `SpawnFlag`
+
+This refers to the various flags that an [`InnerNetObject`](../05_innernetobject_types/README.md) may have associated with it when spawned.
+
+| ID | Name |
+| --- | --- |
+| `0` | `NONE` |
+| `1` | `IS_CLIENT_CHARACTER` |
+
+### `SpawnType`
+
+This refers to the various [`InnerNetObject`s](../05_innernetobject_types/README.md) that may be spawned.
+
+| ID | Name |
+| --- | --- |
+| `0` | `SHIP_STATUS` |
+| `1` | `MEETING_HUD` |
+| `2` | `LOBBY_BEHAVIOUR` |
+| `3` | `GAME_DATA` |
+| `4` | `PLAYER_CONTROL` |
+| `5` | `HEADQUARTERS` |
+| `6` | `PLANET_MAP` |
+| `7` | `APRIL_SHIP_STATUS` |
 
 ### `SystemType`
 
@@ -313,12 +419,39 @@ This refers to the various rooms and systems found throughout each map.
 | `27` | `OUTSIDE` |
 | `28` | `SPECIMENS` |
 | `29` | `BOILER_ROOM` |
+| `30` | `VAULT_ROOM` |
+| `31` | `COCKPIT` |
+| `32` | `ARMORY` |
+| `33` | `KITCHEN` |
+| `34` | `VIEWING_DECK` |
+| `35` | `HALL_OF_PORTRAITS` |
+| `36` | `CARGO_BAY` |
+| `37` | `VENTILATION` |
+| `38` | `SHOWERS` |
+| `39` | `ENGINE` |
+| `40` | `BRIG` |
+| `41` | `MEETING_ROOM` |
+| `42` | `RECORDS` |
+| `43` | `LOUNGE` |
+| `44` | `GAP_ROOM` |
+| `45` | `MAIN_HALL` |
+| `46` | `MEDICAL` |
+
+### `TaskBarMode`
+
+This refers to the `Task Bar Updates` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object.
+
+| ID | Name |
+| --- | --- |
+| `0` | `ALWAYS` |
+| `1` | `MEETINGS` |
+| `2` | `NEVER` |
 
 ### `TaskType`
 
 This refers to the various types of tasks that a player can be assigned.
 
-For a list of all tasks on each map, see [Map-Specific IDs for Vents and Tasks](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md).
+For a list of all tasks on each map, see [Map-Specific IDs for Vents and Tasks](../07_miscellaneous/04_map_specific_ids_for_interactables.md).
 
 | ID | Name |
 | --- | --- |
@@ -365,67 +498,23 @@ For a list of all tasks on each map, see [Map-Specific IDs for Vents and Tasks](
 | `40` | `ALIGN_TELESCOPE` |
 | `41` | `RECORD_TEMPERATURE` |
 | `42` | `REBOOT_WIFI` |
-
-### `TaskBarMode`
-
-This refers to the `Task Bar Updates` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object.
-
-| ID | Name |
-| --- | --- |
-| `0` | `ALWAYS` |
-| `1` | `MEETINGS` |
-| `2` | `NEVER` |
-
-### `SpawnType`
-
-This refers to the various [`InnerNetObject`s](../05_innernetobject_types/README.md) that may be spawned.
-
-| ID | Name |
-| --- | --- |
-| `0` | `SHIP_STATUS` |
-| `1` | `MEETING_HUD` |
-| `2` | `LOBBY_BEHAVIOUR` |
-| `3` | `GAME_DATA` |
-| `4` | `PLAYER_CONTROL` |
-| `5` | `HEADQUARTERS` |
-| `6` | `PLANET_MAP` |
-| `7` | `APRIL_SHIP_STATUS` |
-
-### `SpawnFlag`
-
-This refers to the various flags that an [`InnerNetObject`](../05_innernetobject_types/README.md) may have associated with it when spawned.
-
-| ID | Name |
-| --- | --- |
-| `0` | `NONE` |
-| `1` | `IS_CLIENT_CHARACTER` |
-
-### `KillDistances`
-
-This refers to the `Kill Distance` field in the [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) object. Each unit has a corresponding `float` representing the magnitude ![magnitude of vector K to vector V](https://render.githubusercontent.com/render/math?math=\overrightarrow{\text{KV}}), or distance, between the killer and victim
-
-| ID | Name | Magnitude |
-| --- | --- | --- |
-| `0` | `SHORT` | `1.0f` |
-| `1` | `NORMAL` | `1.8f` |
-| `2` | `LONG` | `2.5f` |
-
-### `GameStates`
-
-| ID | Name |
-| --- | --- |
-| `0` | `NOT_STARTED` |
-| `1` | `STARTED` |
-| `2` | `ENDED` |
-| `3` | `DESTROYED` |
-
-### `LimboStates`
-
-| ID | Name |
-| --- | --- |
-| `0` | `PRE_SPAWN` |
-| `1` | `NOT_LIMBO` |
-| `2` | `WAITING_FOR_HOST` |
+| `43` | `POLISH_RUBY` |
+| `44` | `RESET_BREAKERS` |
+| `45` | `DECONTAMINATE` |
+| `46` | `MAKE_BURGER` |
+| `47` | `UNLOCK_SAFE` |
+| `48` | `SORT_RECORDS` |
+| `49` | `PUT_AWAY_PISTOLS` |
+| `50` | `FIX_SHOWER` |
+| `51` | `CLEAN_TOILET` |
+| `52` | `DRESS_MANNEQUIN` |
+| `53` | `PICK_UP_TOWELS` |
+| `54` | `REWIND_TAPES` |
+| `55` | `START_FANS` |
+| `56` | `DEVELOP_PHOTOS` |
+| `57` | `GET_BIGGOL_SWORD` |
+| `58` | `PUT_AWAY_RIFLES` |
+| `59` | `STOP_CHARLES` |
 
 ---
 

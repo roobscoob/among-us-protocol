@@ -2,7 +2,7 @@
 
 This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.md) object when a game starts to set the tasks for each player.
 
-> **Note**: Each map has its own set of tasks and associated IDs, found [here](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md), that are used when setting a player's tasks.
+> **Note**: Each map has its own set of tasks and associated IDs, found [here](../07_miscellaneous/04_map_specific_ids_for_interactables.md), that are used when setting a player's tasks.
 
 > **Note**: This message is sent from the host of a game to all clients via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
@@ -115,4 +115,5 @@ This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.
 
 ---
 
-> Previous section: [`0x1c` RepairSystem](28_repairsystem.md)
+> Previous section: [`0x1c` RepairSystem](28_repairsystem.md)<br>
+> Next section: [`0x1f` ClimbLadder](31_climbladder.md)

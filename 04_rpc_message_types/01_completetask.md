@@ -2,7 +2,7 @@
 
 This message is sent by a client's [`PlayerControl`](../05_innernetobject_types/04_playercontrol.md) object in a game when they complete a task.
 
-> **Note**: Each map has its own set of tasks and associated IDs, found [here](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md), that are used when setting a player's tasks.
+> **Note**: Each map has its own set of tasks and associated IDs, found [here](../07_miscellaneous/04_map_specific_ids_for_interactables.md), that are used when setting a player's tasks.
 
 > **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 

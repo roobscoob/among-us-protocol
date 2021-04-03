@@ -6,8 +6,9 @@ This message is sent from the client to the server when searching for public gam
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed int32` | *Unknown* | An unknown value that is hardcoded to be `0x00`<br><br>In the previous version of this message, [`0x09` GetGameList](09_getgamelist.md), this field was a `boolean` that when set to `true` would tell the server to include private games in the search results |
+| `packed int32` | *Unknown* | An unknown value that is hardcoded to be `0x02` |
 | [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings used when searching for public games<br><br>**Note**: The map ID in this Game Options Data is a bitfield containing the IDs of each [`Map`](../01_packet_structure/06_enums.md#map) that the client is searching for |
+| `byte` | Quick Chat Mode | The ID of the [`QuickChatMode`](../01_packet_structure/06_enums.md#quickchatmode) used when creating the game |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -15,8 +16,8 @@ This message is sent from the client to the server when searching for public gam
 ```
 01              # Reliable packet
 0002            # Nonce
-2c0010          # Hazel message (tag of 0x10 = GetGameListV2)
-    00          # Hardcoded 0
+2d0010          # Hazel message (tag of 0x10 = GetGameListV2)
+    02          # Hardcoded 2
     2a          # Game Options Data Length: 42
     02          # Game Optiona Data Version: 2
     0a          # Max Number of Players: 10
@@ -36,6 +37,7 @@ This message is sent from the client to the server when searching for public gam
     78000000    # Voting Time: 120s
     01          # Is Defaults: False
     0f          # Emergency Cooldown: 15s
+    01          # Quick Chat Mode: 1 (FREE_CHAT_OR_QUICK_CHAT)
 ```
 </details>
 
@@ -45,6 +47,7 @@ This message is sent from the server to the client after searching for public ga
 
 | Type | Name | Description |
 | --- | --- | --- |
+| `Message` (*Optional*) | Game Counts | An optional [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x01` that contains the number of games for each map<br><br><table><thead><tr><th>Type</th><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>`uint32`</td><td>The Skeld</td><td>The number of games being played on *The Skeld*</td></tr><tr><td>`uint32`</td><td>MIRA HQ</td><td>The number of games being played on *MIRA HQ*</td></tr><tr><td>`uint32`</td><td>Polus</td><td>The number of games being played on *Polus*</td></tr></tbody></table> |
 | `Message` (*Optional*) | Game List | An optional [Hazel message](../01_packet_structure/03_the_structure_of_a_hazel_message.md) with a tag of `0x00` that contains multiple nested Hazel messages (one for each public game) |
 
 ### The `Game List` Message Structure
@@ -180,4 +183,5 @@ fa0010                      # Hazel message (tag of 0x10 = GetGameListV2)
 
 ---
 
-> Previous section: [`0x0e` ReselectServer](14_reselectserver.md)
+> Previous section: [`0x0e` ReselectServer](14_reselectserver.md)<br>
+> Next section: [`0x11` ReportPlayer](17_reportplayer.md)

@@ -4,7 +4,7 @@
 
 This message is sent from the host of a game to all clients when the host determines that the game has ended.
 
-> **Note**: The [game state](../01_packet_structure/06_enums.md#gamestates) is set to `Ended` when this message is sent, and the list of clients in the game will be cleared.
+> **Note**: The [game state](../01_packet_structure/06_enums.md#gamestate) is set to `Ended` when this message is sent, and the list of clients in the game will be cleared.
 
 | Type | Name | Description |
 | --- | --- | --- |

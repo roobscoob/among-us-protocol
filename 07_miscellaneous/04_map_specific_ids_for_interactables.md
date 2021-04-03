@@ -1,6 +1,8 @@
 # Map-Specific IDs for Vents and Tasks
 
-All vents in the tables below include an X and Y coordinate which can be used in conjunction with the [`0x15` SnapTo](../04_rpc_message_types/21_snapto.md) message to determine if a player is moving between vents. The tasks in the tables below are used when the game sets each player's tasks via the [`0x1d` SetTasks](../04_rpc_message_types/29_settasks.md) message.
+- All vents in the tables below include an X and Y coordinate which can be used in conjunction with the [`0x15` SnapTo](../04_rpc_message_types/21_snapto.md) message to determine if a player is moving between vents.
+- The tasks in the tables below are used when the game sets each player's tasks via the [`0x1d` SetTasks](../04_rpc_message_types/29_settasks.md) message.
+- The ladders in the tables below can be used in conjunction with the [`0x1f` ClimbLadder](../04_rpc_message_types/31_climbladder.md) message to determine which ladder a player is climbing as well as which direction
 
 #### Table of Contents
 
@@ -13,6 +15,10 @@ All vents in the tables below include an X and Y coordinate which can be used in
 1. [Polus](#polus)
     1. [Vents](#vents-2)
     1. [Tasks](#tasks-2)
+1. [The Airship](#the-airship)
+    1. [Vents](#vents-3)
+    1. [Tasks](#tasks-3)
+    1. [Ladders](#ladders)
 
 ### The Skeld
 
@@ -178,6 +184,81 @@ All vents in the tables below include an X and Y coordinate which can be used in
 | `30` | Laboratory: Repair Drill | `REPAIR_DRILL` | Short | &#x2716; |
 | `31` | Laboratory: Record Temperature | `RECORD_TEMPERATURE` | Short | &#x2716; |
 | `32` | Outside: Record Temperature | `RECORD_TEMPERATURE` | Short | &#x2716; |
+
+### The Airship
+
+##### Vents
+
+| ID | Location | Coordinates `(x, y)` |
+| --- | --- | --- |
+| `0` | In the Vault | `-12.6322`, `8.4735` |
+| `1` | In the Cockpit | `-22.099`, `-1.512` |
+| `2` | In the Viewing Deck | `-15.659`, `-11.6991` |
+| `3` | In the Engine | `0.203`, `-2.5361` |
+| `4` | In the Kitchen | `-2.6019`, `-9.338` |
+| `5` | In the Upper Main Hall | `7.021`, `-3.730999` |
+| `6` | In the Lower Main Hall | `9.814`, `3.206` |
+| `7` | On the right side of the Gap Room | `12.663`, `5.922` |
+| `8` | On the left side of the Gap Room | `3.605`, `6.923` |
+| `9` | In the Showers | `23.9869`, `-1.386` |
+| `10` | In the Records | `23.2799`, `8.259998` |
+| `11` | In the Cargo Bay | `30.4409`, `-3.577` |
+
+##### Tasks
+
+| ID | Description | [`TaskType`](../01_packet_structure/06_enums.md#tasktype) | Length | Is Visual |
+| --- | --- | --- | --- | --- |
+| `0` | Electrical: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
+| `1` | Meeting Room: Enter ID Code | `ENTER_ID_CODE` | Common | &#x2716; |
+| `2` | Electrical: Reset Breakers | `RESET_BREAKERS` | Long | &#x2716; |
+| `3` | Vault Room: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `4` | Brig: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `5` | Cargo Bay: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `6` | Gap Room: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `7` | Records: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `8` | Cargo Bay: Unlock Safe | `UNLOCK_SAFE` | Long | &#x2716; |
+| `9` | Ventilation: Start Fans | `START_FANS` | Long | &#x2716; |
+| `10` | Main Hall: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
+| `11` | Medical: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
+| `12` | Kitchen: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
+| `13` | Main Hall: Develop Photos | `DEVELOP_PHOTOS` | Long | &#x2716; |
+| `14` | Cargo Bay: Fuel Engines | `FUEL_ENGINES` | Long | &#x2716; |
+| `15` | Security: Rewind Tapes | `REWIND_TAPES` | Long | &#x2716; |
+| `16` | Vault Room: Polish Ruby | `POLISH_RUBY` | Short | &#x2716; |
+| `17` | Electrical: Calibrate Distributor | `CALIBRATE_DISTRIBUTOR` | Long | &#x2716; |
+| `18` | Cockpit: Stabilize Steering | `STABILIZE_STEERING` | Short | &#x2716; |
+| `19` | Armory: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `20` | Cockpit: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `21` | Comms: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `22` | Medical: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `23` | Viewing Deck: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `24` | Electrical: Divert Power to Armory | `DIVERT_POWER` | Short | &#x2716; |
+| `25` | Electrical: Divert Power to Cockpit | `DIVERT_POWER` | Short | &#x2716; |
+| `26` | Electrical: Divert Power to Gap Room | `DIVERT_POWER` | Short | &#x2716; |
+| `27` | Electrical: Divert Power to Main Hall | `DIVERT_POWER` | Short | &#x2716; |
+| `28` | Electrical: Divert Power to Meeting Room | `DIVERT_POWER` | Short | &#x2716; |
+| `29` | Electrical: Divert Power to Showers | `DIVERT_POWER` | Short | &#x2716; |
+| `30` | Electrical: Divert Power to Engine | `DIVERT_POWER` | Short | &#x2716; |
+| `31` | Showers: Pick Up Towels | `PICK_UP_TOWELS` | Short | &#x2716; |
+| `32` | Lounge: Clean Toilet | `CLEAN_TOILET` | Short | &#x2716; |
+| `33` | Vault Room: Dress Mannequin | `DRESS_MANNEQUIN` | Short | &#x2716; |
+| `34` | Records: Sort Records | `SORT_RECORDS` | Short | &#x2716; |
+| `35` | Armory: Put Away Pistols | `PUT_AWAY_PISTOLS` | Short | &#x2716; |
+| `36` | Armory: Put Away Rifles | `PUT_AWAY_RIFLES` | Short | &#x2716; |
+| `37` | Main Hall: Decontaminate | `DECONTAMINATE` | Short | &#x2716; |
+| `38` | Kitchen: Make Burger | `MAKE_BURGER` | Short | &#x2716; |
+| `39` | Showers: Fix Shower | `FIX_SHOWER` | Short | &#x2716; |
+
+##### Ladders
+
+| ID | Description |
+| --- | --- |
+| `0` | Upper Gap Room to Lower Gap Room |
+| `1` | Lower Gap Room to Upper Gap Room |
+| `2` | Meeting Room to Gap Room |
+| `3` | Gap Room to Meeting Room |
+| `4` | Main Hall to Electrical |
+| `5` | Electrical to Main Hall |
 
 ---
 

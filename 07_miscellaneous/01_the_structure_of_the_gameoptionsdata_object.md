@@ -5,7 +5,7 @@
 | `packed uint32` | Length | &mdash; | &mdash; | The length, in bytes, of the `GameOptionsData` object |
 | `byte` | Version | &mdash; | &mdash; | The version of the `GameOptionsData` object |
 | `byte` | Max Number of Players | 1 | `10` | The maximum number of players |
-| `uint32` | Keywords | 1 | `1` | A bitfield for the languages (see [`GameKeywords`](../01_packet_structure/06_enums.md#gamekeywords)) |
+| `uint32` | Keywords | 1 | `1` | A bitfield for the languages (see [`GameKeyword`](../01_packet_structure/06_enums.md#gamekeyword)) |
 | `byte` | Map(s) | 1 | `1` | For the [client-to-server `0x10` GetGameListV2](../02_root_message_types/16_getgamelistv2.md#request-client-to-server) message, this is a bitfield<br><br>For all other uses, this is the ID of the [`Map`](../01_packet_structure/06_enums.md#map) |
 | `float` | Player Speed Modifier | 1 | `1.0` | A multiplicative number for the speed at which players will move |
 | `float` | Crewmate Light Modifier | 1 | `1.0` | A multiplicative number for the size of the fog-of-war ring encircling crewmates |
@@ -16,7 +16,7 @@
 | `byte` | Number of Short Tasks | 1 | `2` | The number of short tasks each crewmate will have |
 | `uint32` | Number of Emergency Meetings | 1 | `1` | The number of emergency meetings each player will be able to call |
 | `byte` | Number of Impostors | 1 | `1` | The maximum number of impostors |
-| `byte` | Kill Distance | 1 | `1` | How far of a reach an impostor has when killing crewmates (see [`KillDistances`](../01_packet_structure/06_enums.md#killdistances)) |
+| `byte` | Kill Distance | 1 | `1` | How far of a reach an impostor has when killing crewmates (see [`KillDistance`](../01_packet_structure/06_enums.md#killdistance)) |
 | `uint32` | Discussion Time | 1 | `15` | How many seconds before voting starts during a meeting |
 | `uint32` | Voting Time | 1 | `120` | How many seconds players will have to cast a vote during a meeting |
 | `boolean` | Is Defaults | 1 | `true` | Whether or not the `GameOptionsData` object is using the default options |

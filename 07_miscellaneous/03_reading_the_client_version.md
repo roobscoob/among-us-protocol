@@ -35,4 +35,4 @@ int revision = version % 50
 ---
 
 > Previous section: [Converting Game IDs to and from Game Codes](02_converting_game_ids_to_and_from_game_codes.md)<br>
-> Next section: [Map-Specific IDs for Vents and Tasks](04_map_specific_ids_for_vents_and_tasks.md)
+> Next section: [Map-Specific IDs for Vents and Tasks](04_map_specific_ids_for_interactables.md)

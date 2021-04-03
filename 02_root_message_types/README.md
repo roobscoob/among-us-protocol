@@ -18,6 +18,7 @@
 1. [`0x0d` Redirect](13_redirect.md)
 1. [`0x0e` ReselectServer](14_reselectserver.md)
 1. [`0x10` GetGameListV2](16_getgamelistv2.md)
+1. [`0x11` ReportPlayer](17_reportplayer.md)
 
 ---
 

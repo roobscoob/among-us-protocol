@@ -32,6 +32,8 @@
 1. [`0x1b` CloseDoorsOfType](27_closedoorsoftype.md)
 1. [`0x1c` RepairSystem](28_repairsystem.md)
 1. [`0x1d` SetTasks](29_settasks.md)
+1. [`0x1f` ClimbLadder](31_climbladder.md)
+1. [`0x20` UsePlatform](32_useplatform.md)
 
 ---
 

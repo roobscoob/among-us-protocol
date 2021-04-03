@@ -2,7 +2,7 @@
 
 This message is sent by a client's [`PlayerPhysics`](../05_innernetobject_types/09_playerphysics.md) component when exiting a vent.
 
-> **Note**: Each map has its own set of vents and associated IDs that can be found [here](../07_miscellaneous/04_map_specific_ids_for_vents_and_tasks.md).
+> **Note**: Each map has its own set of vents and associated IDs that can be found [here](../07_miscellaneous/04_map_specific_ids_for_interactables.md).
 
 > **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 

@@ -7,6 +7,7 @@ This message is sent from the client to the server when attempting to create a g
 | Type | Name | Description |
 | --- | --- | --- |
 | [`GameOptionsData`](../07_miscellaneous/01_the_structure_of_the_gameoptionsdata_object.md) | Game Options Data | The settings used when creating the game<br><br>**Note**: The map ID in this Game Options Data is the ID of the [`Map`](../01_packet_structure/06_enums.md#map) |
+| `byte` | Quick Chat Mode | The ID of the [`QuickChatMode`](../01_packet_structure/06_enums.md#quickchatmode) used when creating the game |
 
 <details>
     <summary>Click here to view an example packet</summary>
@@ -14,7 +15,7 @@ This message is sent from the client to the server when attempting to create a g
 ```
 01              # Reliable packet
 0002            # Nonce
-2b0000          # Hazel message (tag of 0x00 = HostGame)
+2c0000          # Hazel message (tag of 0x00 = HostGame)
     2a          # Game Options Data Length: 42
     02          # Game Optiona Data Version: 2
     0a          # Max Number of Players: 10
@@ -34,6 +35,7 @@ This message is sent from the client to the server when attempting to create a g
     78000000    # Voting Time: 120s
     00          # Is Defaults: False
     0f          # Emergency Cooldown: 15s
+    01          # Quick Chat Mode: 1 (FREE_CHAT_OR_QUICK_CHAT)
 ```
 </details>
 
