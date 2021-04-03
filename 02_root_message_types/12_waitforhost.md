@@ -2,7 +2,7 @@
 
 ### Client-to-Host
 
-This message is sent from the host of a game that has just finished to a client after the client clicks the "*Play Again*" button to rejoin the game.
+This message is sent from the server to a client after the client clicks the "*Play Again*" button to rejoin a game that has just finished.
 
 | Type | Name | Description |
 | --- | --- | --- |
