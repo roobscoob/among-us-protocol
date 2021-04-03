@@ -1,5 +1,7 @@
 # `0x0e` ReselectServer
 
+> **Note**: Despite still being sent by the Innersloth servers, this packet is no longer handled by the client as of The Airship update (2021.3.31).
+
 ### Server-to-Client
 
 This message is sent from the server to the client when loading the game list, creating a game, and joining a game, and tells the client which servers the games are hosted on.
@@ -29,7 +31,7 @@ This is the structure of each [Hazel message](../01_packet_structure/03_the_stru
 7a000e                            # Hazel message (tag of 0x0e = ReselectServer)
     01                            # Version: 1
     06                            # Master Servers Length: 6
-        110000                    # Hazel message (master server)  
+        110000                    # Hazel message (master server)
             084d61737465722d34    # Name: Master-4
             c63a7339              # IP Address: 198.58.115.57
             0756                  # Port: 22023
