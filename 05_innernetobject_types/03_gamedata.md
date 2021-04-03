@@ -167,13 +167,25 @@ for (int i = 0; i < playerCount; i++) {
 }
 ```
 
-##### Reading the Player's `Flags`
+##### The `Flags` Bitfield
 
-Each player's flags is itself a bitfield indicating whether or not a player is disconnected, dead, or an impostor. To read the information in each player's flags, see [The `Flags` Bitfield](../04_rpc_message_types/30_updategamedata.md#the-flags-bitfield).
+To read the information in each player's `Flags`, use the following bitwise operations.
 
-##### Reading the Player's `TaskInfo`
+| Name | Description | Operation |
+| --- | --- | --- |
+| Is Disconnected | Whether or not the player has disconnected from the game | `(flags & 1) != 0` |
+| Is Impostor | Whether or not the player is an impostor | `(flags & 2) != 0` |
+| Is Dead | Whether or not the player is dead | `(flags & 4) != 0` |
 
-Each player's `TaskInfo` is an array containing the player's task completion states. To read the information in each player's `TaskInfo`, see [The `TaskInfo` Structure](../04_rpc_message_types/30_updategamedata.md#the-taskinfo-structure).
+##### The `TaskInfo` Structure
+
+| Type | Name | Description |
+| --- | --- | --- |
+| `packed uint32` | Task ID | The ID (index) of the task |
+| `boolean` | Is Completed | Whether or not the player has completed the task |
+
+<details>
+    <summary>Click here to view an example packet</summary>
 
 ---
 

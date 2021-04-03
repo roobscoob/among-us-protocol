@@ -115,5 +115,4 @@ This message is sent by the [`GameData`](../05_innernetobject_types/03_gamedata.
 
 ---
 
-> Previous section: [`0x1c` RepairSystem](28_repairsystem.md)<br>
-> Next section: [`0x1e` UpdateGameData](30_updategamedata.md)
+> Previous section: [`0x1c` RepairSystem](28_repairsystem.md)

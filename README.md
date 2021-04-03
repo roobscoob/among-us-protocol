@@ -114,7 +114,6 @@ If you would like to discuss the Among Us protocol or client modding with me or 
     1. [`0x1b` CloseDoorsOfType](04_rpc_message_types/27_closedoorsoftype.md)
     1. [`0x1c` RepairSystem](04_rpc_message_types/28_repairsystem.md)
     1. [`0x1d` SetTasks](04_rpc_message_types/29_settasks.md)
-    1. [`0x1e` UpdateGameData](04_rpc_message_types/30_updategamedata.md)
 1. [`InnerNetObject` Types](05_innernetobject_types/README.md)
     1. [`ShipStatus`](05_innernetobject_types/00_shipstatus.md)
     1. [`MeetingHud`](05_innernetobject_types/01_meetinghud.md)
