@@ -34,7 +34,7 @@ If two clients tried to join a game with one spot open, the *host* of the game w
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
 | `uint32` | Disconnected Client ID | The ID of the client that was disconnected |
 | `uint32` | Host Client ID | The ID of the client that is now the current host of the game |
-| `byte` (*Optional*) | Disconnect Reason | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the client was disconnected |
+| `byte` | Disconnect Reason | The ID of the [disconnect reason](../01_packet_structure/06_enums.md#disconnectreason) for why the client was disconnected |
 
 <details>
     <summary>Click here to view an example packet</summary>
