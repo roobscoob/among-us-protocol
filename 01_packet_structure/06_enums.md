@@ -374,14 +374,15 @@ This refers to the various [`InnerNetObject`s](../05_innernetobject_types/README
 
 | ID | Name |
 | --- | --- |
-| `0` | `SHIP_STATUS` |
+| `0` | `SKELD_SHIP_STATUS` |
 | `1` | `MEETING_HUD` |
 | `2` | `LOBBY_BEHAVIOUR` |
 | `3` | `GAME_DATA` |
 | `4` | `PLAYER_CONTROL` |
-| `5` | `HEADQUARTERS` |
-| `6` | `PLANET_MAP` |
-| `7` | `APRIL_SHIP_STATUS` |
+| `5` | `MIRA_SHIP_STATUS` |
+| `6` | `POLUS_SHIP_STATUS` |
+| `7` | `DLEKS_SHIP_STATUS` |
+| `8` | `AIRSHIP_STATUS` |
 
 ### `SystemType`
 

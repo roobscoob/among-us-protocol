@@ -92,5 +92,5 @@ Each player state is itself a bitfield indicating how the game should display a 
 
 ---
 
-> Previous section: [`ShipStatus`](00_shipstatus.md)<br>
+> Previous section: [`SkeldShipStatus`](00_skeldshipstatus.md)<br>
 > Next section: [`LobbyBehaviour`](02_lobbybehaviour.md)

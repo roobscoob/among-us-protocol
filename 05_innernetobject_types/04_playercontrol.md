@@ -63,4 +63,4 @@ byte playerId = reader.readByte();
 ---
 
 > Previous section: [`GameData`](03_gamedata.md)<br>
-> Next section: [`Headquarters`](05_headquarters.md)
+> Next section: [`MiraShipStatus`](05_mirashipstatus.md)

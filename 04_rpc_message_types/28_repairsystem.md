@@ -1,6 +1,6 @@
 # `0x1c` RepairSystem
 
-This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_shipstatus.md) object when a [`SystemType`](../01_packet_structure/06_enums.md#systemtype) is interacted with by a player or sabotaged by an impostor.
+This message is sent by the [`ShipStatus`](../05_innernetobject_types/00_skeldshipstatus.md) object when a [`SystemType`](../01_packet_structure/06_enums.md#systemtype) is interacted with by a player or sabotaged by an impostor.
 
 > **Note**: This message is sent from a client to the host of a game via [`0x06` GameDataTo](../02_root_message_types/06_gamedatato.md). It is **never** sent from the host of a game.
 

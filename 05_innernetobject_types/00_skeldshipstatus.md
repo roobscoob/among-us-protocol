@@ -1,8 +1,8 @@
-# `ShipStatus`
+# `SkeldShipStatus`
 
-The `ShipStatus` object is spawned at the start of a game on *The Skeld* and despawned at the end of the game. It holds the map for *The Skeld* and is responsible for controlling the interactive systems throughout the map.
+The `SkeldShipStatus` object is spawned at the start of a game on *The Skeld* and despawned at the end of the game. It holds the map for *The Skeld* and is responsible for controlling the interactive systems throughout the map.
 
-> **Note**: See [`Headquarters`](05_headquarters.md) for *MIRA HQ*, or [`PlanetMap`](06_planetmap.md) for *Polus*.
+> **Note**: See [`MiraShipStatus`](05_mirashipstatus.md) for *MIRA HQ*, or [`PolusShipStatus`](06_polusshipstatus.md) for *Polus*.
 
 ### All `SystemType`s for The Skeld
 
@@ -21,7 +21,7 @@ The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#sy
 
 ### Serialize
 
-When the `ShipStatus` is being spawned, the game loops over every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
+When the `SkeldShipStatus` is being spawned, the game loops over every [`SystemType`](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
@@ -66,7 +66,7 @@ if (isSpawning) {
 
 ### Deserialize
 
-When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
+When the `SkeldShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *The Skeld*. For each type that is a part of *The Skeld*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
 
 When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 

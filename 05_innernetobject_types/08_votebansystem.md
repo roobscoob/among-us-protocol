@@ -72,5 +72,5 @@ for (int i = 0; i < playersLength; i++) {
 
 ---
 
-> Previous section: [`AprilShipStatus`](07_aprilshipstatus.md)<br>
+> Previous section: [`DleksShipStatus`](07_dleksshipstatus.md)<br>
 > Next section: [`PlayerPhysics`](09_playerphysics.md)

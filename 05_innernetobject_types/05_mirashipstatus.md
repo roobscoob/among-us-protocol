@@ -1,8 +1,8 @@
-# `Headquarters`
+# `MiraShipStatus`
 
-The `Headquarters` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *MIRA HQ* and despawned at the end of the game. It holds the map for *MIRA HQ* and is responsible for controlling the interactive systems throughout the map.
+The `MiraShipStatus` object (which is a variant of the [`SkeldShipStatus`](00_skeldshipstatus.md) object) is spawned at the start of a game on *MIRA HQ* and despawned at the end of the game. It holds the map for *MIRA HQ* and is responsible for controlling the interactive systems throughout the map.
 
-> **Note**: See [`ShipStatus`](00_shipstatus.md) for *The Skeld*, or [`PlanetMap`](06_planetmap.md) for *Polus*.
+> **Note**: See [`SkeldShipStatus`](00_skeldshipstatus.md) for *The Skeld*, or [`PolusShipStatus`](06_polusshipstatus.md) for *Polus*.
 
 ### All `SystemType`s for MIRA HQ
 
@@ -20,9 +20,9 @@ The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#sy
 
 ### Serialize
 
-> **Note**: Because `Headquarters` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *MIRA HQ*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `MiraShipStatus` is an extension of [`SkeldShipStatus`](00_skeldshipstatus.md) specific to *MIRA HQ*, the `serialize` method is identical to that of `SkeldShipStatus` except for the system types.
 
-When the `ShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *MIRA HQ*. For each type that is a part of *MIRA HQ*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
+When the `MiraShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *MIRA HQ*. For each type that is a part of *MIRA HQ*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
@@ -67,9 +67,9 @@ if (isSpawning) {
 
 ### Deserialize
 
-> **Note**: Because `Headquarters` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *MIRA HQ*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `MiraShipStatus` is an extension of [`SkeldShipStatus`](00_skeldshipstatus.md) specific to *MIRA HQ*, the `deserialize` method is identical to that of `SkeldShipStatus` except for the system types.
 
-When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *MIRA HQ*. For each type that is a part of *MIRA HQ*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
+When the `MiraShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *MIRA HQ*. For each type that is a part of *MIRA HQ*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
 
 When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 
@@ -111,4 +111,4 @@ for (SystemType system : SystemType.values()) {
 ---
 
 > Previous section: [`PlayerControl`](04_playercontrol.md)<br>
-> Next section: [`PlanetMap`](06_planetmap.md)
+> Next section: [`PolusShipStatus`](06_polusshipstatus.md)

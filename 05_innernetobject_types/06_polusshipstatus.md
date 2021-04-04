@@ -1,8 +1,8 @@
-# `PlanetMap`
+# `PolusShipStatus`
 
-The `PlanetMap` object (which is a variant of the [`ShipStatus`](00_shipstatus.md) object) is spawned at the start of a game on *Polus* and despawned at the end of the game. It holds the map for *Polus* and is responsible for controlling the interactive systems throughout the map.
+The `PolusShipStatus` object (which is a variant of the [`SkeldShipStatus`](00_skeldshipstatus.md) object) is spawned at the start of a game on *Polus* and despawned at the end of the game. It holds the map for *Polus* and is responsible for controlling the interactive systems throughout the map.
 
-> **Note**: See [`ShipStatus`](00_shipstatus.md) for *The Skeld*, or [`Headquarters`](05_headquarters.md) for *MIRA HQ*.
+> **Note**: See [`SkeldShipStatus`](00_skeldshipstatus.md) for *The Skeld*, or [`MiraShipStatus`](05_mirashipstatus.md) for *MIRA HQ*.
 
 ### All `SystemType`s for Polus
 
@@ -22,9 +22,9 @@ The table below lists every [`SystemType`](../01_packet_structure/06_enums.md#sy
 
 ### Serialize
 
-> **Note**: Because `PlanetMap` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Polus*, the `serialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `PolusShipStatus` is an extension of [`SkeldShipStatus`](00_skeldshipstatus.md) specific to *Polus*, the `serialize` method is identical to that of `SkeldShipStatus` except for the system types.
 
-When the `ShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Polus*. For each type that is a part of *Polus*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
+When the `PolusShipStatus` is being spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Polus*. For each type that is a part of *Polus*, the Hazel message writer containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `serialize` method.
 
 When sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first writes the information in the table below.
 
@@ -69,9 +69,9 @@ if (isSpawning) {
 
 ### Deserialize
 
-> **Note**: Because `PlanetMap` is an alias for [`ShipStatus`](00_shipstatus.md) specific to *Polus*, the `deserialize` method is identical to that of `ShipStatus` except for the system types.
+> **Note**: Because `PolusShipStatus` is an extension of [`SkeldShipStatus`](00_skeldshipstatus.md) specific to *Polus*, the `deserialize` method is identical to that of `SkeldShipStatus` except for the system types.
 
-When the `ShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Polus*. For each type that is a part of *Polus*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
+When the `PolusShipStatus` has been spawned, the game loops over all [`SystemType`s](../01_packet_structure/06_enums.md#systemtype) in order and checks if the type is part of *Polus*. For each type that is a part of *Polus*, the Hazel message containing the [component data](../03_gamedata_and_gamedatato_message_types/04_spawn.md#the-component-structure) is passed in to the type's `deserialize` method.
 
 When receiving data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game first reads the information in the table below.
 
@@ -112,5 +112,5 @@ for (SystemType system : SystemType.values()) {
 
 ---
 
-> Previous section: [`Headquarters`](05_headquarters.md)<br>
-> Next section: [`AprilShipStatus`](07_aprilshipstatus.md)
+> Previous section: [`MiraShipStatus`](05_mirashipstatus.md)<br>
+> Next section: [`DleksShipStatus`](07_dleksshipstatus.md)
