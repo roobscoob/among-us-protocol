@@ -210,44 +210,44 @@
 | --- | --- | --- | --- | --- |
 | `0` | Electrical: Fix Wiring | `FIX_WIRING` | Common | &#x2716; |
 | `1` | Meeting Room: Enter ID Code | `ENTER_ID_CODE` | Common | &#x2716; |
-| `2` | Electrical: Reset Breakers | `RESET_BREAKERS` | Long | &#x2716; |
-| `3` | Vault Room: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `4` | Brig: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `5` | Cargo Bay: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `6` | Gap Room: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `7` | Records: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `8` | Cargo Bay: Unlock Safe | `UNLOCK_SAFE` | Long | &#x2716; |
-| `9` | Ventilation: Start Fans | `START_FANS` | Long | &#x2716; |
-| `10` | Main Hall: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
-| `11` | Medical: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
-| `12` | Kitchen: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
-| `13` | Main Hall: Develop Photos | `DEVELOP_PHOTOS` | Long | &#x2716; |
-| `14` | Cargo Bay: Fuel Engines | `FUEL_ENGINES` | Long | &#x2716; |
-| `15` | Security: Rewind Tapes | `REWIND_TAPES` | Long | &#x2716; |
-| `16` | Vault Room: Polish Ruby | `POLISH_RUBY` | Short | &#x2716; |
-| `17` | Electrical: Calibrate Distributor | `CALIBRATE_DISTRIBUTOR` | Long | &#x2716; |
-| `18` | Cockpit: Stabilize Steering | `STABILIZE_STEERING` | Short | &#x2716; |
-| `19` | Armory: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `20` | Cockpit: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `21` | Comms: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `22` | Medical: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `23` | Viewing Deck: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
-| `24` | Electrical: Divert Power to Armory | `DIVERT_POWER` | Short | &#x2716; |
-| `25` | Electrical: Divert Power to Cockpit | `DIVERT_POWER` | Short | &#x2716; |
-| `26` | Electrical: Divert Power to Gap Room | `DIVERT_POWER` | Short | &#x2716; |
-| `27` | Electrical: Divert Power to Main Hall | `DIVERT_POWER` | Short | &#x2716; |
-| `28` | Electrical: Divert Power to Meeting Room | `DIVERT_POWER` | Short | &#x2716; |
-| `29` | Electrical: Divert Power to Showers | `DIVERT_POWER` | Short | &#x2716; |
-| `30` | Electrical: Divert Power to Engine | `DIVERT_POWER` | Short | &#x2716; |
-| `31` | Showers: Pick Up Towels | `PICK_UP_TOWELS` | Short | &#x2716; |
-| `32` | Lounge: Clean Toilet | `CLEAN_TOILET` | Short | &#x2716; |
-| `33` | Vault Room: Dress Mannequin | `DRESS_MANNEQUIN` | Short | &#x2716; |
-| `34` | Records: Sort Records | `SORT_RECORDS` | Short | &#x2716; |
-| `35` | Armory: Put Away Pistols | `PUT_AWAY_PISTOLS` | Short | &#x2716; |
-| `36` | Armory: Put Away Rifles | `PUT_AWAY_RIFLES` | Short | &#x2716; |
-| `37` | Main Hall: Decontaminate | `DECONTAMINATE` | Short | &#x2716; |
-| `38` | Kitchen: Make Burger | `MAKE_BURGER` | Short | &#x2716; |
-| `39` | Showers: Fix Shower | `FIX_SHOWER` | Short | &#x2716; |
+| `3` | Electrical: Reset Breakers | `RESET_BREAKERS` | Long | &#x2716; |
+| `4` | Vault Room: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `5` | Brig: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `6` | Cargo Bay: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `7` | Gap Room: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `8` | Records: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `9` | Cargo Bay: Unlock Safe | `UNLOCK_SAFE` | Long | &#x2716; |
+| `10` | Ventilation: Start Fans | `START_FANS` | Long | &#x2716; |
+| `11` | Main Hall: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
+| `12` | Medical: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
+| `13` | Kitchen: Empty Garbage | `EMPTY_GARBAGE` | Long | &#x2716; |
+| `14` | Main Hall: Develop Photos | `DEVELOP_PHOTOS` | Long | &#x2716; |
+| `15` | Cargo Bay: Fuel Engines | `FUEL_ENGINES` | Long | &#x2716; |
+| `16` | Security: Rewind Tapes | `REWIND_TAPES` | Long | &#x2716; |
+| `17` | Vault Room: Polish Ruby | `POLISH_RUBY` | Short | &#x2716; |
+| `18` | Electrical: Calibrate Distributor | `CALIBRATE_DISTRIBUTOR` | Long | &#x2716; |
+| `19` | Cockpit: Stabilize Steering | `STABILIZE_STEERING` | Short | &#x2716; |
+| `20` | Armory: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `21` | Cockpit: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `22` | Comms: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `23` | Medical: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `24` | Viewing Deck: Download Data | `UPLOAD_DATA` | Long | &#x2716; |
+| `25` | Electrical: Divert Power to Armory | `DIVERT_POWER` | Short | &#x2716; |
+| `26` | Electrical: Divert Power to Cockpit | `DIVERT_POWER` | Short | &#x2716; |
+| `27` | Electrical: Divert Power to Gap Room | `DIVERT_POWER` | Short | &#x2716; |
+| `28` | Electrical: Divert Power to Main Hall | `DIVERT_POWER` | Short | &#x2716; |
+| `29` | Electrical: Divert Power to Meeting Room | `DIVERT_POWER` | Short | &#x2716; |
+| `30` | Electrical: Divert Power to Showers | `DIVERT_POWER` | Short | &#x2716; |
+| `31` | Electrical: Divert Power to Engine | `DIVERT_POWER` | Short | &#x2716; |
+| `32` | Showers: Pick Up Towels | `PICK_UP_TOWELS` | Short | &#x2716; |
+| `33` | Lounge: Clean Toilet | `CLEAN_TOILET` | Short | &#x2716; |
+| `34` | Vault Room: Dress Mannequin | `DRESS_MANNEQUIN` | Short | &#x2716; |
+| `35` | Records: Sort Records | `SORT_RECORDS` | Short | &#x2716; |
+| `36` | Armory: Put Away Pistols | `PUT_AWAY_PISTOLS` | Short | &#x2716; |
+| `37` | Armory: Put Away Rifles | `PUT_AWAY_RIFLES` | Short | &#x2716; |
+| `38` | Main Hall: Decontaminate | `DECONTAMINATE` | Short | &#x2716; |
+| `39` | Kitchen: Make Burger | `MAKE_BURGER` | Short | &#x2716; |
+| `40` | Showers: Fix Shower | `FIX_SHOWER` | Short | &#x2716; |
 
 ##### Ladders
 
