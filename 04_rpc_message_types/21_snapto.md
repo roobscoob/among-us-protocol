@@ -1,6 +1,6 @@
 # `0x15` SnapTo
 
-This message is sent by a client's [`CustomNetworkTransform`](../05_innernetobject_types/10_customnetworktransform.md) component when moving between [vents](../07_miscellaneous/04_map_specific_ids_for_interactables.md), and the player's velocity is set to zero in the process.
+This message is sent by a client's [`CustomNetworkTransform`](../05_innernetobject_types/10_customnetworktransform.md) component when moving between [vents](../07_miscellaneous/04_map_specific_ids_for_interactables.md) and when selecting a spawn point on *The Airship*. The player's velocity is set to zero as a side effect of this message.
 
 > **Note**: This message is sent to and from all clients in a game via [`0x05` GameData](../02_root_message_types/05_gamedata.md).
 
