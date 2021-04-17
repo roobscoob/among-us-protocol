@@ -32,18 +32,7 @@ writer.writePackedUInt32(gameDataNetId);
 
 if (isSpawning) {
     writer.startMessage(0);
-}
-
-// Store the position of the write head so we can write the
-// number of updated players when sending a data update
-int position = writer.position;
-int updatedPlayers = 0;
-
-if (isSpawning) {
     writer.writePackedUInt32(players.length);
-} else {
-    // Temporarily write a 0 at the start
-    writer.writeByte(updatedPlayers);
 }
 
 // Loop through all players
@@ -57,12 +46,21 @@ for (int i = 0; i < players.length; i++) {
         continue;
     }
 
-    writer.writeByte(player.id);
+    if (!isSpawning) {
+        writer.startMessage(player.id);
+    } else {
+        writer.writeByte(player.id);
+    }
+
     writer.writeString(player.name);
     writer.writePackedUInt32(player.color);
     writer.writePackedUInt32(player.hat);
     writer.writePackedUInt32(player.pet);
     writer.writePackedUInt32(player.skin);
+
+    if (isSpawning) {
+        writer.endMessage();
+    }
 
     byte flags = 0;
 
@@ -87,13 +85,6 @@ for (int i = 0; i < players.length; i++) {
     }
 
     updatedPlayers++;
-}
-
-// Write the number of updated players when sending a data update
-if (!isSpawning) {
-    writer.position = position;
-    writer.writeByte(updatedPlayers);
-    writer.position = writer.length
 }
 
 if (isSpawning) {
@@ -131,39 +122,48 @@ long gameDataNetId = reader.readPackedUInt32();
 
 if (isSpawning) {
     reader = reader.readMessage();
+
+    long playerCount = reader.readPackedUInt32();
+
+    // Loop through all player states
+    for (int i = 0; i < playerCount; i++) {
+        readPlayer(child, child.readByte());
+    }
+} else {
+    while ((child = reader.readMessage()) != null) {
+        readPlayer(child, child.getTag());
+    }
 }
 
-long playerCount = isSpawning ? reader.readPackedUInt32() : reader.readByte();
-
-// Loop through all player states
-for (int i = 0; i < playerCount; i++) {
-    byte id = reader.readByte();
+Player readPlayer(MessageReader reader, byte id) {
     Player player = Game.getOrCreatePlayerById(id);
 
-    player.name = reader.readString();
-    player.color = reader.readPackedUInt32();
-    player.hat = reader.readPackedUInt32();
-    player.pet = reader.readPackedUInt32();
-    player.skin = reader.readPackedUInt32();
+    player.name = child.readString();
+    player.color = child.readPackedUInt32();
+    player.hat = child.readPackedUInt32();
+    player.pet = child.readPackedUInt32();
+    player.skin = child.readPackedUInt32();
 
-    byte flags = reader.readByte();
+    byte flags = child.readByte();
 
     player.isDisconnected = (flags & 1) != 0
     player.isImpostor = (flags & 2) != 0
     player.isDead = (flags & 4) != 0
 
-    byte tasksLength = reader.readByte();
+    byte tasksLength = child.readByte();
 
     player.tasks = new TaskInfo[tasksLength];
 
     for (int j = 0; j < tasksLength; j++) {
         TaskInfo task = new TaskInfo();
 
-        task.id = reader.readPackedUInt32();
-        task.isCompleted = reader.readBoolean();
+        task.id = child.readPackedUInt32();
+        task.isCompleted = child.readBoolean();
 
         player.tasks[j] = task;
     }
+
+    return player;
 }
 ```
 
