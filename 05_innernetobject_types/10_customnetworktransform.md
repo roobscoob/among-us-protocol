@@ -2,6 +2,8 @@
 
 The `CustomNetworkTransform` object is spawned for each player that joins a game lobby and despawned at the end of the game. It is responsible for a player's movement. It has two sibling objects: the [`PlayerControl`](04_playercontrol.md) and [`PlayerPhysics`](09_playerphysics.md) objects.
 
+> **Note**: The position on a `CustomNetworkTransform`, which is used when getting and setting a player's position in-game, is at the center of the character sprite. A player's true position, which is used for sound occlusion and physics calculations, is at `position - 0.3636f`.
+
 ### Serialize
 
 When the `CustomNetworkTransform` object is being spawned, as well as when it is sending data (via [`0x01` Data](../03_gamedata_and_gamedatato_message_types/01_data.md)), the game writes the information in the table below.
