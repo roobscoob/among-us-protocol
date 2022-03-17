@@ -2,11 +2,11 @@
 
 # Among Us Protocol Research
 
-> **Note**: An update to this repo regarding the changes in The Airship update (2021.3.31) is currently underway. Most of the information is still correct, and the sections involving ShipStatus and system serialization are the most outdated.
+> **Note**: This repo is outdated, it is correct up to and partially including the Airship Update. PRs are welcome!
 
 Contained in this repo is my detailed explanation of the netcode behind Among Us, a game by Innersloth. Myself and others have spent countless hours scanning the game's decompiled source code as well as manually dissecting each and every packet sent by the game. Not all of this information will be correct, though it is safe to assume that almost all of it is, and those parts that I am uncertain of will be labeled as such.
 
-I do not work for Innersloth, nor do I have any connection to anyone at Innersloth; this is just the result of an obsession in discovering how the game works.
+I do not work for Innersloth, however Innersloth has provided support in the construction of this wiki; for the most part this is just the result of an obsession in discovering how the game works.
 
 This repo does not currently contain instructions on how to decompile/deobfuscate the game.
 
@@ -20,7 +20,7 @@ To show only reliable packets (recommended as movement, pings, and acks can add 
 udp.port in { 22023 22123 22223 22323 22423 22523 22623 22723 22823 22923 } and data[0] == 01
 ```
 
-If you would like to discuss the Among Us protocol or client modding with me or others interested in such topics, you are welcome to join the [NodePolus Discord server](https://discord.gg/Jpg4sWqeYH). [NodePolus](https://github.com/nodepolus) is a (soon-to-be open-source) Among Us custom server implementation written in TypeScript that is under active development, and it is the server powering the soon-to-be released [Polus.gg](https://polus.gg) Among Us server.
+If you would like to discuss the Among Us protocol or client modding with me or others interested in such topics, you are welcome to join the [NodePolus Discord server](https://discord.gg/Jpg4sWqeYH), or [Reactor](https://discord.gg/ejBqr5zWPD)
 
 #### Table of Contents
 
