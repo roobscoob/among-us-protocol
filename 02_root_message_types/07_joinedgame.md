@@ -7,10 +7,10 @@ This message is sent from the host of a game to a client after the client has su
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
-| `uint32` | Joined Client ID | The ID of the client that joined the game |
-| `uint32` | Host Client ID | The ID of the client that is the current host of the game |
-| `packed uint32` | Other Client IDs Length | The number of clients in the game excluding the client that just joined |
-| `packed uint32[n]` | Other Client IDs | A list of the IDs of every other client in the game, where length `n` is defined in the previous field |
+| `int32` | Joined Client ID | The ID of the client that joined the game |
+| `int32` | Host Client ID | The ID of the client that is the current host of the game |
+| `packed int32` | Other Client IDs Length | The number of clients in the game excluding the client that just joined |
+| `packed int32[n]` | Other Client IDs | A list of the IDs of every other client in the game, where length `n` is defined in the previous field |
 
 <details>
     <summary>Click here to view an example packet</summary>

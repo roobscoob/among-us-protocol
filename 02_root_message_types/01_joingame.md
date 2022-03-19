@@ -60,8 +60,8 @@ This message is sent from the server to all clients in a game when another clien
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
-| `uint32` | Joining Client ID | The ID of the joining client |
-| `uint32` | Host Client ID | The ID of the client that is the current host of the game |
+| `int32` | Joining Client ID | The ID of the joining client |
+| `int32` | Host Client ID | The ID of the client that is the current host of the game |
 
 <details>
     <summary>Click here to view an example success packet</summary>

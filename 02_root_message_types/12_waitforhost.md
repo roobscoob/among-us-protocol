@@ -7,7 +7,7 @@ This message is sent from the server to a client after the client clicks the "*P
 | Type | Name | Description |
 | --- | --- | --- |
 | `int32` | Game ID | The ID ([code](../07_miscellaneous/02_converting_game_ids_to_and_from_game_codes.md)) of the game |
-| `uint32` | Rejoining Client ID | The ID of the client that is rejoining the game |
+| `int32` | Rejoining Client ID | The ID of the client that is rejoining the game |
 
 <details>
     <summary>Click here to view an example packet</summary>

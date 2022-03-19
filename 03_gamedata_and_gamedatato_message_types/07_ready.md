@@ -6,7 +6,7 @@ This message is sent by the client to the host of a game as a response to the [`
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Ready Client ID | The ID of the client that is ready |
+| `packed int32` | Ready Client ID | The ID of the client that is ready |
 
 <details>
     <summary>Click here to view an example packet</summary>

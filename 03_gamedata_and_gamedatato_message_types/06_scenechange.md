@@ -6,7 +6,7 @@ This message is sent by the client to the host of a game when changing the game 
 
 | Type | Name | Description |
 | --- | --- | --- |
-| `packed uint32` | Client ID | The ID of the client that is changing scenes |
+| `packed int32` | Client ID | The ID of the client that is changing scenes |
 | `String` | Scene Name | The name of the scene that the client is changing to |
 
 <details>
