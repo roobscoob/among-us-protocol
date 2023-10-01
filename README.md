@@ -4,7 +4,7 @@
 
 > **Note**: This repo is outdated, it is correct up to and partially including the Airship Update. PRs are welcome!
 
-Contained in this repo is my detailed explanation of the netcode behind Among Us, a game by Innersloth. Myself and others have spent countless hours scanning the game's decompiled source code as well as manually dissecting each and every packet sent by the game. Not all of this information will be correct, though it is safe to assume that almost all of it is, and those parts that I am uncertain of will be labeled as such.
+Contained in this repo is my detailed explanation of the netcode behind Among Us, a game by Innersloth. I and others have spent countless hours scanning the game's decompiled source code as well as manually dissecting each and every packet sent by the game. Not all of this information will be correct, though it is safe to assume that almost all of it is, and those parts that I am uncertain of will be labeled as such.
 
 I do not work for Innersloth, however Innersloth has provided support in the construction of this wiki; for the most part this is just the result of an obsession in discovering how the game works.
 
